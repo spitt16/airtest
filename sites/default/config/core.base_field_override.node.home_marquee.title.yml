@@ -1,0 +1,18 @@
+uuid: f25714c7-d4a7-455f-9849-d37712d1501d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.home_marquee
+id: node.home_marquee.title
+field_name: title
+entity_type: node
+bundle: home_marquee
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

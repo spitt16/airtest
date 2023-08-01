@@ -1,0 +1,18 @@
+uuid: 781efd72-6621-4bad-bf62-3edad54cdf30
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.navigation
+id: node.navigation.changed
+field_name: changed
+entity_type: node
+bundle: navigation
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

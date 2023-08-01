@@ -1,0 +1,20 @@
+uuid: 60e7011c-9ab2-46a2-a10f-4d45d2d04907
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band_container
+  module:
+    - path
+id: node.band_container.path
+field_name: path
+entity_type: node
+bundle: band_container
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

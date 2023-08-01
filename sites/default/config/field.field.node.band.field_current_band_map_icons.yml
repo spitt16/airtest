@@ -1,0 +1,64 @@
+uuid: 18f3b6b9-39c2-4a69-ab33-9b272e911be9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_current_band_map_icons
+    - node.type.band
+    - paragraphs.paragraphs_type.home_current_map_icon
+  module:
+    - entity_reference_revisions
+id: node.band.field_current_band_map_icons
+field_name: field_current_band_map_icons
+entity_type: node
+bundle: band
+label: 'Current Band Map Icons'
+description: 'Add up to 4 icons. If the link is not specified with the image, then the body of text below it will be used to allow a tooltip to appear. If neither the link nor the body are filled out, no action will be done.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      home_current_map_icon: home_current_map_icon
+    target_bundles_drag_drop:
+      banner_slides:
+        weight: 14
+        enabled: false
+      basic_link:
+        weight: 15
+        enabled: false
+      content:
+        weight: 16
+        enabled: false
+      header_title:
+        weight: 17
+        enabled: false
+      home_current_map_icon:
+        enabled: true
+        weight: 13
+      link_image:
+        weight: 18
+        enabled: false
+      main_navigation_link:
+        weight: 19
+        enabled: false
+      marquee_images:
+        weight: 20
+        enabled: false
+      navigation_link:
+        weight: 21
+        enabled: false
+      parameter_message:
+        weight: 22
+        enabled: false
+      publication:
+        weight: 23
+        enabled: false
+      sidebar:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

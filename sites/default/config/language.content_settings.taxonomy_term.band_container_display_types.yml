@@ -1,0 +1,18 @@
+uuid: 8b5ce678-a14c-44d9-bd4d-52359153f03e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_container_display_types
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.band_container_display_types
+target_entity_type_id: taxonomy_term
+target_bundle: band_container_display_types
+default_langcode: site_default
+language_alterable: false

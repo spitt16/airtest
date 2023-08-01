@@ -1,0 +1,7 @@
+name: Random Marquee Image Loader
+type: module
+description: Random Marquee Image Loader
+package: Custom
+
+type: module
+core: 8.x

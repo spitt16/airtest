@@ -1,0 +1,92 @@
+hr {
+    height: 1px;
+    color: #aaa;
+    background-color: #aaa;
+    border: 0;
+    margin: .2em 0 .2em 0;
+}
+
+.NtnlSummaryCity {
+		font-size: 16px;
+    margin-left: 5px;
+}
+
+.btn.btn-highest-aqi {
+  color: white;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+  padding: 11px 0 0 0;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.btn-highest-aqi .fa.fa-times {
+  font-size: 16px;
+  margin-top: -1px;
+}
+
+#highestAQIfirstColumn {
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
+
+#highestAQIsecondColumn {
+  float: left;
+  width: 50%;
+  padding-left: 10px;
+}
+
+@media all and (max-width: 510px) {
+  .btn.btn-highest-aqi {
+    width: 35px;
+    height: 35px;
+    padding: 8px 0 0 0;
+  }
+
+  .btn.btn-highest-aqi {
+    width: 35px;
+    height: 35px;
+    padding: 8px 0 0 0;
+  }
+
+  .row .col-sm-12 .basic-content .column {
+    width: 100%;
+  }
+
+  .row .col-sm-12 .basic-content .column table {
+    width: 170px;
+  }
+
+  #highestAQIfirstColumn {
+    float: left;
+    width: 100%;
+    padding-right: 0px;
+  }
+
+  #highestAQIsecondColumn {
+    float: left;
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  /* Columns are stacked; reverse the lower candy stripes */
+  #highestAQIsecondColumn-row5 {
+    background-color: #EEEEEE;
+  }
+  #highestAQIsecondColumn-row6 {
+    background-color: #FFFFFF;
+  }
+  #highestAQIsecondColumn-row7 {
+    background-color: #EEEEEE;
+  }
+  #highestAQIsecondColumn-row8 {
+    background-color: #FFFFFF;
+  }
+  #highestAQIsecondColumn-row9 {
+    background-color: #EEEEEE;
+  }
+
+}

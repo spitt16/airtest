@@ -1,0 +1,18 @@
+uuid: f4285e8d-9f6e-4854-a6f9-e64fc2a5bc4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.data_providers
+id: taxonomy_term.data_providers.name
+field_name: name
+entity_type: taxonomy_term
+bundle: data_providers
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

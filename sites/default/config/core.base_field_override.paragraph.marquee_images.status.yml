@@ -1,0 +1,22 @@
+uuid: 8f535eb1-e6f0-45fd-b49c-aa1bf1ad54e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.marquee_images
+id: paragraph.marquee_images.status
+field_name: status
+entity_type: paragraph
+bundle: marquee_images
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

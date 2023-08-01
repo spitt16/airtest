@@ -1,0 +1,4 @@
+webcams_helper:
+  css:
+    base:
+      css/PluginData/webcam_helper.css: {}

@@ -1,0 +1,22 @@
+uuid: 1c699aa1-ba4a-465f-8dbc-093daf162f08
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_container_display_types
+id: taxonomy_term.band_container_display_types.status
+field_name: status
+entity_type: taxonomy_term
+bundle: band_container_display_types
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

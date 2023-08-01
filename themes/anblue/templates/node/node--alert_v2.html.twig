@@ -1,0 +1,24 @@
+{% set alert = constructAlertV2(node) %}
+
+<div class="container inner-card-style">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="article-title">
+        {{ alert.getTitle() }}
+      </h1>
+      {%  if alert.getDate() %}
+        <h4 class="article-date">
+          {{ alert.getDate()|date("Y-m-d") }}
+        </h4>
+      {% endif %}
+    </div>
+    <div class="col-xs-12">
+      <p>{{ alert.getMainText() }}</p>
+    </div>
+    {% if alert.getAdditionalText() %}
+      <div class="col-xs-12">
+        <p>{{ alert.getAdditionalText() }}</p>
+      </div>
+    {% endif %}
+  </div>
+</div>

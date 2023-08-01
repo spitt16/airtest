@@ -1,0 +1,744 @@
+.marquee-dial-arrow-container {
+  position: relative;
+}
+
+.marquee-dial-arrow {
+  /* Sets rotation animation */
+  -webkit-transition: all 1.25s ease-in-out;
+  -moz-transition: all 1.25s ease-in-out;
+  -o-transition: all 1.25s ease-in-out;
+  transition: all 1.25s ease-in-out;
+
+  /* Sets rotation to pivot around the end of the div */
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+}
+
+.marquee-dial-arrow-head {
+  /* Use borders to create the arrow triangle */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 30px solid white;
+}
+
+.marquee-dial-col {
+  /*padding: 10px;*/
+  /*width: 290px;*/
+  /*margin-left: 200px;*/
+}
+
+.marquee-location-col {
+  color: white;
+  /*position: absolute;*/
+  /*left: 67%;*/
+  /*right: auto;*/
+  /*top: 172px;*/
+}
+
+.location-input-style,
+.location-input-holder .arcgisSearch .searchGroup .searchInput {
+  z-index: 0;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.4);
+  color: #FFFFFF;
+  width: 240px;  /* AIR-537 Make Geosearch box fit Spanish cw 2022-04-14 */
+  height: 25px;
+  padding: 0 30px 0 10px;
+  margin: auto;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  font-family: "DroidSansFont";
+
+  /* esri.css adds a transition for some reason.  Causes odd UI behavior when re-sizing the field so we disable it. */
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.location-input-style::-webkit-input-placeholder,
+.location-input-style::-moz-placeholder,
+.location-input-style::-ms-input-placeholder,
+.location-input-style::-moz-placeholder,
+.location-input-holder .arcgisSearch .searchGroup .searchInput::-webkit-input-placeholder,
+.location-input-holder .arcgisSearch .searchGroup .searchInput::-moz-placeholder,
+.location-input-holder .arcgisSearch .searchGroup .searchInput::-ms-input-placeholder,
+.location-input-holder .arcgisSearch .searchGroup .searchInput::-moz-placeholder {
+  color: #BDBDBD;
+}
+
+.location-input-holder .arcgisSearch .searchGroup .searchClear,
+.location-input-holder .arcgisSearch .searchGroup .searchBtn {
+  display: none;
+}
+
+.marquee-location-col div.location-input-gps-btn {
+  height: 24px;
+  width: 24px;
+  padding: 5px;
+  position: absolute;
+  right: 2px;
+  border-left: 1px solid white;
+  bottom: 0;
+  background: url('../../images/icons/gps_white.svg') no-repeat center;
+  background-origin: content-box;
+  background-size: contain;
+}
+
+.marquee-location-col div.location-input-gps-btn:hover,
+.marquee-location-col.noData div.location-input-gps-btn:hover,
+.marquee-location-col div.location-input-gps-btn:active,
+.marquee-location-col.noData div.location-input-gps-btn:active {
+  background: url('../../images/icons/gps_light_blue.svg') no-repeat center;
+  background-origin: content-box;
+  background-size: contain;
+  cursor: pointer;
+}
+.marquee-location-col div.location-input-gps-btn.disabled,
+.marquee-location-col.noData div.location-input-gps-btn.disabled {
+  background: url('../../images/icons/gps_gray.svg') no-repeat center;
+  background-origin: content-box;
+  background-size: contain;
+}
+
+.dial-data-info {
+  position: absolute;
+  color: white;
+  top: 290px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.aqi-dial-nav .dial-data-info {
+  top: 117px;
+}
+
+.current-aq-label {
+  text-align: center;
+}
+
+.current-aq-label h3 {
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.updated-time-row {
+  text-align: center;
+}
+
+.aq-data-row .col-xs-5 {
+  text-align: right;
+}
+
+.marquee-forecast-col {
+  	padding-right: 14px;
+	/*position: absolute;*/
+  	/*width: 200px;*/
+  	/*margin-top: 210px;*/
+}
+
+.aq-day-status {
+  width: 60px;
+}
+
+
+/* For iPhone 5 / 320 pixel wide cw 2018-09-18 */
+@media all and (min-width: 319px) and (max-width: 360px) {
+  .marquee-forecast-col div.aq-day-category {
+		margin-top: 0px;
+  }
+  .marquee-forecast-col .aq-forecast-label {
+		margin-bottom: 0px;
+  }
+
+  .aq-forecast-details-button {
+		margin-top: 1px;
+	    margin-bottom: 4px;
+  }
+  .btn {
+		margin-bottom: 1px;
+  }
+  .current-aq-label h3 {
+    font-size: 1.7em;
+    margin-top: 0px;
+    margin-bottom: 3px;
+  }
+
+  .current-aq-label h1 {
+    font-size: 1.7em;
+    margin-top: 0px;
+    margin-bottom: 3px;
+  }
+
+  .updated-time-row {
+    font-size: 0.7em;
+  }
+
+  .aq-data-row .aq-data-value{
+    font-size: 1.5em;
+  }
+
+  .aq-data-row .aq-data-label{
+    font-size: 0.7em;
+    margin-top: -8px;
+  }
+
+  .aq-data-row .aq-data-label p{
+    margin-left: -5px;
+  }
+  .dial-data-info {
+    /*top: 155px;*/
+    top: 125px;
+    width: 100%;
+  }
+
+  .marquee-holder {
+    padding: 0;
+  }
+
+  .col-xs-12.aq-data-row {
+    margin-top: -2px;
+  }
+
+  .weather-container {
+    top: 10px;
+  }
+}
+
+@media all and (min-width: 361px) and (max-width: 767px) {
+  .current-aq-label h3 {
+    font-size: 1.7em;
+    margin-top: 0px;
+    margin-bottom: 3px;
+  }
+
+  .current-aq-label h1 {
+    font-size: 1.7em;
+    margin-top: 0px;
+    margin-bottom: 3px;
+  }
+
+  .updated-time-row {
+    font-size: 0.7em;
+  }
+
+  .aq-data-row .aq-data-value{
+    font-size: 1.5em;
+  }
+
+  .aq-data-row .aq-data-label{
+    font-size: 0.7em;
+    margin-top: -8px;
+  }
+
+  .aq-data-row .aq-data-label p{
+    margin-left: -5px;
+  }
+  .dial-data-info {
+    /*top: 155px;*/
+    top: 125px;
+    width: 100%;
+  }
+
+  /*.marquee-col {*/
+    /*height: 50%;*/
+  /*}*/
+
+  .marquee-holder {
+    padding: 0;
+  }
+
+  .col-xs-12.aq-data-row {
+    margin-top: -2px;
+  }
+
+  .weather-container {
+    top: 10px;
+  }
+}
+
+.location-holder.splash-screen .splash-main-message {
+  margin: 20px 0;
+}
+@media all and (max-width: 991px) {
+  .location-holder.splash-screen {
+    max-width: none;
+  }
+}
+@media all and (max-width: 767px) {
+  .location-holder.splash-screen .location-input-holder {
+    margin-bottom: 0;
+  }
+  .location-holder.splash-screen #location-input-mobile-gps {
+    width: 295px;  /* AIR-537 Make Geosearch box fit Spanish cw 2022-04-14 */
+  }
+  .location-holder.splash-screen .location-input-style,
+  .location-holder.splash-screen .arcgisSearch .searchGroup .searchInput {
+    line-height: 28px;
+    font-size: 18px;
+    max-width: 295px; /* AIR-537 Make Geosearch box fit Spanish cw 2022-04-14 */
+    height: 31px;
+    width: 295px;  /* AIR-537 Make Geosearch box fit Spanish cw 2022-04-14 */
+    padding-right: 33px;
+    margin:auto;
+  }
+
+  .location-holder.splash-screen div.location-input-gps-btn {
+    height: 30px;
+    width: 30px;
+    padding: 6px;
+    position: absolute;
+    right: 2px;
+    border-left: 1px solid white;
+    bottom: 0;
+    background: url('../../images/icons/gps_white.svg') no-repeat center;
+    background-origin: content-box;
+    background-size: contain;
+  }
+}
+
+/* A bit less than the col-md cuttoff at 1199px */
+@media all and (min-width: 1100px) {
+  .location-holder.splash-screen {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .location-holder {
+    margin-left: -55px;
+    margin-right: 55px;
+  }
+}
+@media all and (min-width: 768px) {
+  .current-aq-label h3 {
+    font-size: 42px;
+    margin-top: -15px;
+    margin-bottom: 3px;
+  }
+
+  .current-aq-label h1{
+    font-size: 42px;
+    margin-top: -15px;
+    margin-bottom: 3px;
+  }
+
+  .updated-time-row {
+    font-size: 12px;
+  }
+
+  .aq-data-row {
+    padding: 10px;
+  }
+
+  .aq-data-row .aq-data-value{
+    font-size: 32px;
+  }
+
+  .aq-data-row .aq-data-label{
+    font-size: 12px;
+    margin-top: -3px;
+  }
+
+
+  .location-holder {
+    /*top: 40%;*/
+    /*display: block;*/
+    /*position: relative;*/
+    margin-top: -30px;
+    text-align: center;
+  }
+
+  #location-label {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 900px) {
+  /*.location-holder {*/
+    /*max-width: 200px;*/
+  /*}*/
+
+  /*.arcgisSearch .searchGroup .searchInput {*/
+  /*width: 170px*/
+  /*}*/
+
+  .location-holder .location-btn-holder {
+    padding-right: 0px;
+  }
+
+  #location-label {
+    font-size: 22px;
+  }
+}
+
+.marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {
+  /*max-width: 440px;*/
+  padding: 5px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.marquee-dial-background {
+  opacity: 0.5;
+}
+
+
+.aqi-dial-nav .aq-data-row {
+  padding: 2px 10px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1159px) {
+  .dial-data-info {
+    top: 290px;
+  }
+
+  .marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {
+    /*max-width: 440px;*/
+    padding: 0px;
+  }
+
+  .current-aq-label h3 {
+    font-size: 3.5vw;
+  }
+
+  .current-aq-label h1 {
+    font-size: 3.5vw;
+  }
+
+  .updated-time-row {
+    font-size: 1vw;
+  }
+
+  .col-xs-12.aq-data-row {
+    margin-top: -10px;
+  }
+
+  .aq-data-row .aq-data-value {
+    font-size: 3.5vw;
+  }
+
+  div.aq-data-label p {
+    font-size: 1.2vw;
+  }
+
+  .aqi-dial-nav  div.aq-data-label p {
+    font-size: 8px;
+  }
+
+
+  .aqi-dial-nav .aq-data-row {
+    padding: 10px;
+  }
+}
+
+
+.aqi-dial-nav .current-aq-label h3 {
+  font-size: 16px;
+}
+
+.aqi-dial-nav .updated-time-row {
+  font-size: 8px;
+}
+
+.aqi-dial-nav .aq-data-value{
+  font-size: 16px;
+}
+
+.aqi-dial-nav .aq-data-label{
+  font-size: 8px;
+}
+
+@media all and (max-width: 767px) {
+  .marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {
+    min-width: 230px;
+    padding: 0px;
+  }
+}
+
+@media all and (max-width: 374px) {
+  .marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {
+    min-width: 228px;
+    width: 80%;
+  }
+}
+
+
+
+/*
+  Copied from marquee_data_helper.css
+ */
+
+.aq-dial {
+  width: 430px;
+  height: 430px;
+  position: relative;
+  font-size: 16px;
+  color: white;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.aq-dial.status-bar {
+  display: none;
+}
+.aq-dial.small {
+  width: 230px;
+  height: 230px;
+  font-size: 8px;
+}
+.aq-dial.col-sm-5 {
+  top: 27px;
+}
+.aq-dial.noData {
+  display: none !important;
+}
+@media all and (max-width: 1199px) {
+  .aq-dial {
+    width: 385px;
+    height: 385px;
+    margin-top: 35px;
+  }
+}
+/* Tablet and smaller screen sizes */
+@media all and (max-width: 767px) {
+  .aq-dial-container {
+    margin-bottom: 20px;
+  }
+  .aq-dial {
+    width: 300px;
+    height: 300px;
+    font-size: 12px;
+    margin: auto;
+    margin-top: 45px;
+  }
+  .aq-dial.small {
+    width: 175px;
+    height: 175px;
+    font-size: 6px;
+  }
+  .marquee-col.marquee-location-col.col-sm-5 {
+    margin-top: -10px;
+  }
+}
+@media all and (max-width: 320px) {
+  .aq-dial {
+    height: 275px;
+    width: 275px;
+    margin-top: 35px;
+  }
+  .marquee-col.marquee-location-col.col-sm-5 {
+    margin-top: -15px;
+    height: 35px;
+  }
+}
+
+.aq-dial .aq-dial-background,
+.aq-dial .aq-dial-background2,
+.aq-dial .aq-dial-meter,
+.aq-dial .aq-dial-arrow,
+.aq-dial .aq-dial-status {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.aq-dial .aq-dial-background {
+  opacity: 0.7;
+}
+.aq-dial .aq-dial-background2 {
+  opacity: 0.5;
+}
+
+.aq-dial .aq-dial-arrow {
+  -webkit-transition: all 1.25s ease-in-out;
+  -moz-transition: all 1.25s ease-in-out;
+  -o-transition: all 1.25s ease-in-out;
+  transition: all 1.25s ease-in-out;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+
+  /* for testing arrow rotation */
+  /*transform: rotate(13.8deg);*/
+}
+
+.aq-dial .bottom-half {
+  position: absolute;
+  box-sizing: border-box;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+}
+
+.aq-dial .bottom-half .current-aq-container {
+  position: relative;
+  box-sizing: border-box;
+  height: 42%;
+  width: 100%;
+  top: 0;
+  padding: 2%;
+  font-size: 1em;
+}
+
+.aq-dial .bottom-half .current-aq-container .header {
+  position: relative;
+  box-sizing: border-box;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  padding: 1%;
+  text-align: center;
+}
+
+.aq-dial .bottom-half .current-aq-container .current-aq-data {
+  position: relative;
+  box-sizing: border-box;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+}
+
+.aq-dial .bottom-half .current-aq-container .current-aq-data .aqi {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding: 1% 3% 1% 1%;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.aq-dial .bottom-half .current-aq-container .current-aq-data .pollutant {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  float: right;
+  padding: 1% 1% 1% 3%;
+}
+
+.aq-dial .bottom-half .forecast-aq-container {
+  position: relative;
+  box-sizing: border-box;
+  height: 58%;
+  width: 100%;
+  bottom: 0;
+  padding: 2.5% 10% 6.5% 10%;
+  text-align: center;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .header,
+.aq-dial .bottom-half .forecast-aq-container .today-aq-data,
+.aq-dial .bottom-half .forecast-aq-container .tomorrow-aq-data,
+.aq-dial .bottom-half .forecast-aq-container .misc {
+  position: relative;
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  float: left;
+  font-size: 0.75em;
+  padding-right: 2%;
+  padding-left: 2%;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.aq-dial .bottom-half .forecast-aq-container .today-aq-data,
+.aq-dial .bottom-half .forecast-aq-container .tomorrow-aq-data {
+  cursor: pointer;
+}
+.aq-dial .bottom-half .forecast-aq-container .today-aq-data .category.smallfont,
+.aq-dial .bottom-half .forecast-aq-container .tomorrow-aq-data .category.smallfont {
+  font-size: 0.75em;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .misc {
+  text-align: left;
+  border-right: none;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .misc div,
+.aq-dial .bottom-half .forecast-aq-container .misc a {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .misc .print-only {
+  display: none;
+}
+@media print {
+  .aq-dial .bottom-half .forecast-aq-container .misc .browser-only {
+    display: none;
+  }
+
+  .aq-dial .bottom-half .forecast-aq-container .misc .print-only {
+    display: block;
+  }
+}
+
+.aq-dial .bottom-half .forecast-aq-container .circle {
+  position: relative;
+  width: 38%;
+  height: 32%;
+  border-radius: 50px;
+  margin: 5% auto;
+  border: 1px solid white;
+  background-color: #5E5E5E;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.good {
+  background-color: #00E400;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.moderate {
+  background-color: #FFFF00;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.unhealthy-sensitive {
+  background-color: #FF7E00;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.unhealthy {
+  background-color: #FF0000;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.very-unhealthy {
+  background-color: #8F3E96;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.hazardous {
+  background-color: #7E0023;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.no-data-fcst {
+  background-color: #5E5E5E;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .circle .action-day {
+  position: absolute;
+  display: none;
+  height: 65%;
+  width: 65%;
+  bottom: -1px; /* offset circle's 1px border */
+  right: -35%;
+}

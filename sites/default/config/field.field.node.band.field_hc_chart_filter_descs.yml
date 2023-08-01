@@ -1,0 +1,67 @@
+uuid: 2b30736c-0cab-4e14-b338-bc9673d5d4e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hc_chart_filter_descs
+    - node.type.band
+    - paragraphs.paragraphs_type.home_current_chart_filter_descs
+  module:
+    - entity_reference_revisions
+id: node.band.field_hc_chart_filter_descs
+field_name: field_hc_chart_filter_descs
+entity_type: node
+bundle: band
+label: 'Chart Filter Descriptions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      home_current_chart_filter_descs: home_current_chart_filter_descs
+    target_bundles_drag_drop:
+      banner_slides:
+        weight: 15
+        enabled: false
+      basic_link:
+        weight: 16
+        enabled: false
+      content:
+        weight: 17
+        enabled: false
+      header_title:
+        weight: 18
+        enabled: false
+      home_current_chart_filter_descs:
+        enabled: true
+        weight: 14
+      home_current_map_icon:
+        weight: 19
+        enabled: false
+      link_image:
+        weight: 20
+        enabled: false
+      main_navigation_link:
+        weight: 21
+        enabled: false
+      marquee_images:
+        weight: 22
+        enabled: false
+      navigation_link:
+        weight: 23
+        enabled: false
+      parameter_message:
+        weight: 24
+        enabled: false
+      publication:
+        weight: 25
+        enabled: false
+      sidebar:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

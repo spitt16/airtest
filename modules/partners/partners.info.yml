@@ -1,0 +1,11 @@
+name: Partners
+type: module
+description: Partners page displays cw 2018-05-18
+package: Custom
+
+type: module
+core: 8.x
+
+
+libraries:
+  - partners/partners_helper

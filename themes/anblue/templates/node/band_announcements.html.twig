@@ -1,0 +1,36 @@
+{% set announcementsCollection = band.getAnnouncementCollectionReference() %}
+{% set announcements = announcementsCollection.getAnnouncements() %}
+
+{# Only show the 3 most recent announcements #}
+{% set limit = announcements|length <= 3 ? announcements|length : 3 %}
+
+<div class="band-card-row-light band-basic row flex flex-hidden-xs">
+  {% for announcement in announcements|slice(0, limit) %}
+    <div class="col-sm-4 outer-card-style announcement-card">
+      <div class="inner-card-style inner-card-style-announcement">
+        <a class="card-link" href="/announcement/{{ announcement.getNodeId() }}">
+          <span class="sr-only">{{ url('<front>') }}announcement/{{ announcement.getNodeId() }}</span>
+        </a>
+        <div class="col-xs-12">
+          <h4>
+              {{  announcement.getTitle() }}
+          </h4>
+        </div>
+        <div class="col-xs-12">
+          <b>{{ announcement.getDate()|date('Y-m-d') }}</b>
+        </div>
+
+        <div class="col-xs-12">
+          {{ announcement.getMainText() }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- AIR-599 Hide Title for zero Announcements cw 2023-04-03 -->
+<script>
+  if( {{ announcements|length }} === 0 ) {
+    document.getElementById("announcements-band").innerText = "";
+  }
+</script>

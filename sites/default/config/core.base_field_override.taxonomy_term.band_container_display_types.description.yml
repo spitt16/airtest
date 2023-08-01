@@ -1,0 +1,20 @@
+uuid: 9610d11d-6f37-4a7f-b410-01f1a02cf7ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_container_display_types
+  module:
+    - text
+id: taxonomy_term.band_container_display_types.description
+field_name: description
+entity_type: taxonomy_term
+bundle: band_container_display_types
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

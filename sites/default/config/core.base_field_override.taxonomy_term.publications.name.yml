@@ -1,0 +1,18 @@
+uuid: dcf8ed77-3756-4fa8-a76f-0d71d597af53
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.publications
+id: taxonomy_term.publications.name
+field_name: name
+entity_type: taxonomy_term
+bundle: publications
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

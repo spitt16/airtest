@@ -1,0 +1,11 @@
+name: Data Providers
+type: module
+description: Data Provider page displays cw 2018-07-03
+package: Custom
+
+type: module
+core: 8.x
+
+
+libraries:
+  - data_providers/data_providers_helper

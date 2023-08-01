@@ -1,0 +1,32 @@
+uuid: 625d1616-a566-405e-9e31-60e4c9f08592
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_announcement_collection
+    - node.type.announcement_collection_v2
+    - node.type.band
+  content:
+    - 'node:announcement_collection_v2:f0b4c8b3-b8cf-4ce3-a069-2c2f2e678a02'
+id: node.band.field_announcement_collection
+field_name: field_announcement_collection
+entity_type: node
+bundle: band
+label: 'Announcement Collection'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: f0b4c8b3-b8cf-4ce3-a069-2c2f2e678a02
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      announcement_collection_v2: announcement_collection_v2
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

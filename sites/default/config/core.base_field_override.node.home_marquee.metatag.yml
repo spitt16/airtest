@@ -1,0 +1,18 @@
+uuid: 2a52c9d4-1416-4ae8-9365-98b6065d8461
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.home_marquee
+id: node.home_marquee.metatag
+field_name: metatag
+entity_type: node
+bundle: home_marquee
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

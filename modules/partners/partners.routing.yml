@@ -1,0 +1,9 @@
+partners.partners_page:
+  path: '/partners/{term_name}/{partner_id}'
+  defaults:
+    _controller: '\Drupal\partners\Controller\PartnersController::partnerPage'
+    _title: 'Partners Page'
+  requirements:
+    _permission: 'access content'
+
+    

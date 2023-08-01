@@ -1,0 +1,42 @@
+{% set alertCollection = constructAlertCollectionV2() %}
+{% set alerts = alertCollection.getAlerts() %}
+
+{% if alerts|length > 0 %}
+  {# Alerts Icon #}
+  <div id="nav-alerts-tool" class="nav-tool" tabindex="0">
+    <button id="nav-alerts-toggle" class="nav-tool-toggle" tabindex="-1" name="Alerts">
+      <span class="sr-only"><nav id="show-alerts">Show Alerts Popup</nav></span>
+    </button>
+    <div class="nav-tool-counter red"><nav id="alerts-length">
+      {{ alerts|length }}
+      </nav></div>
+    <div id="nav-alerts-popup-arrow" class="nav-tool-popup-arrow">
+      <span class="sr-only">Arrow pointing from Alerts Popup to the Tool button</span>
+    </div>
+  </div>
+
+  {# Alert Popup #}
+  <div id="nav-alerts-popup" class="nav-tool-popup">
+    <span class="popup-dismiss">&#10799;</span>
+    <h1 class="popup-title">System Alerts</h1>
+    <div class="popup-container">
+      {% for alert in alerts %}
+        {% if alert.isVisible() and not alert.isArchived() %}
+          <div class="alert-container">
+            <a class="link" href="/node/{{ alert.getNodeId() }}">
+              <span class="sr-only">{{ url('<front>') }}alert/{{ alert.getNodeId() }}</span>
+            </a>
+            <h2 class="title">{{ alert.getTitle() }}</h2>
+            <h3 class="date">{{ alert.getDate()|date("Y-m-d") }}</h3>
+            <div class="message">
+              {{ alert.getMainText() }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="view-all-link">
+      <a href="/alerts">View All ({{ alerts|length }})</a>
+    </div>
+  </div>
+{% endif %}

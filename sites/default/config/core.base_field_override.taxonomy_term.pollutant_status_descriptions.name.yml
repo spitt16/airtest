@@ -1,0 +1,18 @@
+uuid: 520b664a-0b99-49f2-a5cb-4817fb6b8f39
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pollutant_status_descriptions
+id: taxonomy_term.pollutant_status_descriptions.name
+field_name: name
+entity_type: taxonomy_term
+bundle: pollutant_status_descriptions
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

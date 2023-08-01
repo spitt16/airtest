@@ -1,0 +1,20 @@
+uuid: e33acea1-d833-4e17-a55d-5d2ecda06369
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.partners
+  module:
+    - path
+id: taxonomy_term.partners.path
+field_name: path
+entity_type: taxonomy_term
+bundle: partners
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,18 @@
+uuid: cca2d18f-97a2-48de-bf51-ade52c4d7edf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.articles_airnow
+id: node.articles_airnow.title
+field_name: title
+entity_type: node
+bundle: articles_airnow
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

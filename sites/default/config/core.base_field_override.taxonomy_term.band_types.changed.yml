@@ -1,0 +1,18 @@
+uuid: 1fcd8f81-a040-4e17-a82c-5febae055abd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_types
+id: taxonomy_term.band_types.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: band_types
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

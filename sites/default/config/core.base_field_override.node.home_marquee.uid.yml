@@ -1,0 +1,20 @@
+uuid: 5e304020-eb2e-4325-adb1-1e05c1205795
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.home_marquee
+id: node.home_marquee.uid
+field_name: uid
+entity_type: node
+bundle: home_marquee
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

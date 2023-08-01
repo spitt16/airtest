@@ -1,0 +1,18 @@
+uuid: 3e880a54-be5f-47fb-8f31-97f6e95f4a92
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band_container
+id: node.band_container.changed
+field_name: changed
+entity_type: node
+bundle: band_container
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

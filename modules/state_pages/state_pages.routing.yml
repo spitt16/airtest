@@ -1,0 +1,7 @@
+state_pages.state_page:
+  path: '/state'
+  defaults:
+    _controller: '\Drupal\state_pages\Controller\StatePagesController::statePage'
+    _title: 'State AQI'
+  requirements:
+    _permission: 'access content'

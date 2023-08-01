@@ -1,0 +1,22 @@
+uuid: ec2fdad0-6a01-43d8-9e06-8eb66f1941cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.alert_collection_v2
+id: node.alert_collection_v2.status
+field_name: status
+entity_type: node
+bundle: alert_collection_v2
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

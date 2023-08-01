@@ -1,0 +1,205 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a marquee data block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="aq-dial-container col-md-5 col-sm-6 col-md-offset-2 col-sm-offset-1 noData">
+  <div class="aq-dial-mobile-spacer visible-xs"></div>
+  <div class="aq-dial">
+    <img class="aq-dial-background" src="{{ directory }}/images/dial3/dial_black_circle_top.svg" alt="Dial Background Circle Top" />
+    <img class="aq-dial-background2" src="{{ directory }}/images/dial3/dial_black_circle_bottom.svg" alt="Dial Background Circle Bottom"/>
+    <img class="aq-dial-meter" src="{{ directory }}/images/dial3/dial_legend.svg" alt="Dial Arched AQI Legend"/>
+    <img class="aq-dial-arrow" src="{{ directory }}/images/dial3/dial_arrow_full_rounded.svg" alt="Dial AQI Value Indicator Arrow" />
+    <img class="aq-dial-status" src="{{ directory }}/images/dial3/dial_not_available.svg" alt="Dial Category Indicator Half-Circle" />
+    <div class="top-half" id="top-half">
+      <div class="current-category-tooltip-hotspot"></div>
+    </div>
+    <div class="popup" onClick='document.getElementById("missingPM25Popup").classList.toggle("show")'>
+      <span class="popuptext" id="missingPM25Popup">Popup</span>
+    </div>
+    <div class="bottom-half">
+      <div class="current-aq-container">
+        <div class="header">
+          Current Air Quality <span class="aq-updated-time">{#1:00 PM PDT#}</span>
+        </div>
+        <div class="current-aq-data">
+          <div class="aqi">{#NowCast AQI 26#}</div>
+          <div class="pollutant">{#PM2.5#}</div>
+        </div>
+      </div>
+      <div class="forecast-aq-container">
+        <div class="header">Forecast AQI</div>
+        <div class="today-aq-data">
+          <div class="date">Today</div>
+          <div class="circle">
+            <img class="action-day" src="{{ directory }}/images/dial3/action_day_icon.png" alt="Action Day Icon" />
+          </div>
+          <div class="category">{#Unhealthy for Sensitive Groups#}</div>
+        </div>
+        <div class="tomorrow-aq-data">
+          <div class="date">Tomorrow</div>
+          <div class="circle">
+            <img class="action-day" src="{{ directory }}/images/dial3/action_day_icon.png" alt="Action Day Icon" />
+          </div>
+          <div class="category">{#Moderate#}</div>
+        </div>
+        <div class="misc">
+          <div class="browser-only">More</div>
+          <a class="print-only" href="//airnow.gov">AirNow.gov</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="marquee-col marquee-location-col col-sm-5 visible-xs noData">
+  <div class="marquee-col-holder">
+    <div class="location-holder splash-screen">
+      <div class="col-xs-12 location-input-holder">
+        <label class="hidden" for="location-input-mobile">Location Search</label>
+        <div id="location-input-mobile-gps" style="display: inline-block">
+          <input id="location--inputmobile"
+                 class="location-input-style location-input-field location-input-marquee visible-xs"
+                 placeholder="ZIP Code, City, or State"/>
+          <div class="location-input-gps-btn"></div>
+        </div>
+      </div>
+      <div class="mobile-location-label"></div> {# Adding Location below dial on Mobile cw 2019-02-28 #}
+      <div class="mobile-reporting-location"></div>
+      <div class="col-xs-12 location-label-holder">
+        <h2 class="location-label standard-location-label splash-main-message">
+          {{ homeMarquee.getSplashDefaultMessage() }}
+          {# <p style="font-size: 20px;">Wildfire in your area? Visit AirNow's <a href="https://fire.airnow.gov" style="color: #FFFF00; text-decoration: underline;">Fire and Smoke Map</a>.</p> #}
+        </h2>
+      </div>
+      <div class="col-xs-12 location-btn-holder">
+        <a id="mobile-fire-smoke-map" href="https://fire.airnow.gov" target="_blank" class="btn btn-custom-blue fire-smoke-map">Fire & Smoke Map</a>
+        <a id="mobile-air-quality-monitors-near-me" href="https://gispub.epa.gov/airnow/" target="_blank" class="btn btn-custom-blue air-quality-monitors-near-me">Monitors Near Me</a>
+        <a id="mobile-trends" href="/trends/?cityName&stateName&countryCode" target="_self" class="btn btn-custom-blue trends">Recent Trends</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="marquee-dataprovider-col ">
+</div>
+
+<div class="mobile-marquee-dataprovider-col">
+</div>
+
+
+<div class="site-attribution">
+  <a class="epa-logo" href="https://www.epa.gov/" target="_blank">
+    <img src="/themes/anblue/images/epa-logo.svg" alt="EPA">
+  </a>
+  and
+  <a class="partners-link" href="/partners">PARTNERS</a>
+</div>
+
+
+<div class="marquee-col marquee-location-col col-sm-5 hidden-xs noData">
+  <div class="marquee-col-holder">
+    <div class="location-holder splash-screen">
+      <div class="col-xs-12 location-input-holder">
+        <label class="hidden" for="location-input">Location Search</label>
+        <div id="location-input-gps-wrapper" style="display: inline-block;">
+          <input id="location-input" class="location-input-style location-input-field location-input-marquee hidden-xs"
+                 aria-label="Location Search" placeholder="ZIP Code, City, or State"/>
+          <label style="display: none;" for="location-input_input">Location Search</label>
+          <div class="location-input-gps-btn"></div>
+        </div>
+      </div>
+      <div class="col-xs-12 location-label-holder">
+        <h1 class="location-label standard-location-label splash-main-message">
+          {{ homeMarquee.getSplashDefaultMessage() }}
+          {# <p style="font-size: 20px;">Wildfire in your area? Visit AirNow's <a href="https://fire.airnow.gov" style="color: #FFFF00; text-decoration: underline;">Fire and Smoke Map</a>.</p> #}
+        </h1>
+      </div>
+      <div class="reporting-location">
+      </div>
+      <div class="col-xs-12 location-btn-holder">
+        <a id="fire-smoke-map" href="https://fire.airnow.gov" target="_blank" class="btn btn-custom-blue fire-smoke-map">Fire & Smoke Map</a>
+        <a id="air-quality-monitors-near-me" href="https://gispub.epa.gov/airnow/" target="_blank" class="btn btn-custom-blue air-quality-monitors-near-me">Monitors Near Me</a>
+        <a id="trends" href="/trends/?cityName&stateName&countryCode" target="_self" class="btn btn-custom-blue trends">Recent Trends</a>
+      </div>
+
+      {# AirNowDrupal #118 Remove More cities button  cw 2019-04-01 #}
+      {#<div class="col-xs-12 location-btn-holder">
+          <a class="state-air-quality btn btn-custom-blue-state"></a>
+        </div>
+        #}
+    </div>
+  </div>
+
+</div>
+
+<div class="po-aqi-scale noData">
+  <button class="po-scale-item po-aqi-scale-btn">
+    <img class="aqi-legend-icon" src="/{{ directory }}/images/Legend_Color_block.svg" alt="">
+    <span class="fa fa-chevron-circle-down"></span>AQI Legend
+  </button>
+  <div class="po-scale-item po-aqi-scale-display po-aqi-scale-display-hidden">
+    <div class="row strip-margin scale-section-title">
+      <div class="col-xs-10 po-title-container">
+        <p class="display-item po-title-text">Air Quality Index Scale </p>
+      </div>
+      <div class="col-xs-2 display-close-holder">
+        <span class="fa fa-times"></span>
+      </div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-good">
+      <div class="col-xs-4 po-aqi-text">0 - 50</div>
+      <div class="col-xs-8 po-category-text">Good</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-moderate">
+      <div class="col-xs-4 po-aqi-text">51 - 100</div>
+      <div class="col-xs-8 po-category-text">Moderate</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-sensitive-unhealthy">
+      <div class="col-xs-4 po-aqi-text">101 - 150</div>
+      <div class="col-xs-8 po-category-text">Unhealthy for Sensitive Groups (USG)</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-unhealthy">
+      <div class="col-xs-4 po-aqi-text">151 - 200</div>
+      <div class="col-xs-8 po-category-text">Unhealthy</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-very-unhealthy">
+      <div class="col-xs-4 po-aqi-text">201 - 300</div>
+      <div class="col-xs-8 po-category-text">Very Unhealthy</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-hazardous">
+      <div class="col-xs-4 po-aqi-text">301 +</div>
+      <div class="col-xs-8 po-category-text">Hazardous</div>
+    </div>
+             {# Air-538 eb 2023-06-15 Removed code that displayed Beyond the AQI #} 
+
+    
+    </div>
+  </div>
+</div>

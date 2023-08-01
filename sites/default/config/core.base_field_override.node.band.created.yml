@@ -1,0 +1,18 @@
+uuid: 0dfaad2e-3c83-40ce-9523-45462684f876
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band
+id: node.band.created
+field_name: created
+entity_type: node
+bundle: band
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

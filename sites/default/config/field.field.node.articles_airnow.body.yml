@@ -1,0 +1,23 @@
+uuid: 35bc69a4-2996-4a91-b0b9-f8533ecdae1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.articles_airnow
+  module:
+    - text
+id: node.articles_airnow.body
+field_name: body
+entity_type: node
+bundle: articles_airnow
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

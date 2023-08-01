@@ -1,0 +1,22 @@
+uuid: 353d0a7e-68ad-483a-8741-c1ec839190d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.alert_collection_v2
+id: node.alert_collection_v2.promote
+field_name: promote
+entity_type: node
+bundle: alert_collection_v2
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

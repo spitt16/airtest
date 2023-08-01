@@ -1,0 +1,20 @@
+uuid: 57ad9b3f-a013-4c20-9e29-8e36aed719ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.home_marquee
+  module:
+    - path
+id: node.home_marquee.path
+field_name: path
+entity_type: node
+bundle: home_marquee
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

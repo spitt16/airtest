@@ -1,0 +1,18 @@
+uuid: eb867560-e1ac-4fda-bf3a-5689de2d81cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band_container
+id: node.band_container.title
+field_name: title
+entity_type: node
+bundle: band_container
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

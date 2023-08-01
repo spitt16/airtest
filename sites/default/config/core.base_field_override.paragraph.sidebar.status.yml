@@ -1,0 +1,22 @@
+uuid: eda12796-1790-415f-be3b-7cde5d05036d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sidebar
+id: paragraph.sidebar.status
+field_name: status
+entity_type: paragraph
+bundle: sidebar
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

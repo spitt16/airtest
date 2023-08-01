@@ -1,0 +1,20 @@
+uuid: 0232dc02-fd8c-4b5b-857b-ec567b0fc412
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_container_display_types
+  module:
+    - path
+id: taxonomy_term.band_container_display_types.path
+field_name: path
+entity_type: taxonomy_term
+bundle: band_container_display_types
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

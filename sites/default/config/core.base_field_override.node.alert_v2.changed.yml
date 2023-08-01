@@ -1,0 +1,18 @@
+uuid: cbeb726c-d0d7-4be7-bcff-f410553f89c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.alert_v2
+id: node.alert_v2.changed
+field_name: changed
+entity_type: node
+bundle: alert_v2
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,10 @@
+<div class="col-xs-12 sidebar-template">
+  <div class="row" style="border: solid 2px {{ current_sidebar.getColor() }}">
+    <div style="background-color: {{ current_sidebar.getColor() }}">
+      <h2 class="sidebar-title strip-margin">{{ current_sidebar.getName() }}</h2>
+    </div>
+    <div class="col-xs-12">
+      <p>{{ current_sidebar.getBody() | raw }}</p>
+    </div>
+  </div>
+</div>

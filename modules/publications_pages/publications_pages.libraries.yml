@@ -1,0 +1,4 @@
+publications_pages_helper:
+  css:
+    base:
+      css/PluginData/publications_pages_helper.css: {}

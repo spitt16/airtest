@@ -1,0 +1,23 @@
+uuid: 341f4114-bcc7-40b5-89a2-9a0c8865555d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_title_section
+    - node.type.band
+id: node.band.field_has_title_section
+field_name: field_has_title_section
+entity_type: node
+bundle: band
+label: 'Show Title Section'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Show
+  off_label: Hide
+field_type: boolean

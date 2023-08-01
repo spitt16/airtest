@@ -1,0 +1,608 @@
+.search-block-form {
+  display: none;
+}
+
+.pollutant-card {
+  /*border: solid 1px black;*/
+  /*margin: 10px;*/
+  /*padding: 0px 10px;*/
+  display: inline-block;
+  width: 100%;
+}
+
+.current-aq-band-row .pollutant-card.primary-pollutant-card {
+  border: 5px solid #C0C0C0;
+}
+
+.current-aq-band-row .pollutant-card.good {
+  border: 5px solid #00E400;
+}
+
+.current-aq-band-row .pollutant-card.moderate {
+  border: 5px solid #FFFF00;
+}
+
+.current-aq-band-row .pollutant-card.unhealthy-sensitive {
+  border: 5px solid #FF7E00;
+}
+
+.current-aq-band-row .pollutant-card.unhealthy {
+  border: 5px solid #FF0000;
+}
+
+.current-aq-band-row .pollutant-card.very-unhealthy {
+  border: 5px solid #8F3E96;
+}
+
+.current-aq-band-row .pollutant-card.hazardous {
+  border: 5px solid #7E0023;
+}
+
+.highcharts-tooltip {
+  z-index: 9999;
+}
+
+.highcharts-contextmenu {
+  top: 55px !important;
+}
+
+.highcharts-point {
+  stroke: black !important;
+  stroke-width: 1px;
+}
+.highcharts-point.zone-good {
+  fill: #00E400;
+}
+.highcharts-point.zone-moderate {
+  fill: #FFFF00;
+}
+.highcharts-point.zone-unhealthy-sensitive {
+  fill: #FF7E00;
+}
+.highcharts-point.zone-unhealthy {
+  fill: #FF0000;
+}
+.highcharts-point.zone-very-unhealthy {
+  fill: #8F3E96;
+}
+.highcharts-point.zone-hazardous {
+  fill: #7E0023;
+}
+.highcharts-point.zone-good:hover,
+.highcharts-point.zone-moderate:hover,
+.highcharts-point.zone-unhealthy-sensitive:hover,
+.highcharts-point.zone-unhealthy:hover,
+.highcharts-point.zone-very-unhealthy:hover,
+.highcharts-point.zone-hazardous:hover {
+  stroke: #7CB5EC !important;
+  stroke-width: 3px;
+}
+
+.trends-section {
+  position: relative;
+}
+
+.trends-section #chatButtonHolder {
+  position: absolute;
+  top: 40px;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+#map {
+  min-height: 230px;
+  /* AirNowDrupal #116 Map must claim it's own height. cw 2019-04-08 */
+  height: 385px;
+}
+
+#map .ol-viewport {
+  touch-action: auto !important;
+}
+
+#map-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.map-section {
+  position: relative;
+}
+
+.map-section .example_map_overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.map-section .time_overlay {
+  background-color: white;
+  border-radius: 5px 5px;
+  padding: 0 5px;
+  float: left;
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.map-section #timeicons {
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 500;
+}
+
+.map-section .more_maps_overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
+  z-index: 500;
+}
+
+.map-section .time_overlay:hover {
+  opacity: 0.40;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
+}
+
+.map-section .map_icons_overlay {
+  float: left;
+  margin-bottom: -4px;
+  transform: translateY(-13%);
+  z-index: 500;
+}
+
+.map-icon {
+  padding: 0px 8px 0px 8px;
+}
+
+.map-icon .map-icon-img {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.map-section .demo_text_overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  z-index: 2;
+}
+
+.pollutant-card .pollutant-title-section {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  /*background-color: var(--color-pollutant-title-section);*/
+  background-color: #E0E0E0;
+  min-height: 55px;
+}
+
+.pollutant-card-title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.pollutant-card-title-subtext {
+  text-align: center;
+  font-size: 12px;
+}
+
+.pollutant-card .pollutants-list {
+  display: inline-block;
+  /*background-color: var(--color-white);*/
+  background-color: #FFFFFF;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pollutant-info-heading {
+  font-size: 12px;
+  height: 50px;
+  cursor: pointer;
+  /*border-bottom: solid 1px grey;*/
+}
+
+@media all and (max-width: 991px) {
+  .col-xs-12.pollutant-info-heading {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+.pollutant-info-heading i {
+  float: left;
+}
+
+.pollutant-info-sub {
+  padding-left: 15px;
+  padding-right: 15px;
+  /*padding-top: 15px;*/
+  position: relative;
+  margin-top: 15px;
+}
+
+.pollutant-info-sub h4 {
+  border-top: 1px solid #AEAEAE;
+  text-align: center;
+  padding-top: 15px;
+  margin-bottom: 5px;
+}
+
+.pollutant-info-sub p {
+  padding-top: 15px;
+}
+
+.pollutant-info-sub:before {
+  background: #FFF;
+  content: '';
+  width: 23px;
+  height: 1px;
+  position: absolute;
+  top: 0px;
+  left: 2px;
+}
+
+.pollutant-info-sub:after {
+  background: #FFF;
+  content: '';
+  width: 23px;
+  height: 1px;
+  position: absolute;
+  top: 0px;
+  right: 2px;
+}
+
+.pi-heading-title {
+  padding: 1px;
+  height: 100%;
+  text-align: right;
+  padding-top: 13px;
+  font-size: 15px;
+}
+
+/*.pi-heading-status {*/
+  /*border-radius: 50px;*/
+  /*text-align: center;*/
+/*}*/
+
+.pollutant-status-circle {
+  background-color: #5E5E5E;
+  border: solid 1px white;
+  font-size: 18px;
+  font-weight: bold;
+  width: 50px !important;
+  padding: 10px 0px !important;
+  margin: auto;
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.pi-heading-message {
+  height: 100%;
+  font-size: 15px;
+  padding-top: 14px;
+}
+
+.unhealthy-sensitive-adj .pi-heading-message {
+  padding-top: 7px;
+}
+
+@media all and (max-width: 767px) and (min-width: 512px) {
+  .unhealthy-sensitive-adj .pi-heading-message {
+    padding-top: 13px;
+  }
+}
+@media all and (max-width: 767px) {
+  .col-xs-5.pi-heading-message {
+    width: 40%;
+    padding-right: 0;
+  }
+}
+
+.pi-heading-title .fa {
+  font-size: 20px;
+  margin-right: 9px;
+}
+
+/*.pollutant-info-sub-show {*/
+  /*display: block;*/
+/*}*/
+
+.pollutant-info-sub-hide {
+  display: none;
+}
+
+.row.pollutant-info {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.pollutant-info {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.other-pollutants-card .pollutant-info:not(:last-child) {
+  /*border-bottom: solid 2px var(--color-silver);*/
+  border-bottom: solid 2px #F5F5F5;
+}
+
+.pollutant-card-col {
+  padding: 20px 15px;
+}
+
+.band-custom-section {
+  /*padding: 0 0 20px 0*/
+}
+
+/*TODO: Remove if not needed. Used for placeholder images, do we still need this?*/
+/*.band-custom-section img {*/
+  /*width: 100%;*/
+/*}*/
+
+.pollutant-custom-col {
+  padding-bottom: 20px;
+}
+
+.tippy-tooltip.currentcharticon-theme,
+.tippy-tooltip.currentmapicon-theme {
+  background-color: #000000;
+  opacity: 0.7;
+  max-width: 500px;
+  padding: 5px 10px 10px 10px;
+}
+.tippy-tooltip.currentcharticon-theme h4,
+.tippy-tooltip.currentmapicon-theme h4 {
+  font-size: 18px;
+}
+
+.tippy-tooltip.currentcharticon-theme p,
+.tippy-tooltip.currentmapicon-theme p {
+  font-size: 14px;
+}
+.tippy-tooltip.currentcharticon-theme a,
+.tippy-tooltip.currentmapicon-theme a {
+  color: inherit;
+  text-decoration: underline;
+}
+.tippy-tooltip.currentcharticon-theme a:hover,
+.tippy-tooltip.currentmapicon-theme a:hover {
+  color: rgba(106, 208, 255, .9);
+}
+
+.btn-chart-info {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  margin-left: 15px;
+}
+
+.btn-chart-info img{
+  position: absolute;
+  height: 25px;
+  top: -1px;
+  left: 0px;
+}
+
+/* Targeting ALL mobile devices SMALLER than iPad Mini; the iPad Mini is 768 px wide. cw 2019-02-27 */
+/* Created for AirNowDrupal#106 cw 2019-02-27 */
+@media all and (max-width: 767px) {
+  #current-aq-band {
+    display: none;
+  }
+
+}
+
+@media all and (min-width: 768px) {
+  .current-aq-band-row .col-xs-12 .col-sm-6 {
+	padding-top: 20px;
+  }
+
+  .pollutant-custom-col > div {
+    border: solid 1px #C0C0C0;
+  }
+
+  #chart {
+    overflow: hidden;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .pi-heading-status.col-xs-2 {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .pi-heading-title {
+    font-size: 12px;
+  }
+
+  .pi-heading-message {
+    font-size: 12px;
+  }
+
+  .band-custom-section {
+    margin: 0 -15px -20px -15px;
+  }
+
+  /* Make wider on mobile*/
+  .col-sm-6.pollutant-custom-col {
+    padding-left: 0;
+    padding-right: 0;
+	margin-bottom: 10px;
+  }
+
+  .row.pollutant-info {
+    margin-right: -12px;
+    margin-left: -12px;
+  }
+
+  #map {
+    min-height: 265px;
+  }
+
+  .map-section .map_icons_overlay {
+    padding: 5px 0px 0px 5px;
+    margin-bottom: -18px;
+    transform: translateY(-34%);
+  }
+
+  /* AirNowDrupal # 115 Boxes around elements on Mobile cw 2019-04-10 */
+  .map-section {
+    padding: 10px 10px 10px 10px;
+  }
+
+  .map-icon {
+    padding: 5px;
+  }
+
+  .map-icon .map-icon-img {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+  }
+
+  .map-section .time_overlay {
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+
+/* Card media queries to fit on smaller mobile devices*/
+@media all and (max-width: 390px) {
+  /* Make wider on mobile*/
+  .col-sm-6.pollutant-card-col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Make wider on mobile*/
+  .col-sm-6.pollutant-custom-col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .col-xs-12.pollutant-info-heading {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .pollutant-status-circle {
+    width: 48px !important;
+    height: 48px;
+  }
+
+  .map-section .time_overlay {
+    font-size: 10px;
+    font-weight: normal;
+  }
+}
+
+#chatButtonHolder .btn.activeChartButton {
+  background-color: rgb(50,70,160) !important;
+  color: white !important;
+}
+
+
+/* AIR-572 Popup container for Missing PM2.5 Reporting Area with nearby High PM cw 2023-01-12 */
+.popup {
+  position: relative;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* popup arrow -- hidden mode */
+.popup::after {
+  visibility: hidden;
+}
+
+/* The actual popup -- hidden mode */
+.popup .popuptext {
+  visibility: hidden;
+  width: 430px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  border-radius: 6px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+}
+
+/* Popup arrow*/
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+/* AIR-572 Smaller screens cw 2023-01-12 */
+/* Tablet screens */
+@media all and (max-width: 1199px) {
+  .popup .popuptext {
+    width: 385px;
+  }
+}
+/* smaller screen sizes */
+@media all and (max-width: 768px) {
+  .popup .popuptext {
+    width: 300px;
+  }
+}
+/* END AIR-572 Pop-container for missing PM25 reporting Areas cw 2023-01-12 */

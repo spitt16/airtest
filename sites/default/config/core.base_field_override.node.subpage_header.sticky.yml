@@ -1,0 +1,22 @@
+uuid: cab145fc-23fe-4a85-a723-b0a991332620
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.subpage_header
+id: node.subpage_header.sticky
+field_name: sticky
+entity_type: node
+bundle: subpage_header
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

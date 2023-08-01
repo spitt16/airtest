@@ -1,0 +1,18 @@
+uuid: 420837c5-8a02-461b-ab61-d2200b38cf91
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement_collection_v2
+id: node.announcement_collection_v2.changed
+field_name: changed
+entity_type: node
+bundle: announcement_collection_v2
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

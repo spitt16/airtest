@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function data_providers_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'data_providers_template' => array(
+      'variables' => array(
+       'term_name' => NULL,
+        
+      ),
+      'template' => 'block--data_providers',
+    ),
+  );
+  return $variables;
+}

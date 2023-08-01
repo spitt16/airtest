@@ -1,0 +1,167 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a marquee data block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{#{% set publication = getTaxonomyTermPublicationByName(term_name, publication_id) %}#}
+<div class="metaTagStatePage"></div>
+
+<div class="band-card-row container-fluid state-page-container">
+
+  {#<div class="col-sm-12 state-map-container">   // DIV hidden for Phil's 1 of 5 cw 2018-05-15
+    <span class="scrollable">
+    </span>
+    <h3 class="map_loading_overlay">Loading...</h3>
+    <div class="time_overlay">{#8:00 am, March 2nd (CST)#} {#</div>
+    <div id="stateMap"></div>
+
+
+  </div>
+<br />
+#}
+
+  <div class="col-sm-12">
+    <h2 class="stateTitle" style="text-align: center;">
+      Loading...
+    </h2>
+
+    <div style="text-align: center;">
+      <div id="pick-state-label">Pick another state</div>
+      <select id="stateSelect" aria-labelledby="pick-state-label">State List
+      </select><br />
+      {#<a id="air-quality-monitors-in-state" target="_self" class="btn btn-custom-blue">Air Quality Monitors in {{ state_name }}</a>#}
+      <a id="air-quality-monitors-in-state" target="_self" class="btn btn-custom-blue">Go to Interactive Map</a>
+    </div>
+  </div>
+
+  <div class="col-sm-12 state-tabs-container">
+    <ul class="nav nav-tabs state-tabs">
+      <li class="active"><a data-toggle="tab" href="#currentAQI" id="currentAQITab">Current Air Quality</a></li>
+      <li><a data-toggle="tab" href="#historicalAQI" id="historicalAQITab">Historical Air Quality</a></li>
+    </ul>
+  </div>
+
+  <div class="col-sm-12 tab-content">
+    <div id="currentAQI" class="tab-pane fade in active" style="overflow: visible; overflow: auto;">{# Site Improve "Text is clipped when resized" fix cw 2023-04-28 #}
+      <table id="current-aqi-table" class="state-table" style="width:100%">
+        <tbody id="currentAQITableBody">
+          <tr>
+            <th style="overflow: visible; overflow: auto;">Reporting Area </th>
+            <th class="state-table-header state-table-cell-border" style="overflow: visible; overflow: auto;">Current AQI</th>
+            <th class="state-table-header state-table-cell-border">
+              <span class="hidden-xs" style="overflow: visible; overflow: auto;">
+                Today's Forecast
+              </span>
+              <span class="visible-xs" style="overflow: visible; overflow: auto;">
+                Forecast
+              </span>
+              <br class="hidden-xs">
+              <span id="todayForecastDate" class="hidden-xs"></span>
+              <span id="todayForecastDateAbbr" class="visible-xs"></span>
+            </th>
+            <th class="state-table-header center-cell">
+              <span class="hidden-xs" style="overflow: visible; overflow: auto;">
+                Tomorrow's Forecast
+              </span>
+              <span class="visible-xs" style="overflow: visible; overflow: auto;">
+                Forecast
+              </span>
+              <br class="hidden-xs">
+              <span id="tomorrowForecastDate" class="hidden-xs"></span>
+              <span id="tomorrowForecastDateAbbr" class="visible-xs"></span>
+            </th>
+          </tr>
+
+          <tr id="currentLoading" style="background-color: transparent !important;">
+            <td colspan="4" style="text-align: center; overflow: visible; overflow: auto;">Loading...</td>{# Changed to "td" for Site Improve "No data cells assigned to table header" cw 2023-04-28 #}
+          </tr>
+          <tr id="noCurrentDataAvailable" style="background-color: transparent !important; display: none;">
+            <th colspan="4" style="text-align: center; overflow: visible;">No data available.</th>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div id="historicalAQI" class="tab-pane fade">
+
+      <div class="historical-date-picker">
+        Pick another date
+        <input id="historicalDatePicker" placeholder="Select Date">
+        </input>
+      </div>
+
+      <table id="historical-aqi-table" class="state-table" style="width:100%">
+        <tbody id="historicalAQITableBody">
+          <tr id="historical-aqi-table-header">
+            <th>Reporting Area</th>
+            <th class="state-table-header state-table-cell-border">Daily AQI for Ozone</th>
+            <th class="state-table-header state-table-cell-border">Daily AQI for PM2.5</th>
+            <th class="state-table-header state-table-cell-border">Daily AQI for PM10</th>
+          </tr>
+
+          <tr id="historicalLoading" style=" background-color: transparent !important;">
+            <th colspan="4" style="text-align: center;">Loading...</th>
+          </tr>
+          <tr id="noHistoricalDataAvailable" style=" background-color: transparent !important; display: none;">
+            <th colspan="4" style="text-align: center;">No data available.</th>
+          </tr>
+
+        </tbody>
+
+
+        {#<tr class="region-name">#}
+          {#<td colspan="4">#}
+            {#<b>Region Name</b>#}
+          {#</td>#}
+        {#</tr>#}
+
+
+        {#<tr>#}
+          {#<td><b>Reporting Area</b> Data Courtesy of Sonoma Technology, Inc. (Exit AirNow)</td>#}
+          {#<td>128 7:00 AM PST</td>#}
+          {#<td>50</td>#}
+          {#<td>50</td>#}
+        {#</tr>#}
+        {#<tr>#}
+          {#<td><b>Reporting Area</b> Data Courtesy of Sonoma Technology, Inc. (Exit AirNow)</td>#}
+          {#<td>128 7:00 AM PST</td>#}
+          {#<td>94</td>#}
+          {#<td>94</td>#}
+        {#</tr>#}
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

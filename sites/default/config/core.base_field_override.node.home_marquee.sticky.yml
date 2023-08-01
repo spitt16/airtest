@@ -1,0 +1,22 @@
+uuid: ca823f2d-edde-40f9-b894-f4b3a37d2d50
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.home_marquee
+id: node.home_marquee.sticky
+field_name: sticky
+entity_type: node
+bundle: home_marquee
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

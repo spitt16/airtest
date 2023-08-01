@@ -1,0 +1,5 @@
+[
+{"state":"TE", "notification": {"type":"Notice", "alertnode":1000 }},
+{"state":"TF", "notification": {"type":"Wildfires", "alertnode":4477 }},
+{"state":"TG", "notification": {"type":"Wildfires", "alertnode":0, "alerttext":"This is a General Notification for the state of TG. \n\nYou have been notified!" }}
+]

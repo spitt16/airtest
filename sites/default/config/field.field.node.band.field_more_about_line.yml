@@ -1,0 +1,21 @@
+uuid: 35e10d95-2a66-49dd-8271-3488c4bec7fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_about_line
+    - node.type.band
+  module:
+    - text
+id: node.band.field_more_about_line
+field_name: field_more_about_line
+entity_type: node
+bundle: band
+label: 'More About Line'
+description: 'More About Line in HTML; Can include Links; Leave blank for none.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

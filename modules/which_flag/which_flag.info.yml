@@ -1,0 +1,10 @@
+name: Which Flag
+type: module
+description: Which Flag Do I Fly display cw 2020-06-29
+package: Custom
+
+type: module
+core: 8.x
+
+libraries:
+  - which_flag/which_flag_helper

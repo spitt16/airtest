@@ -1,0 +1,18 @@
+uuid: f14b0061-5d48-4c7b-880e-ad4e5d6fda42
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.publications
+id: taxonomy_term.publications.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: publications
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

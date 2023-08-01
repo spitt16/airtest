@@ -1,0 +1,18 @@
+uuid: b4c5afc4-8c86-4bdd-a45e-4ea1f84b267f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.marquee_images
+id: taxonomy_term.marquee_images.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: marquee_images
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

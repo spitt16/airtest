@@ -1,0 +1,43 @@
+<div class="card-link">
+
+
+  <div class="links-card-style">
+    {% if not has_description and has_image  %}
+      {% set title_float = "text-center" %}
+    {% endif %}
+
+    <div class="col-xs-12 links-card-title">
+      <h2>
+        {{ card.getName() }}
+      </h2>
+	 {# AirNowDrupal Issue #3 cw 2018-04-05  #}
+	  {% if card.getTitleBlankRows() > 0 %}<br /> {% endif %}
+    </div>
+
+    {% if has_image %}
+      <div class="col-xs-12">
+        <a href="{{ card.getCardLink().getLinkUrl() }}">
+          <img alt="{{ card.getImage().altText() }}" class="links-card-image" src="{{ card.getImage().getImageUrl() }}">
+        </a>
+      </div>
+
+    {% endif %}
+
+
+    <div class="col-xs-12">
+      <ul>
+        {% for link in card.getLinks() %}
+          <li>
+              <a class="links-card-link" href="{{ link.getLinkUrl() }}" target="{{ link.getLinkTabTarget() }}">
+                {{ link.getLinkTitle() }}
+              </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+
+  </div>
+
+
+</div>

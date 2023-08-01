@@ -1,0 +1,11 @@
+name: Site Map
+type: module
+description: Site Map page display
+package: Custom
+
+type: module
+core: 8.x
+
+
+libraries:
+  - site_map/site_map_helper

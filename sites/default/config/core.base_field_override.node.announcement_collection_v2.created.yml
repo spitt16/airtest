@@ -1,0 +1,18 @@
+uuid: ab493048-15e7-4276-962a-327f42d789fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement_collection_v2
+id: node.announcement_collection_v2.created
+field_name: created
+entity_type: node
+bundle: announcement_collection_v2
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

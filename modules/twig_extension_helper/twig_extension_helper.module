@@ -1,0 +1,17 @@
+<?php
+//
+///**
+// * Implements hook_theme()
+// * @return mixed
+// */
+//function twig_extension_helper_theme($existing, $type, $theme, $path) {
+// $variables = array(
+//    'marquee_data_template' => array(
+//      'variables' => array(
+//        'test_var' => NULL,
+//      ),
+//      'template' => 'block--marquee_data',
+//    ),
+//  );
+//  return $variables;
+//}

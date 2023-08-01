@@ -1,0 +1,18 @@
+uuid: 9f503be1-f599-4c67-b9da-183c6ec89c5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.marquee_images
+id: taxonomy_term.marquee_images.name
+field_name: name
+entity_type: taxonomy_term
+bundle: marquee_images
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,375 @@
+.links-card-style .links-card-style {
+  /*float: left;*/
+}
+
+.links-card-style li::before {
+  content: "•";
+  font-size: 28px;
+  margin-left: -15px;
+  color: rgb(107,167,88);
+  position: absolute;
+  margin-top: -7px;
+}
+
+.links-card-style li{
+  padding-left: 1.6em;
+  text-indent: 0;
+  line-height: 1.4;
+}
+
+.links-card-style ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 20px;
+}
+.links-card-link {
+  font-size: 16px;
+}
+
+
+.outer-card-style {
+  padding: 20px 10px;
+  font-size: 12px;
+}
+
+.inner-card-style {
+  /*background-color: var(--color-white);*/
+  background-color: #FFFFFF;
+  /*border: solid 1px var(--color-silver);*/
+  border: solid 1px #C0C0C0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+/* AirNowDrupal #4  Modified to bring in line with the dial page styles  cw 2018-04-09 */
+.links-card-title h2{
+  font-size: 22px;
+  max-width: 290px;
+  line-height: 1.1;
+  padding-bottom: 20px;
+}
+
+.links-card-title h2{
+  margin: 0px;
+}
+
+.links-card-image {
+  height:auto;
+  max-width:100%; 
+}
+
+.band-style-nondesc .inner-card-style .col-xs-12 h2,
+.band-style-nondesc .inner-card-style .col-xs-12 h3 { /* obsolete? */
+  margin-top: 8px;
+  margin-bottom: 3px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.inner-card-style-announcement h3 {
+  margin-top: 5px;
+}
+
+/*.inner-card-style .col-xs-12 p {*/
+
+/*}*/
+
+.basic-image img {
+  width: inherit;
+  max-height: 135px;
+}
+
+.band-style-nondesc .basic-image img {
+  /*width: inherit;*/
+  width: auto;
+  height: 8vw;
+  max-height: 72px;
+  margin: auto;
+  display: block;
+  position: relative;
+}
+
+a.card-link:link {
+  color: inherit;
+  
+}
+
+a.card-link:visited {
+  color: inherit;
+}
+
+a.card-link:hover {
+  color: inherit;
+}
+
+a.card-link:active {
+  color: inherit;
+}
+
+/*
+ Fix for Announcement cards.  Gives the illusion of nested <a>, which is normally invalid.
+*/
+.inner-card-style-announcement {
+  position: relative;
+ 
+}
+.inner-card-style-announcement a {
+  position: relative;
+  z-index: 2;
+  text-decoration: underline;
+}
+.inner-card-style-announcement a.card-link {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  
+}
+.inner-card-style-announcement h4 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+
+/*.band-style-nondesc .basic-image img {*/
+  /*padding: 22%;*/
+  /*position: absolute;*/
+  /*margin: auto;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*top: 0;*/
+  /*bottom: -20px;*/
+/*}*/
+
+/*.col-xs-12.basic-image.basic-image-nondesc {*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*position: absolute;*/
+  /*margin-top: -10px;*/
+/*}*/
+
+.basic-image-nondesc {
+  position: absolute;
+  margin: 45px auto;
+  width: 100%;
+  padding: 6% 30%;
+}
+
+.card-name-mobile {
+  display: none;
+}
+
+.band-style-nondesc .inner-card-style{
+  position: relative;
+}
+
+.no-pollutant-info {
+  height: 80px;
+  text-align: center;
+  margin: auto;
+  position: relative;
+}
+
+.no-pollutant-info p {
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 5;
+}
+
+.mapDimensions {
+  width: 100%;
+  height: 756px;
+}
+
+@media all and (min-width: 1200px) {
+  .band-style-default .inner-card-style {
+    height: 260px;
+  }
+
+  .band-style-announcements .inner-card-style{
+    height: 130px;
+  }
+  .band-style-announcements .flex .inner-card-style{
+    height: 100%;
+  }
+}
+
+@media all and (max-width: 1199px) {
+  .band-style-default .inner-card-style {
+    height: 240px;
+  }
+
+  .band-style-announcements .inner-card-style{
+    height: 130px;
+  }
+
+  .band-style-announcements .flex .inner-card-style{
+    height: 100%;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .band-style-announcements .inner-card-style{
+    height: 180px;
+  }
+
+  .links-card-image {
+    width: 250px;
+  }
+
+  .band-style-announcements .flex .inner-card-style{
+    height: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .band-style-announcements .inner-card-style{
+    height: auto;
+    /*background-color: var(--color-white);*/
+    background-color: #FFFFFF;
+    /*border: solid 1px var(--color-white);*/
+    border: solid 1px #FFFFFF;
+  }
+
+  .band-style-announcements .band-card-row {
+    /*background-color: var(--color-white);*/
+    background-color: #FFFFFF;
+    padding-bottom: 10px;
+  }
+
+  .band-style-nondesc .outer-card-style{
+    width: 33.33333333%;
+    float: left;
+  }
+
+  .band-style-nondesc .outer-card-style {
+    padding: 0px;
+  }
+
+  .band-style-nondesc .inner-card-style .col-xs-12{
+    min-height: 10px;
+  }
+
+  .band-style-nondesc .links-card {
+    width: auto;
+    padding-bottom: 30px;
+  }
+
+
+  .band-style-nondesc .inner-card-style .col-xs-12 h2,
+  .band-style-nondesc .inner-card-style .col-xs-12 h3 { /* obsolete? */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  /* AirNowDrupal#145 Announcement cards now using H4 cw 2019-06-03 */
+  div.col-xs-12 h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .band-style-nondesc .basic-image-nondesc {
+    padding: 7px;
+    position: relative;
+    margin: 0;
+  }
+
+  .band-style-nondesc .card-name-mobile {
+    display: block;
+  }
+
+  .band-style-nondesc .card-name {
+    display: none;
+  }
+
+  .basic-image img {
+    width: 100%;
+    max-width: 360px;
+    max-height: 110px;
+    margin: 0 auto;
+    display: block;
+    /*padding: 20px;*/
+  }
+
+  .band-style-nondesc .basic-image img {
+    max-width: 100%;
+    max-height: 115px;
+    height: auto;
+    padding: 35px 15px; /* AirNowDrupal #145 Mobile Fixes cw 2019-05-30 */
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-05-30 */
+  div.col-sm-4.outer-card-style.announcement-card {
+    padding:  5px;
+  }
+
+  .col-xs-12.basic-image.basic-image-nondesc {
+    height: 100%;
+    position: absolute;
+    margin-top: 10px; /* AirNowDrupal #115 cw 2019-05-06 */
+  }
+
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-05-30 */
+  .band-style-nondesc .inner-card-style {
+    height: 120px;
+  }
+
+  .links-card-image {
+    width: auto;
+  }
+
+  .related-announcements-container {
+    height: auto;
+  }
+
+  /*.band-style-default .band-card-row {*/
+    /*height: 350px;*/
+  /*}*/
+
+  /*.band-style-default .outer-card-style {*/
+    /*position: absolute;*/
+  /*}*/
+
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-05-30 */
+  .band-card-row-light.band-basic.row {
+    padding: 15px;
+  }
+
+  .mapDimensions {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+
+@media all and (min-width: 818px) {
+  .band-style-nondesc .inner-card-style .col-xs-12 h3, /* obsolete? */
+  .band-style-nondesc .inner-card-style .col-xs-12 h2 {
+    font-size: 22px;
+  }
+
+  .band-style-nondesc .inner-card-style {
+    height: 188px;
+  }
+
+  .basic-image-nondesc {
+    padding: 6% 30%;
+  }
+}

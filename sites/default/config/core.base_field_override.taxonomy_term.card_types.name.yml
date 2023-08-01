@@ -1,0 +1,18 @@
+uuid: d0adcb9b-0156-4297-b5b2-11f08e2a70d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.card_types
+id: taxonomy_term.card_types.name
+field_name: name
+entity_type: taxonomy_term
+bundle: card_types
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

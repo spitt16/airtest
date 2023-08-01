@@ -1,0 +1,33 @@
+<a class="card-link" target="_blank" href="/announcement/{{ card.getAnnouncementId() }}">
+  <div class="inner-card-style inner-card-style-announcement">
+    {% if not has_description and has_image  %}
+      {% set title_float = "text-center" %}
+    {% endif %}
+
+    <div class="col-xs-12">
+        <h2>
+          {{ card.getName() }}
+        </h2>
+    </div>
+
+    <div class="col-xs-12">
+      <p>
+        <b>{{ card.getDate() }}</b>
+      </p>
+    </div>
+
+    {% if has_description %}
+      <div class="col-xs-12">
+        <p>
+          {{ card.getDescription() }}
+        </p>
+      </div>
+    {% endif %}
+
+    {% if not has_description and has_image %}
+      <div class="col-xs-12">
+        <img alt="{{ card.getImage().altText() }}" src="{{ card.getImage().getImageUrl() }}">
+      </div>
+    {% endif %}
+  </div>
+</a>

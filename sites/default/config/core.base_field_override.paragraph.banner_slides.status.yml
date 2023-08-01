@@ -1,0 +1,22 @@
+uuid: 160d468e-3e62-4dfc-82f0-e69feffe49e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.banner_slides
+id: paragraph.banner_slides.status
+field_name: status
+entity_type: paragraph
+bundle: banner_slides
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

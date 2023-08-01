@@ -1,0 +1,50 @@
+### Cypress Testing General Info 
+
+# Running standard test suite... all the AirNow tests in cypress.
+
+
+### run ALL the tests AirNow Tests AND store the results at cloud.cypress.io
+
+
+npx cypress run --spec "cypress/e2e/AirNow*.cy.js" -b chrome --record --key fd36687c-8355-4e35-9422-ecad02a9474c
+
+
+
+### PRODUCTION -- Default
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://www.airnow.gov"
+
+### Staging 
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://airnowstage.app.cloud.gov"
+
+
+
+### BLUE BLUE BLUE
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://airnow-blue.app.cloud.gov"
+
+
+
+### GREEN GREEN GREEN
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://airnow-green.app.cloud.gov"
+
+
+
+### dev-pantheon
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://preview:Welcome1@dev-airnowgov.pantheonsite.io/"
+
+### test-pantheon
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://preview:Welcome1@test-airnowgov.pantheonsite.io/"
+
+### live-pantheon
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://preview:Welcome1@live-airnowgov.pantheonsite.io/"
+
+### LANDO DEV
+
+npx cypress run --spec "cypress/e2e/*.cy.js" --config-file "cypress.config.js" -b chrome --config baseUrl="https://preview:Welcome1@airnowgov.lndo.site/"
+

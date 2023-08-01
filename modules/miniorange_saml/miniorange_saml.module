@@ -1,0 +1,76 @@
+<?php
+/**
+ * @file
+ * Module file for miniOrange SAML Module.
+ */
+ 
+/**
+* Implements hook_menu().
+*/
+use Drupal\miniorange_saml\Utilities;
+use Drupal\miniorange_saml\MiniOrangeAuthnRequest;
+use Drupal\miniorange_saml\XMLSecurityKey;
+
+function miniorange_saml_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'miniorange_saml/miniorange_saml.admin';
+}
+
+function miniorange_saml_form_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id) {
+	global $base_url;
+    $force_auth = \Drupal::config('miniorange_saml.settings')->get('miniorange_saml_force_auth');
+    $backdoor_enabled = \Drupal::config('miniorange_saml.settings')->get('miniorange_saml_enable_backdoor');
+	$auto_redirect = \Drupal::config('miniorange_saml.settings')->get('miniorange_saml_auto_redirect_to_idp');
+	$enable_saml_login = \Drupal::config('miniorange_saml.settings')->get('miniorange_saml_enable_login');
+	$relay_state = $base_url . '/' . \Drupal\Core\Url::fromRoute("<current>")->toString();
+
+	if($enable_saml_login) {
+      if ($force_auth &&  !\Drupal::currentUser()->isAuthenticated()) {
+      }
+	  if ($form_id == 'user_login_block' || $form_id == 'user_login_form') {
+        $query_parameters = \Drupal\Component\Utility\UrlHelper::filterQueryParameters($form);
+        if ($backdoor_enabled) {
+          if (isset($query_parameters['saml_login']))
+            $backdoor = $query_parameters['saml_login'];
+		  else {
+            if ($auto_redirect && strtolower($backdoor) != 'false') {
+              saml_login($relay_state);
+            }
+		  }
+        }
+        else {
+          if ($auto_redirect && strtolower($backdoor) != 'false') {
+            saml_login($relay_state);
+          }		
+        }
+    
+        $saml_login_url = $base_url . '/samllogin';
+        $idp_name = \Drupal::config('miniorange_saml.settings')->get('miniorange_saml_idp_name');
+        $form['loginurl']= array(array(
+          '#markup' => '<a href="'. $saml_login_url .'">Login using ' . $idp_name . '</a>'
+        ));
+      }
+   }
+}
+
+/**
+* Implements hook_libraries_info().
+*/
+function miniorange_saml_libraries_info() {
+  $libraries['xmlseclibs'] = array(
+    'name' => 'XML Encryption and Signatures',
+    'vendor url' => 'https://code.google.com/p/xmlseclibs/',
+    'download url' => 'https://xmlseclibs.googlecode.com/files/xmlseclibs-1.3.1.tar.gz',
+    'version arguments' => array(
+      'file'    => 'xmlseclibs.php',
+      'pattern' => '/@version\s*(.*)$/',
+      'lines'   => 100,
+    ),
+    'files' => array(
+      'php' => array(
+        'xmlseclibs.php',
+      ),
+    ),
+  );
+
+  return $libraries;
+}

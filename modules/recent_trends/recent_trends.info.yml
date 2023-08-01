@@ -1,0 +1,10 @@
+name: Recent Trends
+type: module
+description: Recent Trends page display
+package: Custom
+
+type: module
+core: 8.x
+
+libraries:
+  - recent_trends/recent_trends_helper

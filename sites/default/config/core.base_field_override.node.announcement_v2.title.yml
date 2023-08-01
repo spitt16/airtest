@@ -1,0 +1,18 @@
+uuid: 8a164b98-28a4-40d4-8391-cb3a3b8bbce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement_v2
+id: node.announcement_v2.title
+field_name: title
+entity_type: node
+bundle: announcement_v2
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

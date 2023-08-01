@@ -1,0 +1,18 @@
+uuid: 2b90b431-d332-4371-9b36-b1d76ac0a8a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.home_current_chart_filter_descs
+id: paragraph.home_current_chart_filter_descs.created
+field_name: created
+entity_type: paragraph
+bundle: home_current_chart_filter_descs
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

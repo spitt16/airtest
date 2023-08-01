@@ -1,0 +1,18 @@
+uuid: 54503719-4c6c-4392-b6b0-03ed5ee3a0ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.home_current_chart_filter_descs
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.home_current_chart_filter_descs
+target_entity_type_id: paragraph
+target_bundle: home_current_chart_filter_descs
+default_langcode: site_default
+language_alterable: false

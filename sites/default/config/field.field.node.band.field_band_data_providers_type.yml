@@ -1,0 +1,29 @@
+uuid: 8d5e1dca-aaa9-4f89-8ee9-0bed33a9fafe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_band_data_providers_type
+    - node.type.band
+    - taxonomy.vocabulary.data_providers
+id: node.band.field_band_data_providers_type
+field_name: field_band_data_providers_type
+entity_type: node
+bundle: band
+label: 'Band Data Providers Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      data_providers: data_providers
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

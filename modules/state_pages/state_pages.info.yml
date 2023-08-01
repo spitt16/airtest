@@ -1,0 +1,10 @@
+name: State Pages
+type: module
+description: State page displays
+package: Custom
+
+type: module
+core: 8.x
+
+libraries:
+  - state_pages/state_pages_helper

@@ -1,0 +1,20 @@
+uuid: 42f865de-8e40-46f8-a293-e438b99f3707
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.alert_collection_v2
+  module:
+    - path
+id: node.alert_collection_v2.path
+field_name: path
+entity_type: node
+bundle: alert_collection_v2
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

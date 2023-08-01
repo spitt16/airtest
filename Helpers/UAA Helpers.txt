@@ -1,0 +1,4 @@
+cf create-service cloud-gov-identity-provider oauth-client uaa-id-example
+
+
+cf bind-service id-example uaa-id-example -c '{\"redirect_uri\": [\"https://id-example-appreciative-sable-rr.app.cloud.gov/auth/callback\"]}'

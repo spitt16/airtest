@@ -1,0 +1,69 @@
+{% set announcementCollection = constructAnnouncementCollectionV2() %}
+{% set announcements = announcementCollection.getAnnouncements() %}
+{% set archivedAnnouncements = announcementCollection.getArchivedAnnouncements() %}
+
+<div class="container inner-card-style">
+  {% if announcements|length > 0 %}
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 style="text-align: center;">Current Announcements</h1>
+      </div>
+    </div>
+    {% for announcement in announcements %}
+      {% if announcement.isVisible() and not announcement.isArchived() %}
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="article-title">
+              {{ announcement.getTitle() }}
+            </h2>
+            {%  if announcement.getDate() %}
+              <h3 class="article-date">
+                {{ announcement.getDate()|date("Y-m-d") }}
+              </h3>
+            {% endif %}
+          </div>
+          <div class="col-xs-12">
+            <p>{{ announcement.getMainText() }}</p>
+          </div>
+          {% if announcement.getAdditionalText() %}
+            <div class="col-xs-12">
+              <p>{{ announcement.getAdditionalText() }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if archivedAnnouncements|length > 0 %}
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 style="text-align: center;">Archived</h1>
+      </div>
+    </div>
+    {% for announcement in archivedAnnouncements %}
+      {% if announcement.isVisible() and announcement.isArchived() %}
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="article-title">
+              {{ announcement.getTitle() }}
+            </h2>
+            {%  if announcement.getDate() %}
+              <h3 class="article-date">
+                {{ announcement.getDate()|date("Y-m-d") }}
+              </h3>
+            {% endif %}
+          </div>
+          <div class="col-xs-12">
+            <p>{{ announcement.getMainText() }}</p>
+          </div>
+          {% if announcement.getAdditionalText() %}
+            <div class="col-xs-12">
+              <p>{{ announcement.getAdditionalText() }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>

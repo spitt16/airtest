@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function marquee_data_module_theme($existing, $type, $theme, $path) {
+  $variables = array(
+    'marquee_data_template' => array(
+      'variables' => array(
+        'homeMarquee' => null
+      ),
+      'template' => 'block--marquee_data',
+    ),
+  );
+  return $variables;
+}

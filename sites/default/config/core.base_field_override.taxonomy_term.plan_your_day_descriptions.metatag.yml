@@ -1,0 +1,18 @@
+uuid: 5868d5fc-0617-4613-b4c9-c8c26fc26760
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.plan_your_day_descriptions
+id: taxonomy_term.plan_your_day_descriptions.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: plan_your_day_descriptions
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

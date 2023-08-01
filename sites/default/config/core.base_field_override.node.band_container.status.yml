@@ -1,0 +1,22 @@
+uuid: c40871b2-54e9-4c31-a6cf-fe92cd82edfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band_container
+id: node.band_container.status
+field_name: status
+entity_type: node
+bundle: band_container
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

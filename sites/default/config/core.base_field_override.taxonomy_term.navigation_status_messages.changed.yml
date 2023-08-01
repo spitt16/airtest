@@ -1,0 +1,18 @@
+uuid: 61af1346-5570-4cb5-b9e7-e62ac9100b99
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.navigation_status_messages
+id: taxonomy_term.navigation_status_messages.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: navigation_status_messages
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

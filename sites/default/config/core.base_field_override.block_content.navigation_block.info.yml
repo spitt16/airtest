@@ -1,0 +1,18 @@
+uuid: efd0c799-64a9-46ad-bd88-97b3347c5629
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.navigation_block
+id: block_content.navigation_block.info
+field_name: info
+entity_type: block_content
+bundle: navigation_block
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

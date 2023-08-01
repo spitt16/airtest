@@ -1,0 +1,18 @@
+uuid: b831902d-9af9-494f-8fce-cb842dfad4bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band_container
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: node.band_container
+target_entity_type_id: node
+target_bundle: band_container
+default_langcode: site_default
+language_alterable: true

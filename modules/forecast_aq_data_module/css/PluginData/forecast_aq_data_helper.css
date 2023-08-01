@@ -1,0 +1,385 @@
+.forecast-aq-band-row .pollutant-card {
+  border: 5px solid #C0C0C0;
+}
+
+.forecast-aq-band-row .pollutant-card.good {
+  border: 5px solid #00E400;
+}
+
+.forecast-aq-band-row .pollutant-card.moderate {
+  border: 5px solid #FFFF00;
+}
+
+.forecast-aq-band-row .pollutant-card.unhealthy-sensitive {
+  border: 5px solid #FF7E00;
+}
+
+.forecast-aq-band-row .pollutant-card.unhealthy {
+  border: 5px solid #FF0000;
+}
+
+.forecast-aq-band-row .pollutant-card.very-unhealthy {
+  border: 5px solid #8F3E96;
+}
+
+.forecast-aq-band-row .pollutant-card.hazardous {
+  border: 5px solid #7E0023;
+}
+
+.forecast-aq-band-row .forecast-aq-days {
+  /*background-color: var(--color-dark-blue);*/
+  position: relative;
+  background-color: #167fac;
+  margin-top: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.forecast-aq-band-row .forecast-aq-days .forecast-aq-discussion {
+  color: #FFFFFF;
+  padding: 27px;
+  /*border-bottom: solid 1px var(--color-light-grey);*/
+  /*border-bottom: solid 1px #D5D5D5;*/
+}
+.forecast-aq-band-row .forecast-aq-days .forecast-aq-discussion a {
+  color: #FFFFFF;
+}
+
+.forecast-aq-band-row .forecast-aq-days .day-holder {
+  border-top: solid 1px #D5D5D5;
+}
+
+.forecast-aq-band-row .forecast-aq-days .day-holder.na-holder {
+  border-top: solid 1px transparent;
+}
+
+#forecastDiscussionLink {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.forecast-discussion-title {
+  font-weight: bold;
+}
+
+.forecastProvider {
+  /*position: absolute;*/
+  /*right: 0;*/
+  color: #fff;
+  text-align: right;
+  /*top: 0;*/
+  padding: 27px 27px 27px 0;
+}
+
+.forecastProvider p {
+  margin-bottom: 0;
+}
+
+.forecastProvider p.forecastProviderLabel a,
+.forecastProvider p.forecastProviderLabel a:visited {
+  color: #FFFFFF !important;
+  text-decoration: underline !important;
+}
+.forecastProvider p.forecastProviderLabel a:hover {
+  color: rgba(106,208,255,.9) !important;
+  text-decoration: underline !important;
+}
+.forecastProvider p.forecastProviderAgency {
+  font-size: 12px;
+}
+.forecastProvider p.forecastProviderAgency a {
+  color: white;
+  text-decoration: underline;
+}
+
+.days {
+  padding: 0 !important;
+}
+
+.days .day {
+  position: relative;
+}
+
+.days .day-name {
+  height: 65px;
+  font-size: 16px;
+  padding: 15px 15px 5px 15px;
+}
+
+.days .day-name .action-day{
+  font-size: 14px;
+}
+
+.days .day-status-image {
+  margin: auto;
+}
+
+.days .day-status {
+  font-size: 16px;
+  padding: 0;
+  padding-top: 15px;
+}
+
+.days .day-pollutant {
+  padding-bottom: 30px;
+}
+.days .day-text{
+  color: #FFFFFF;
+  margin: auto;
+  text-shadow: 1px 1px 1px rgb(21, 121, 163),
+  -1px -1px 1px rgb(21, 121, 163),
+  1px -1px 1px rgb(21, 121, 163),
+  -1px 1px 1px rgb(21, 121, 163),
+  1px 1px 1px rgb(21, 121, 163);
+}
+
+.day {
+  height: 100%;
+  /*border-right: solid 1px var(--color-light-grey);*/
+  border-right: solid 1px #D5D5D5;
+  cursor: pointer;
+}
+
+.day-no-border {
+  border-right: solid 0px;
+}
+
+.day .day-caret {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  width: 100%
+}
+
+.day .day-caret-triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  margin: 0 auto;
+}
+
+.show-day-caret .day-caret-triangle {
+  /*border-bottom: 30px solid var(--color-silver);*/
+  border-bottom: 30px solid #FFFFFF; /* AirNowDrupal# 115 2019-05-14 */
+}
+
+.forecast-aq-days .no-data-msg-holder {
+  height: 346px;
+  position: relative;
+}
+
+.forecast-aq-days .no-data-msg-holder .no-data-msg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-57%);
+}
+
+.no-data-msg-h3 {
+  width: 100%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.no-data {
+  display: none;
+}
+.no-data .forecast-aq-discussion {
+  display: none;
+}
+
+.no-data .days {
+  display: none;
+}
+
+/*.no-data .no-data-msg-holder {*/
+  /*display: block;*/
+/*}*/
+
+.has-data {
+  display: block;
+}
+
+.has-data .forecast-aq-discussion {
+  display: block;
+}
+
+.has-data .days {
+  display: block;
+}
+
+.forecast-aq-discussion.no-discussion {
+  display: none;
+}
+
+.forecast-aq-discussion.has-discussion {
+  display: block;
+}
+
+/*.has-data .no-data-msg-holder {*/
+  /*display: none;*/
+/*}*/
+
+ /* AirNowDrupal # 117 remove gap cw 2019-04-10 */
+.pollutant-card.other-pollutants-card {
+    margin-top: -5px;
+	border: solid 2px #C0C0C0; /* AirNowDrupal 115 thin line cw 2019-05-14 */ /* AirNowDrupal # 143 Make Other Pollutant boxes 2px wide cw 2019-05-31 */
+  }
+
+ /* AirNowDrupal # 115 Make Current Forecast other polutants card line up cw 2019-05-16 */
+.col-xs-12.forecast-aq-band-row.pollutant-mobile-stack-format .col-sm-6.pollutant-card-col .pollutant-card.other-pollutants-card {
+    margin-top: 5px;
+  }
+
+
+@media all and (min-width: 768px) {
+  .days .day {
+    height: 241px;
+  }
+}
+
+.days .day {
+  width: 100%;
+  /*height: 150px;*/
+}
+
+@media all and (min-width: 768px) {
+  .col-xs-12.forecast-aq-band-row {
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .col-xs-12.current-aq-band-row {
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .band-custom-section.map-section, #map {
+    height: 100%
+  }
+
+}
+
+@media all and (max-width: 767px) {
+
+  .band-style-default .band-card-row.band-basic {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .forecast-aq-band-row .forecast-aq-days {
+    margin: 0px 0px; /* AirNowDrupal # 145 Border around the forecast section on mobile cw 2019-06-03 */
+  }
+
+  .col-xs-2.day-holder {
+    width: 20%;
+  }
+
+  .col-xs-12.day-mobile-indicators {
+    height: 13px;
+    margin-bottom: -1px;
+    /*background-color: var(--color-page-background);*/
+    background-color: #F5F5F5;
+  }
+
+  .day-mobile-indicators .mobile-day-caret-triangle {
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    /*border-top: 13px solid var(--color-dark-blue);*/
+    border-top: 13px solid #167fac;
+    display: none;
+    margin: auto;
+  }
+
+  .show-day-caret.day-mobile-indicators .mobile-day-caret-triangle {
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    /*border-top: 13px solid var(--color-dark-blue);*/
+    border-top: 13px solid #167fac;
+    display: block;
+    margin: auto;
+  }
+
+  .days .day-name {
+    height: 45px;
+    font-size: 12px;
+    padding: 5px 0px;
+  }
+
+  .days .day-name .action-day{
+    font-size: 11px;
+  }
+
+  .days .day-status {
+    font-size: 12px;
+    font-size: 12px;
+    padding: 5px 0px;
+  }
+
+  .days .day-aqi {
+    font-size: 12px;
+    padding: 5px 0px;
+	display: none;  /* AirNowDrupal #145 Mobile Fixes cw 2019-05-30 */
+  }
+
+  .day .pollutant-status-circle {
+    width: 36px !important;
+    height: 36px;
+    font-size: 0;
+  }
+
+  /*Pollutant Card - Special Formatting for Forecast AQ Band*/
+  /* AirNowDrupal # 117 Add boxes around elements cw 2019-04-10 */
+  .pollutant-mobile-stack-format .col-sm-6.pollutant-card-col {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+  }
+
+  /* AirNowDrupal # 117 remove gap cw 2019-04-10 */
+  .pollutant-card.other-pollutants-card {
+    margin-top: -5px;
+  }
+
+  /* AirNowDrupal # 115 Boxes around elements on Mobile cw 2019-04-10 */
+  .map-section {
+    padding: 10px 10px 10px 10px;
+  }
+  .pollutant-mobile-stack-format .col-xs-12.pollutant-title-section {
+    display: none;
+  }
+
+  .pp-label-mobile {
+    margin-top: -4px;
+    font-weight: bold;
+    padding-left: 15px;
+  }
+
+  .forecast-aq-days .no-data-msg-holder {
+    height: 147px;
+	}
+
+  /* AirNowDrupal # 145 Delete space between “primary” and “other pollutant” boxes under forecast ONLY on mobile cw 2019-05-31 */
+  .col-xs-12.forecast-aq-band-row.pollutant-mobile-stack-format .col-sm-6.pollutant-card-col .pollutant-card.other-pollutants-card {
+	margin-top: -5px;
+	}
+
+  .forecastProvider {
+    color: #fff;
+    text-align: left;
+    padding: 27px 27px 0 27px !important;
+  }
+}
+
+
+@media all and (max-width: 360px) {
+  .days .day {
+    /*height: 167px;*/
+  }
+}
+

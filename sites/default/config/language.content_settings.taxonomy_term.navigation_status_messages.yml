@@ -1,0 +1,18 @@
+uuid: f967d6c2-6f44-48b4-960d-819c81d726a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.navigation_status_messages
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.navigation_status_messages
+target_entity_type_id: taxonomy_term
+target_bundle: navigation_status_messages
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,18 @@
+uuid: 3d339723-e1b4-4197-acbf-019defa2bb98
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement_collection_v2
+id: node.announcement_collection_v2.title
+field_name: title
+entity_type: node
+bundle: announcement_collection_v2
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

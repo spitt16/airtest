@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function publications_pages_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'publications_pages_template' => array(
+      'variables' => array(
+        'term_name' => NULL,
+        'publication_id' => NULL,
+      ),
+      'template' => 'block--publications_pages',
+    ),
+  );
+  return $variables;
+}

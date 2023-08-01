@@ -1,0 +1,8 @@
+random_marquee_image_page.random_marquee_image_page:
+  path: '/marquee_image/random'
+  defaults:
+    _controller: '\Drupal\random_marquee_image_loader\Controller\RandomMarqueeImageLoader::randomImage'
+    _title: 'Marquee Image'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'

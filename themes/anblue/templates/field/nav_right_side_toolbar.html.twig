@@ -1,0 +1,81 @@
+{# Tools displayed in reverse order due to 'float: right' #}
+<div id="nav-right-side-toolbar" class="nav-right-side-toolbar">
+  {# Weather #}
+  {# TODO: Consider moving the Weatehr HTML to a sepearate html.twig file #}
+  <div id="nav-weather-tool" class="nav-tool">
+    <div class="weather-degrees-value-wrapper">
+      <img class="weather-degrees" alt="weather degrees" src="/{{ directory }}/images/weather/Weather_Degree_F.svg"/>
+      <div class="weather-value">{#63#}</div>
+    </div>
+    <div class="weather-icon">
+      <img alt="weather icon" src="/{{ directory }}/images/weather/weather_icon_partly_cloudy.svg"/>
+    </div>
+    <img class="weather-loading" alt="weather loading spinner" src="/{{ directory }}/images/30.svg"/>
+  </div>
+
+  {# AQI Dial #}
+  {# TODO: Consider moving the AQI Dial HTML to a sepearate html.twig file #}
+  <div id="nav-aqi-tool" class="nav-tool hidden">
+    <div class="aqi-button aqi-nav-scroll">
+      <a class="btn btn-aqi-nav aqi-orb">
+        <span class="aqi-nav-text">AQI</span>
+        <span class="fa fa-times" style="display: none"></span>
+      </a>
+    </div>
+    <div class="aq-dial aqi-nav-scroll small status-bar">
+      <img class="aq-dial-background" src="/{{ directory }}/images/dial3/dial_black_circle_top.svg" alt="Dial Background Circle Top" />
+      <img class="aq-dial-background2" src="/{{ directory }}/images/dial3/dial_black_circle_bottom.svg" alt="Dial Background Circle Bottom"/>
+      <img class="aq-dial-meter" src="/{{ directory }}/images/dial3/dial_legend.svg" alt="Dial Arched AQI Legend"/>
+      <img class="aq-dial-arrow" src="/{{ directory }}/images/dial3/dial_arrow_full_rounded.svg" alt="Dial AQI Value Indicator Arrow" />
+      <img class="aq-dial-status" src="/{{ directory }}/images/dial3/dial_not_available.svg" alt="Dial Category Indicator Half-Circle" />
+      <div class="bottom-half">
+        <div class="current-aq-container">
+          <div class="header">
+            Current Air Quality <span class="aq-updated-time">{#1:00 PM PDT#}</span>
+          </div>
+          <div class="current-aq-data">
+            <div class="aqi">{#NowCast AQI 26#}</div>
+            <div class="pollutant">{#PM2.5#}</div>
+          </div>
+        </div>
+        <div class="forecast-aq-container">
+          <div class="header">Forecast AQI</div>
+          <div class="today-aq-data">
+            <div class="date">Today</div>
+            <div class="circle">
+              <img class="action-day" src="/{{ directory }}/images/dial3/action_day_icon.png" alt="Action Day Icon" />
+            </div>
+            <div class="category">{#Unhealthy for Sensitive Groups#}</div>
+          </div>
+          <div class="tomorrow-aq-data">
+            <div class="date">Tomorrow</div>
+            <div class="circle">
+              <img class="action-day" src="/{{ directory }}/images/dial3/action_day_icon.png" alt="Action Day Icon" />
+            </div>
+            <div class="category">{#Moderate#}</div>
+          </div>
+          <div class="misc">
+            <div class="browser-only">More</div>
+            <a class="print-only" href="//airnow.gov">AirNow.gov</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Geolocation Search #}
+  {# TODO: Consider moving the Geolocation Search HTML to a sepearate html.twig file #}
+  <div id="nav-geosearch-tool" class="aqi-container nav-tool hidden">
+    <div class="curr-cond-label aqi-nav-scroll hidden-xs">
+      <a href="/">{#Current Conditions#}</a>
+    </div>
+    <div class="location-input aqi-nav-scroll">
+      <div class="location-input-holder">
+        <label class="hidden" for="location-input-nav">Location Search</label>
+        <input id="location-input-nav" class="location-input-style location-input-field" placeholder="ZIP Code, City, or State" aria-describedby="locationSearch" />
+        <div id="locationSearch" class="hidden">Use this box for geographic or location based searches.</div>
+        <div class="location-input-gps-btn"></div>
+      </div>
+    </div>
+  </div>
+</div>

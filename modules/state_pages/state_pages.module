@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function state_pages_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'state_pages_template' => array(
+      'variables' => array(
+      ),
+      'template' => 'state_pages',
+    ),
+  );
+  return $variables;
+}

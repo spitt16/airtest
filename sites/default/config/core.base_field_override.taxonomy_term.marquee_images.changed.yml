@@ -1,0 +1,18 @@
+uuid: 9b652a3b-72b7-4280-898f-cf968cf53a0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.marquee_images
+id: taxonomy_term.marquee_images.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: marquee_images
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

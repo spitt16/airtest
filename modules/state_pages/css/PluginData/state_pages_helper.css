@@ -1,0 +1,306 @@
+.search-block-form {
+  display: none;
+}
+
+@media (max-width: 610px) {
+  .state-page-container {
+    margin-top: -38px;
+  }
+}
+
+@media (max-width: 1175px) {
+  .state-tabs-container {
+    padding-left: 15px !important;
+    padding-right: 0px !important;
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+  ul.state-tabs {
+    display: flex !important;
+  }
+
+  ul.state-tabs > li {
+    margin-left: -1px !important;
+  }
+
+}
+
+.state-city-cell-link {
+  cursor: pointer;
+}
+
+a.state-city-cell-link {
+  text-decoration: underline;
+}
+
+.historical-date-picker {
+  padding: 15px;
+  text-align: center;
+}
+
+.region-name {
+  background-color: #757575 !important;
+  color: #fff !important;
+}
+
+.state-table  {
+  margin-bottom: 20px;  
+}
+
+.state-table th,
+.state-table td {
+  width: 225px;
+}
+
+.state-table th:first-child,
+.state-table td:first-child {
+  width: auto;
+}
+
+.state-table tr:nth-child(2n+2){
+  background-color: #E0E0E0;
+}
+
+.state-table tr:nth-child(1){
+  background-color: #E0E0E0;
+}
+
+
+/*.state-table {*/
+  /*overflow-x: scroll;*/
+/*}*/
+
+.state-table tr td, .state-table th {
+  padding: 15px;
+  white-space: nowrap;
+}
+
+#stateMap, #stateMap img {
+  height: 100%;
+  width: 100%;
+}
+
+#stateMap {
+  position: relative;
+}
+
+#state-map-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.state-map-container .time_overlay {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px 5px;
+  bottom: 10px;
+  left: 25px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 6;
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.state-map-container .time_overlay:hover {
+  opacity: 0.40;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
+}
+
+.state-page-container .map_loading_overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  z-index: 2;
+}
+
+.btn.btn-custom-blue {
+  color: white;
+  background: #167fac;
+  border-radius: 9px;
+  font-size: 11px;
+  padding: 4px 12px;
+  margin-top: 15px;
+}
+
+.btn.btn-custom-blue:hover {
+  color: rgba(106,208,255,.9);
+  text-decoration: none;
+}
+
+ul.state-tabs {
+  border-bottom: 3px solid #167fac;
+  float: none;
+  width: 100%;
+  display: inline-block;
+  zoom: 1;
+  text-align: center;
+}
+
+ul.state-tabs > li{
+  float: none;
+  display: inline-block;
+  margin-left: -4px;
+}
+
+.state-tabs-container {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.state-map-container {
+  height: 510px;
+  width: 100%;
+  padding-top: 15px;
+  margin-bottom: -10px;
+}
+
+ul.state-tabs>li.active>a, ul.state-tabs>li.active>a:focus, ul.state-tabs>li.active>a:hover {
+  color: #fff;
+  background-color: #167fac;
+  border-radius: 0;
+}
+
+ul.state-tabs>li>a {
+  background-color: #E0E0E0;
+  color: darkslategray;
+  border-radius: 0;
+  margin-right: 0;
+  border: none;
+  padding: 10px 15px !important /* Yeah, using !important is bad but it was a quick fix for a CSS conflict */
+}
+
+
+.pollutant-status-circle {
+  background-color: #5E5E5E;
+  border: solid 1px white;
+  font-size: 17px;
+  font-weight: bold;
+  width: 46px !important;
+  padding: 10px 0px !important;
+  margin: auto;
+  height: 46px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.state-aqi-container {
+  display: inline-block;
+  width: 46px;
+}
+
+.state-aqi-style {
+  display: inline-block;
+}
+
+.state-aqi-style.floatLeft {
+  float: left;
+}
+
+.state-aqi-category {
+  margin-left: -100%;
+  margin-right: -100%;
+  text-align: center;
+}
+
+.state-table-cell-border {
+  border-left: solid 2px #fff;
+  border-right: solid 2px #fff;
+  text-align: center;
+}
+
+.center-cell {
+  text-align: center;
+}
+
+.tab-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.text-align-left {
+  text-align: left !important;
+}
+
+.city-time-cell {
+  padding-top: 5px;
+  display: inline-block;
+  width: 80px;
+  vertical-align: top;
+}
+
+.scrollable {
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+@media all and (max-width: 767px) {
+  .state-page-container .state-aqi-category {
+    margin: 0 0 0 -15px !important;
+    display: inline-block !important;
+    width: 75px;
+  }
+
+  .state-page-container,
+  .state-page-container .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .state-page-container .state-tabs-container {
+    padding-left: 0 !important;
+  }
+
+  .state-page-container .state-table tr td,
+  .state-page-container .state-table tr th {
+    padding: 10px;
+    white-space: normal;
+    min-width: 75px !important;
+    vertical-align: top;
+  }
+  .state-page-container .state-table tr th {
+    text-align: center;
+  }
+
+  .state-page-container .state-table .city-time-cell {
+     padding-top: 0;
+     margin-left: 0;
+     width: auto;
+     vertical-align: inherit;
+  }
+
+  /*.state-page-container .state-table td.currentAirQualityColumn {*/
+  /*}*/
+}
+
+/* iPhone5 support */
+@media all and (max-width: 320px) {
+  .state-page-container .state-table tr td:first-child,
+  .state-page-container .state-table tr th:first-child {
+    max-width: 90px !important;
+  }
+}
+

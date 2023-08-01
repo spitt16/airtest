@@ -1,0 +1,22 @@
+uuid: f24ac5df-71a5-4acf-a0f8-dd06c9e3919f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.home_marquee
+id: node.home_marquee.promote
+field_name: promote
+entity_type: node
+bundle: home_marquee
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

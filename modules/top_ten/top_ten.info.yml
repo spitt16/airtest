@@ -1,0 +1,10 @@
+name: Top Ten
+type: module
+description: Highest AQI locations display cw 2020-07-31
+package: Custom
+
+type: module
+core: 8.x
+
+libraries:
+  - top_ten/top_ten_helper

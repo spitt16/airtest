@@ -1,0 +1,18 @@
+uuid: 3233b015-b8d8-4529-86fc-3d8c8ec5ff42
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.navigation_status_messages
+id: taxonomy_term.navigation_status_messages.name
+field_name: name
+entity_type: taxonomy_term
+bundle: navigation_status_messages
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,187 @@
+@media print {
+  @page {
+    margin: 0 !important;;
+    padding: 0 !important;
+    size: A4 portrait !important;
+  }
+
+  /*html:not(.state-page-container *) {*/
+    /*display: none !important;*/
+  /*}*/
+
+  :before {
+    display: none !important;
+  }
+
+  :after {
+    display: none !important;
+  }
+
+  div.state-page-container > div:nth-child(1) > div,
+  #air-quality-monitors-in-state {
+    display: none !important;
+  }
+
+  .historical-date-picker {
+    color: transparent !important;
+  }
+  .historical-date-picker input {
+    color: #333 !important;
+  }
+
+  .footer-navigation {
+    background-color: #167fac !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    color: #333 !important;
+    background-color: #F5F5F5 !important;
+  }
+
+  a[href]:after {
+    content: none !important;
+  }
+
+  .state-page-container {
+    margin: 0 !important;
+    max-width: 100%;
+  }
+
+  ul.state-tabs > li.active > a {
+    color: #fff !important;
+    background-color: #167fac !important;
+    border-radius: 0;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+  }
+
+  ul.state-tabs > li > a {
+    background-color: #E0E0E0 !important;
+    color: #1f496e !important;
+    font-weight: bold;
+    border-radius: 0;
+    margin-right: 0;
+    border: none;
+  }
+
+  /*.state-tabs-container .active {*/
+    /*background-color: #167fac !important;*/
+  /*}*/
+
+  /*.state-tabs-container #currentAQITab {*/
+    /*color: #FFFFFF !important;*/
+  /*}*/
+
+  .state-table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .state-table tr {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .state-table tr:nth-child(1){
+    background-color: #E0E0E0 !important;
+  }
+
+  .state-table tr:nth-child(2n+2){
+    background-color: #E0E0E0 !important;
+  }
+
+  /*.state-table tr:nth-child(2n+1){*/
+  /*  background-color: #FFFFFF !important;*/
+  /*}*/
+
+  .state-table tr.region-name,
+  .state-table tr.region-name td b {
+    background-color: #757575 !important;
+    color: #FFFFFF !important;
+  }
+
+  .state-table td {
+    margin: 0;
+    padding: 0;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+  }
+
+  .state-table-cell-border {
+    border-left: solid 2px #fff;
+    border-right: solid 2px #fff;
+    text-align: center;
+    white-space: nowrap !important;
+  }
+
+  .state-city-cell-link {
+    text-decoration: none !important;
+  }
+
+  .state-aqi-container {
+    display: inline-block;
+    width: 46px;
+  }
+
+  .state-aqi-style {
+    display: inline-block;
+  }
+
+  .state-aqi-style.floatLeft {
+    float: left;
+  }
+
+  .pollutant-status-circle {
+    background-color: #5E5E5E !important;
+    border-radius: 50px;
+    border: solid 1px white;
+    font-size: 17px;
+    font-weight: bold;
+    height: 46px;
+    margin: auto;
+    text-align: center;
+    width: 46px !important;
+  }
+
+  .pollutant-status-circle.default {
+    background-color: grey;
+    color: white;
+  }
+
+  .pollutant-status-circle.good {
+    background-color: #00E400 !important;
+    color: black !important;
+  }
+
+  .pollutant-status-circle.moderate {
+    background-color: #FFFF00 !important;
+    color: black !important;
+  }
+
+  .pollutant-status-circle.unhealthy-sensitive {
+    background-color: #FF7E00 !important;
+    color: white !important;
+  }
+
+  .pollutant-status-circle.unhealthy {
+    background-color: #FF0000 !important;
+    color: white !important;
+  }
+
+  .pollutant-status-circle.very-unhealthy {
+    background-color: #8F3E96 !important;
+    color: white !important;
+  }
+
+  .pollutant-status-circle.hazardous {
+    background-color: #7E0023 !important;
+    color: white !important;
+  }
+}

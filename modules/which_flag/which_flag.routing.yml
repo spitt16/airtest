@@ -1,0 +1,7 @@
+which_flag.which_flag:
+  path: '/which-flag-do-i-fly'
+  defaults:
+    _controller: '\Drupal\which_flag\Controller\WhichFlagController::whichFlagPage'
+    _title: 'Which Flag Do I Fly'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st10{fill:#FFFFFF;}
+	.st11{fill:none;stroke:#FFFFFF;stroke-width:3.6963;stroke-miterlimit:10;}
+	.st12{fill:#7e0023;}
+</style>
+<path class="st11" d="M420.8,270.7c0-83-67.3-150.4-150.4-150.4S120,187.7,120,270.7H420.8z"/>
+<path class="st12" d="M420.8,270.7c0-83-67.3-150.4-150.4-150.4S120,187.7,120,270.7H420.8z" fill="#7e0023"/>
+<text x="272.47504" y="220.21092" fill="#ffffff" font-family="'Segoe UI Symbol'" font-size="36.633px" letter-spacing="0px" stroke-width=".91582" text-align="center" text-anchor="middle" word-spacing="0px" style="line-height:1.25">
+<tspan x="272.47504" y="220.21092" fill="#ffffff" stroke-width=".91582" text-align="center" text-anchor="middle">Beyond Index</tspan>
+</text>
+</svg>

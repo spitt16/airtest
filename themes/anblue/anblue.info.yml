@@ -1,0 +1,27 @@
+name: AN Blue
+type: theme
+description: This is a sub theme of Bootstrap
+core: 8.x
+base theme: bootstrap
+
+libraries:
+  - bootstrap/theme
+  - anblue/sample-styling
+  - anblue/navigation
+  - anblue/font-awesome
+  - anblue/moment
+  - anblue/bands
+  - anblue/lib-pubsubjs
+  - anblue/airnowgov-base
+  - anblue/airnowgov-storage
+  - anblue/airnowgov-geolocation
+  - anblue/airnowgov-reportingarea
+  - anblue/airnowgov-pageloader
+
+regions:
+  froze_nav: 'Frozen Navigation'
+  highlighted: 'Highlighted'
+  content: 'Content'
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
+  footer: 'Footer Navigation'

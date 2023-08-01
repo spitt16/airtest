@@ -1,0 +1,18 @@
+uuid: 6fcf5298-47ec-4e53-8c1a-99f936b1e74c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pollutant_status_descriptions
+id: taxonomy_term.pollutant_status_descriptions.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: pollutant_status_descriptions
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

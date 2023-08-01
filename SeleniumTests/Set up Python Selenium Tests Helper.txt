@@ -1,0 +1,38 @@
+Steps to set up Selenium Testing for Python 3.10.8
+	Currenttly available for download cw 2022-10-27
+
+Install Python 3.10.8 from web...
+
+Set-up python & packages path as a System Path...
+	C:\Users\chris\AppData\Local\Programs\Python\Python311
+	C:\Users\chris\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages
+	
+	use Windows OS "path" dialog to your Pyhton location form in IDLE's Path Browser
+	reboot for the system Path changes to take effect
+	
+Install needed modules with pip in Python3...
+
+py -3 -m pip install selenium
+pip install colorama
+
+
+Upgrade Chrome first!
+Download and install Chrome driver for your exact version of Chrome... 107?
+	https://sites.google.com/chromium.org/driver/downloads?authuser=0
+	
+	copy it out of the zip and paste it next to your copy of python.exe in the above path
+
+
+Upgrade PIP. just in case...
+python -m pip install --upgrade pip
+
+
+Install pandas & selenium-wire module. They work together...
+
+pip3 install pandas
+
+
+Run the Tests...
+
+python AirNowTestSuite.py
+

@@ -1,0 +1,11 @@
+name: Webcams
+type: module
+description: Webcam displays
+package: Custom
+
+type: module
+core: 8.x
+
+
+libraries:
+  - webcams/webcam_helper

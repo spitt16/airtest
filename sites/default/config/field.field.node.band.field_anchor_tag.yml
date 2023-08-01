@@ -1,0 +1,19 @@
+uuid: 3f0b7854-5ad8-40d6-8784-25b4641c9a0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_anchor_tag
+    - node.type.band
+id: node.band.field_anchor_tag
+field_name: field_anchor_tag
+entity_type: node
+bundle: band
+label: 'Anchor Tag'
+description: 'This is the anchor id tag that will be used when you want to link to a specific band. Be sure to make the anchor tag unique on the page and so that it will not allow any conflicts. Anchor Tags can have characters that are alphanumberic, dash symbols (-), and underscore symbols (_). This is also case-insensitive.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 9cd19bed-e0c4-4d70-84a9-f5b9917d6fd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.articles_airnow
+id: node.articles_airnow.promote
+field_name: promote
+entity_type: node
+bundle: articles_airnow
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

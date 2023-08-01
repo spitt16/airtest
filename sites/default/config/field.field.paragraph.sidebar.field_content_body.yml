@@ -1,0 +1,21 @@
+uuid: 5a26c021-0c93-42e8-8f83-3b0bd5c4b44f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_body
+    - paragraphs.paragraphs_type.sidebar
+  module:
+    - text
+id: paragraph.sidebar.field_content_body
+field_name: field_content_body
+entity_type: paragraph
+bundle: sidebar
+label: 'Sidebar Content Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,4 @@
+site_map_helper:
+  css:
+    base:
+      css/PluginData/site_map_helper.css: {}

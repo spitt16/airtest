@@ -1,0 +1,20 @@
+uuid: 42fbeb66-681e-443e-9b8d-17cf6bf6992a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band
+  module:
+    - path
+id: node.band.path
+field_name: path
+entity_type: node
+bundle: band
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,13 @@
+current_aq_data_helper:
+  css:
+    base:
+      css/PluginData/current_aq_data_helper.css: {}
+  js:
+    js/PluginData/current_aq_data_helper.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - anblue/moment
+    - anblue/airnowgov-base
+    - anblue/airnowgov-reportingarea
+

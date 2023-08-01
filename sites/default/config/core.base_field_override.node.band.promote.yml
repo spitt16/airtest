@@ -1,0 +1,22 @@
+uuid: d95b7dce-ea15-41ba-81eb-3b9115b095f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band
+id: node.band.promote
+field_name: promote
+entity_type: node
+bundle: band
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

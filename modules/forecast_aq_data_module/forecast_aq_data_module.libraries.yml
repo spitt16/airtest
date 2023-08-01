@@ -1,0 +1,12 @@
+forecast_aq_data_helper:
+  css:
+    base:
+      css/PluginData/forecast_aq_data_helper.css: {}
+  js:
+    js/PluginData/forecast_aq_data_helper.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - anblue/airnowgov-base
+    - anblue/airnowgov-reportingarea
+

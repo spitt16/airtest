@@ -1,0 +1,18 @@
+uuid: 25866db6-34d8-4adb-beb7-836aa6293b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pollutant_status_descriptions
+id: taxonomy_term.pollutant_status_descriptions.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: pollutant_status_descriptions
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

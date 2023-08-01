@@ -1,0 +1,18 @@
+uuid: 464bc532-dc2a-4ba2-9e12-e3d803e8eb3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_container_display_types
+id: taxonomy_term.band_container_display_types.name
+field_name: name
+entity_type: taxonomy_term
+bundle: band_container_display_types
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 74e56e16-83ee-40d1-9e7b-fda18ae5e1e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_about_link
+    - node.type.band
+id: node.band.field_more_about_link
+field_name: field_more_about_link
+entity_type: node
+bundle: band
+label: 'More About Link'
+description: 'Link at the top of the Publications Group page; the "More about..." link.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

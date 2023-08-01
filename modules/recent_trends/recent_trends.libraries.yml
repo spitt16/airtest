@@ -1,0 +1,16 @@
+recent_trends_helper:
+  css:
+    base:
+      css/PluginData/recent_trends_helper.css: {}
+      https://code.highcharts.com/7.2.0/css/highcharts.css: {}
+  js:
+    js/PluginData/recent_trends_helper.js: {}
+    https://code.highcharts.com/7.2.0/highcharts.js: {}
+    https://code.highcharts.com/7.2.0/modules/exporting.js: {}
+    https://code.highcharts.com/7.2.0/modules/export-data.src.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - anblue/airnowgov-base
+    - anblue/airnowgov-reportingarea
+    - anblue/airnowgov-geolocation

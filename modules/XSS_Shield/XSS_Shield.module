@@ -1,0 +1,64 @@
+<?php
+/**
+ * 	Use a form alter hook to strip the XSS of offensive strings
+ *
+ *	v1.0 Initial version by Chris Wilkes cw 2019-05-23
+ *  v1.1 Added "font-family" hacks to the array list; made out put full HTML page.  cw 2019-07-23
+ *  v1.2 Added removal of slashes from URI; Now redirecting to top-level admin page.  cw 2019-08-02
+ *  v1.3 Added replacement of escaped Hex values in URI.  cw 2019-08-22
+ *
+*/
+use Drupal\Core\Form\FormStateInterface;
+/**
+ * Implements hook_form_alter() so that the check is done on every form on every page.
+ */
+function XSS_Shield_form_alter(&$form, FormStateInterface $form_state, $form_id) { 
+	// Get the actual request string in the URL; server agnostic
+	$uri = strtolower("$_SERVER[REQUEST_URI]");
+	// ONLY on "admin" or "revisions" pages; Drupal 8 can handle itself on the Public side; GIVEN that TWIG debug is OFF.
+	if (strpos($uri, "admin") > 0 OR strpos($uri, "revisions") > 0 ) {
+		
+		// This section is a response to the 2019-08-16 App Scan. cw 2019-08-21
+		// Walk the string looking for "Hex" values and replace them so that the $xss_checks array below will work properly.
+		// Let's look at each chunk of the URI exploding on the slashes.
+		foreach (explode('/',$uri) as &$potentialHex) {
+			$test = is_numeric($potentialHex);	
+			// If the entire chunk is NOT a number, then let's look at the first two characters.
+			if (is_numeric($potentialHex) != 1) {
+				// The chunk is NOT a number 
+				// If the first two characters are a hex value, then we may have issues.
+				$testHex = str_split($potentialHex,2);
+				if (ctype_xdigit($testHex[0])) {
+					// It is a valid Hex value...
+					// Hit! Found a Hex! So... Put the Hex'd character back in the URI as a string
+					$uri = str_replace("/$testHex[0]",hex2bin($testHex[0]),$uri,$i);
+				}
+			}
+		}
+		// Proceed with the search for XSS Handlers in the URI cw 2019-08-22
+		
+		// Strip all slashes via a new function cw 2019-08-01
+		$uri = removeSlashes($uri);
+		// Build an array of things to look for
+		$xss_checks = array();
+		$xss_checks = array('%3e', '%3c', '>', '<');
+		// Add Event handlers list from https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet#Event_Handlers
+		array_push($xss_checks, 'onmouseover', 'fscommand', 'onabort', 'onactivate', 'onafterprint', 'onafterupdate', 'onbeforeactivate', 'onbeforecopy', 'onbeforecut', 'onbeforedeactivate', 'onbeforeeditfocus', 'onbeforepaste', 'onbeforeprint', 'onbeforeunload', 'onbeforeupdate', 'onbegin', 'onblur', 'onbounce', 'oncellchange', 'onchange', 'onclick', 'oncontextmenu', 'oncontrolselect', 'oncopy', 'oncut', 'ondataavailable', 'ondatasetchanged', 'ondatasetcomplete', 'ondblclick', 'ondeactivate', 'ondrag', 'ondragend', 'ondragleave', 'ondragenter', 'ondragover', 'ondragdrop', 'ondragstart', 'ondrop', 'onend', 'onerror', 'onerrorupdate', 'onfilterchange', 'onfinish', 'onfocus', 'onfocusin', 'onfocusout', 'onhashchange', 'onhelp', 'oninput', 'onkeydown', 'onkeypress', 'onkeyup', 'onlayoutcomplete', 'onload', 'onlosecapture', 'onmediacomplete', 'onmediaerror', 'onmessage', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseup', 'onmousewheel', 'onmove', 'onmoveend', 'onmovestart', 'onoffline', 'ononline', 'onoutofsync', 'onpaste', 'onpause', 'onpopstate', 'onprogress', 'onpropertychange', 'onreadystatechange', 'onredo', 'onrepeat', 'onreset', 'onresize', 'onresizeend', 'onresizestart', 'onresume', 'onreverse', 'onrowsenter', 'onrowexit', 'onrowdelete', 'onrowinserted', 'onscroll', 'onseek', 'onselect', 'onselectionchange', 'onselectstart', 'onstart', 'onstop', 'onstorage', 'onsyncrestored', 'onsubmit', 'ontimeerror', 'ontrackchange', 'onundo', 'onunload', 'onurlflip', 'seeksegmenttime', 'font-family:expression', 'expression(alert', 'font-family: expression', 'font-family:');		
+		// Loop the array of bad things
+		foreach ($xss_checks as $xss) {
+			if (strpos($uri, $xss) > 0) {
+				// Hit! Found a hack! 
+				// Send the Browser to the top level admin page cw 2019-08-02
+				header('Location: /admin/');
+				// Let's just stop doing this page... okay?
+				exit;
+				} // End of XSS search if
+			} // End of foreach
+	} //End of Admin pages if		
+}	// End of the function
+// Function to strip all slashes cw 2019-08-01
+// https://stackoverflow.com/questions/8266476/how-can-i-remove-slashes-from-strings
+function removeSlashes($string = '')
+{
+    return stripslashes(str_replace('/', '', $string));
+}

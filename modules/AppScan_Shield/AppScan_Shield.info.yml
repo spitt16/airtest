@@ -1,0 +1,8 @@
+name: IBM AppScan Shield Module
+author: Chris Wilkes
+date: 2019-05-21
+description: Creates a customizable Shield to protect Drupal 8 Admin from IBM AppScan hacks.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

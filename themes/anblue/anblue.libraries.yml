@@ -1,0 +1,118 @@
+sample-styling:
+  version: 1.x
+  css:
+    theme:
+      css/base.css: {}
+
+navigation:
+  css:
+    base:
+      css/navigation/aqi_dial.css: {}
+      css/navigation/navigation_helper.css: {}
+  js:
+    js/navigation/navigation_helper.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+font-awesome:
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css: {}
+
+moment:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.js: {}
+
+bands:
+  css:
+    theme:
+      css/band-cards/band.css: {}
+      css/band-cards/cards.css: {}
+      css/band-cards/print.css: {}
+
+  js:
+    js/bands.js: {}
+    js/cards.js: {}
+
+lib-pubsubjs:
+  js:
+    js/lib/PubSubJS/pubsub.js: {}
+
+ol:
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol.css: {}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.4/ol.js: {}
+
+leaflet:
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css: {}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js: {}
+
+esri-leaflet:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/esri-leaflet/2.2.3/esri-leaflet.js: {}
+
+# AirNowDrupal #116 Remove Highcharts from Dial Page cw 2019-04-04
+#lib-highcharts:
+#  css:
+#    base:
+#    https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.4/css/highcharts.css: {}
+#  js:
+#    https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.4/highcharts.js: {}
+#    https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.4/modules/exporting.js: {}
+#    https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.4/modules/export-data.src.js: {}
+
+lib-tippy:
+  css:
+    base:
+      css/lib/Tippy/tippy.css: {}
+  js:
+    js/lib/Tippy/tippy.all.js: {}
+
+airnowgov-base:
+  js:
+    js/airnowgov/base.js: {}
+  dependencies:
+    - anblue/lib-pubsubjs
+    - anblue/leaflet
+    - anblue/esri-leaflet
+    - anblue/lib-highcharts
+    - anblue/lib-tippy
+
+airnowgov-storage:
+  js:
+    js/airnowgov/storage.js: {}
+  dependencies:
+    - anblue/base
+
+airnowgov-geolocation:
+  js:
+    js/airnowgov/geolocation.js: {}
+  dependencies:
+    - anblue/lib-pubsubjs
+    - anblue/base
+    - anblue/storage
+
+airnowgov-reportingarea:
+  js:
+    js/airnowgov/reportingarea.js: {}
+  dependencies:
+    - anblue/lib-pubsubjs
+    - anblue/base
+    - anblue/storage
+    - anblue/geolocation
+
+airnowgov-pageloader:
+  js:
+    js/airnowgov/pageloader.js: {}
+  dependencies:
+    - anblue/lib-pubsubjs
+    - anblue/base
+    - anblue/storage
+    - anblue/geolocation
+    - anblue/reportingarea

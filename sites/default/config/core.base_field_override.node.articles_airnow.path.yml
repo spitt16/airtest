@@ -1,0 +1,20 @@
+uuid: 34643f84-1d1d-447d-9f85-30d70b7c3975
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.articles_airnow
+  module:
+    - path
+id: node.articles_airnow.path
+field_name: path
+entity_type: node
+bundle: articles_airnow
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

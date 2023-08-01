@@ -1,0 +1,18 @@
+uuid: ccbada3f-8a07-4c4f-ab73-e4d9e8c02650
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement
+id: node.announcement.created
+field_name: created
+entity_type: node
+bundle: announcement
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

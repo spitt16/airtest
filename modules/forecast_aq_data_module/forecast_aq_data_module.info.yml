@@ -1,0 +1,11 @@
+name: Forecast Air Quality Data Module
+type: module
+description: Provides the functions to create a Forecast Air Quality Data Component
+package: Custom
+
+type: module
+core: 8.x
+
+
+libraries:
+  - forecast_aq_data_module/forecast_aq_data_helper

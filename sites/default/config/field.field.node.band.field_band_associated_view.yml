@@ -1,0 +1,51 @@
+uuid: f4115fd4-b7ff-4fc6-b406-d11b622ffd8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_band_associated_view
+    - node.type.band
+  module:
+    - viewsreference
+id: node.band.field_band_associated_view
+field_name: field_band_associated_view
+entity_type: node
+bundle: band
+label: 'Band Associated View'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    page: page
+    default: 0
+    block: 0
+    feed: 0
+  preselect_views:
+    air_quality_and_health: 0
+    announcement: 0
+    asthma_test: 0
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    content: 0
+    content_recent: 0
+    files: 0
+    fires: 0
+    frontpage: 0
+    home_page: 0
+    older_adults_test: 0
+    page: 0
+    taxonomy_term: 0
+    test_page: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+field_type: viewsreference

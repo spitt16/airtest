@@ -1,0 +1,18 @@
+uuid: 22ae9eb5-e6c8-4170-94cc-02ed8588c0db
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sections
+id: node.sections.created
+field_name: created
+entity_type: node
+bundle: sections
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,13 @@
+which_flag_helper:
+  css:
+    base:
+      css/PluginData/which_flag_helper.css: {}
+      css/PluginData/print.css: {}
+  js:
+    js/PluginData/which_flag_helper.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - anblue/airnowgov-base
+    - anblue/airnowgov-reportingarea
+    - anblue/airnowgov-geolocation

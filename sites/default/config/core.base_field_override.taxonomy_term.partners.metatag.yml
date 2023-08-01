@@ -1,0 +1,18 @@
+uuid: e89785a7-cc0e-4e52-8c00-970ad49f7481
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.partners
+id: taxonomy_term.partners.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: partners
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

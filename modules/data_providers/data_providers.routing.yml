@@ -1,0 +1,7 @@
+data_providers.data_providers_page:
+  path: '/data-providers/{term_name}'
+  defaults:
+    _controller: '\Drupal\data_providers\Controller\DataProvidersController::dataProvidersPage'
+    _title: 'Data Providers Page'
+  requirements:
+    _permission: 'access content'

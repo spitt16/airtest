@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function random_marquee_image_loader_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'random_marquee_image_template' => array(
+      'variables' => array(
+        'image' => NULL,
+      ),
+      'template' => 'random_marquee_image',
+    ),
+  );
+  return $variables;
+}

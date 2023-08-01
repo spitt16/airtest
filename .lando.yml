@@ -1,0 +1,13 @@
+name: airnowgov
+recipe: pantheon
+config:
+  framework: drupal8
+  site: airnowgov
+  id: f83503b7-69a1-4c49-9b98-6f897a749a51
+  conf:
+    php: php.ini
+excludes:
+  - core
+  - vendor
+  - modules/contrib
+  - themes/contrib

@@ -1,0 +1,103 @@
+{%
+set classes = [
+'field',
+'field--name-' ~ field_name|clean_class,
+'field--type-' ~ field_type|clean_class,
+'field--label-' ~ label_display,
+]
+%}
+{%
+set title_classes = [
+'field--label',
+label_display == 'visually_hidden' ? 'sr-only',
+]
+%}
+
+<div class="container">
+  <div class="row">
+    <div class="band-style-general band-style-content">
+      <div class="band-title-row-white">
+        <div class="band-title-holder">
+          <h1 id="trends-title" class="band-title-white">Trends</h1>
+        </div>
+      </div>
+
+      <div class="band-card-row-light row">
+        <div class="band-custom-section trends-section">
+          <div id="chart" class="chart" tabindex="0"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="band-style-general band-style-content">
+      <div class="band-card-row-white row">
+        <div class="band-custom-section trends-section">
+          <div id="chart-week" class="chart" tabindex="0"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="band-style-general band-style-content">
+      <div class="band-card-row-light row">
+        <div class="band-custom-section trends-section">
+          <div id="chart-month" class="chart" tabindex="0"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="po-aqi-scale">
+  <button class="po-scale-item po-aqi-scale-btn">
+    <img class="aqi-legend-icon" src="/{{ directory }}/images/Legend_Color_block.svg" alt="">
+    <span class="fa fa-chevron-circle-down"></span>AQI Legend
+  </button>
+  <div class="po-scale-item po-aqi-scale-display po-aqi-scale-display-hidden">
+    <div class="row strip-margin scale-section-title">
+      <div class="col-xs-10 po-title-container">
+        <p class="display-item po-title-text">Air Quality Index Scale </p>
+      </div>
+      <div class="col-xs-2 display-close-holder">
+        <span class="fa fa-times"></span>
+      </div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-good">
+      <div class="col-xs-4 po-aqi-text">0 - 50</div>
+      <div class="col-xs-8 po-category-text">Good</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-moderate">
+      <div class="col-xs-4 po-aqi-text">51 - 100</div>
+      <div class="col-xs-8 po-category-text">Moderate</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-sensitive-unhealthy">
+      <div class="col-xs-4 po-aqi-text">101 - 150</div>
+      <div class="col-xs-8 po-category-text">Unhealthy for Sensitive Groups (USG)</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-unhealthy">
+      <div class="col-xs-4 po-aqi-text">151 - 200</div>
+      <div class="col-xs-8 po-category-text">Unhealthy</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-very-unhealthy">
+      <div class="col-xs-4 po-aqi-text">201 - 300</div>
+      <div class="col-xs-8 po-category-text">Very Unhealthy</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-hazardous">
+      <div class="col-xs-4 po-aqi-text">301 - 500</div>
+      <div class="col-xs-8 po-category-text">Hazardous</div>
+    </div>
+    <div class="row strip-margin scale-section scale-section-info">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-8 value-text po-category-text">
+        <p>Values above 500 are <a href="/aqi/aqi-basics/extremely-high-levels-of-pm25">beyond</a> the AQI scale.</p>
+      </div>
+    </div>
+  </div>
+</div>

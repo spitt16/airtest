@@ -1,0 +1,175 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field--label',
+    label_display == 'visually_hidden' ? 'sr-only',
+  ]
+%}
+{% set navigation_obj = constructNavigation(items[0].content["#options"].entity.nid[0].value) %}
+{% set navigation = navigation_obj.getTopNavigationObjs() %}
+{% set primaryStatusMessage = navigation_obj.getStatusMessage1() %}
+{% set statusMessages = navigation_obj.getStatusMessages() %}
+
+
+<div id="master-navbar" class="navbar navbar-fixed-top top-bar top-color-def">
+  <div class="navbar-holder">
+    <div class="navigation-holder">
+      <a href="/">
+        <div class="navbar-header" id="navbarHeader"  style="float:left;">
+          {#<h1 class="hidden">AirNow</h1>#}
+          <img alt="{{ navigation_obj.getLogoImage().getAltText() }}" src="{{ navigation_obj.getLogoImage().getImageUrl() }}">
+        </div>
+      </a>
+      <div class="dropdown dropdown-search">
+        <button id="search-btn" class="dropbtn" tabindex="-1" name="Search" aria-label="Search">
+          <span class="hidden">Search</span>
+          <span class="fa fa-search" aria-hidden="true"></span>
+          <span class="fa fa-times" aria-hidden="true" style="display: none;"></span>
+        </button>
+        <div id="search-content" class="dropdown-content">
+
+          {#<label class="hidden" for="search-bar-nav">Search Bar</label>#}
+          {#<input id="search-bar-nav" class="search-bar" type="text">#}
+          {#<a><span class="fa fa-search" aria-hidden="true"></span></a>#}
+          {##}
+
+          <form class="epa-search" method="get" action="https://search.epa.gov/epasearch">
+            <label class="hidden" for="what-look">Search Bar</label>
+            <input class="search-bar" type="text" name="querytext" id="what-look" value=""/>
+            <button class="search-submit-button" id="search-button" type="submit" title="Search"><span class="fa fa-search" aria-hidden="true"></span></button>
+            <input type="hidden" name="typeofsearch" value="area" />
+            <input type="hidden" name="areaname" value="AirNow" />
+            <input type="hidden" name="inmeta" value="URL~www.airnow.gov">
+          </form>
+
+          {#<a><span class="fa fa-times" aria-hidden="true"></span></a>#}
+        </div>
+      </div>
+      <div class="mobile-dropdown">
+        <span class="fa fa-bars" aria-hidden="true"></span>
+      </div>
+      <div class="dropdown mobile-city visible-xs noData">
+        <h2 class="location-label">No Location Selected</h2>
+      </div>
+      <div class="mobile-scroll">
+      {% for k, v in navigation %}
+        {% set current_obj = navigation[k] %}
+        {% set current_header_link = current_obj.getHeaderNavigationLink() %}
+        {% set navigation_links = current_obj.getNavigationLinks() %}
+        <div class="dropdown dropdown-gen">
+          <nav id="{{current_header_link.getLinkTitle() | replace({'&': 'and', " ": "-"}) | lower}}-btn" class="dropbtn"
+          {# AirNowDrupal#372 Highlight Fires link cw 2020-10-20 #}
+		  {# Adding Hilighted Fires link for fire season 2021 cw 2021-07-23 #}
+          {% if current_header_link.getLinkTitle() == 'Fires' %}
+            {# Fire Mode is ON cw 2022-06-07 #}
+            style="background-color: darkred;"
+          {% endif %}
+          >
+
+            {% if current_header_link.getLinkUrl()|length > 0 %}
+              {% if current_header_link.getOpenNewTab() %}
+                {% set target = "_blank" %}
+              {% else %}
+                {% set target = "_self" %}
+              {% endif %}
+              <a class="main-link dropbtn-nav-link" href="{{ current_header_link.getLinkUrl() }}" target="{{ target }}" tabindex="0"><nav id="{{ current_header_link.getLinkTitle() }}">{{ current_header_link.getLinkTitle() }}</nav></a>
+            {% else %}
+              {{ current_header_link.getLinkTitle() }}
+            {% endif %}
+          </nav>
+          <div class="dropdown-content">
+            {% for navigation_link in navigation_links %}
+              {% set current_main_link = navigation_link.getMainNavigationLinks()[0] %}
+              {% if current_main_link.getInHeader() %}
+                  {% if current_main_link.getOpenNewTab() %}
+                    {% set target = "_blank" %}
+                  {% else %}
+                    {% set target = "_self" %}
+                  {% endif %}
+                  <a class="main-link nav-link" href="{{ current_main_link.getLinkUrl() }}" target="{{ target }}"
+                  {# Adding Hilighted Fires link for fire season 2021 cw 2021-07-23 #}
+                  {% if current_main_link.getLinkTitle()|trim == 'Fire and Smoke Map' %}
+                    {# Fire Mode is ON cw 2022-06-07 #}
+                    style="background-color: darkred;"
+                  {% endif %}
+                  >{{ current_main_link.getLinkTitle() }}</a>
+                {% for sub_navigation_link in navigation_link.getSubNavigationLinks() %}
+                  {% if sub_navigation_link.getInHeader() %}
+                    {% if sub_navigation_link.getOpenNewTab() %}
+                      {% set target = "_blank" %}
+                    {% else %}
+                      {% set target = "_self" %}
+                    {% endif %}
+                    <a class="sub-link nav-link" href="{{ sub_navigation_link.getLinkUrl() }}" target="{{ target }}">{{ sub_navigation_link.getLinkTitle() }}</a>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div id="bb-nav" class="bb-holder">
+    <div class="bb-info-holder noData">
+      <div class="strip-padding status-message-container" id="status-message-container">
+        {% include 'nav_left_side_toolbar.html.twig' %}
+      </div>
+      <div class="strip-padding">
+        {% include 'nav_right_side_toolbar.html.twig' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{# Tippy Container #}
+<div style="display: none;" id="tippy_container"></div>

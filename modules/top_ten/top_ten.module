@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+ function top_ten_theme($existing, $type, $theme, $path) {
+
+   $variables = array(
+     'top_ten_template' => array(
+       'variables' => array(
+       ),
+       'template' => 'top-ten',
+     ),
+   );
+   return $variables;
+ }

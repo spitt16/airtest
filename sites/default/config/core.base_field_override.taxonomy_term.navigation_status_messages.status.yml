@@ -1,0 +1,22 @@
+uuid: 89e6605e-5d9f-4876-9d34-0bc6887a4174
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.navigation_status_messages
+id: taxonomy_term.navigation_status_messages.status
+field_name: status
+entity_type: taxonomy_term
+bundle: navigation_status_messages
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

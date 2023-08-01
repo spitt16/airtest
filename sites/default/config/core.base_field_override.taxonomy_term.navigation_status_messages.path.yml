@@ -1,0 +1,20 @@
+uuid: 862c8fa1-d767-4801-a47e-f3d63f86bb99
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.navigation_status_messages
+  module:
+    - path
+id: taxonomy_term.navigation_status_messages.path
+field_name: path
+entity_type: taxonomy_term
+bundle: navigation_status_messages
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

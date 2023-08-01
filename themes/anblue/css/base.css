@@ -1,0 +1,463 @@
+:root {
+  /*Breakpoints (Not used but as a reference)*/
+  --breakpt-xs-max: 767px;
+  --breakpt-sm-min: 768px;
+  --breakpt-sm-max: 991px;
+  --breakpt-md-min: 992px;
+  --breakpt-md-max: 1199px;
+  --breakpt-lg-min: 1200px;
+
+  /*Colors*/
+  --color-dim-grey: #696969;
+  --color-super-light-grey: #e3e3e3;
+  --color-card-border-grey: #E0E0E0;
+  --color-silver: #C0C0C0;
+  --color-light-grey: #D5D5D5;
+  --color-solid-grey: #808080;
+
+  --color-dark-blue: #167fac;
+
+  --color-aqi-green: #00e400;
+  --color-aqi-yellow: #ffff00;
+  --color-aqi-orange: #ff7e00;
+  --color-aqi-red: #ff0000;
+  --color-aqi-purple: #99004c;
+  --color-aqi-maroon: #7e0023;
+
+/*Widths*/
+  --global-outer-width: 1440px;
+  --global-width: 1280px;
+  --global-padded-width: calc(var(--global-width) - 40px);
+
+
+}
+
+/*@font-face {*/
+  /*font-family: "Droid Sans";*/
+  /*src: url('DroidSans-webfont.eot');*/
+  /*src: url('DroidSans-webfont.eot?#iefix') format('embedded-opentype'),*/
+  /*url('DroidSans-webfont.woff') format('woff'),*/
+  /*url('DroidSans-webfont.ttf') format('truetype'),*/
+  /*url('DroidSans-webfont.svg#DroidSansRegular') format('svg');*/
+  /*font-weight: normal;*/
+  /*font-style: normal;*/
+/*}*/
+
+@font-face {
+  font-family: DroidSansFont;
+  src: url(DroidSans-webfont.ttf),
+       url('DroidSans-webfont.eot');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Fix gap below black bar in production cw 2022-08-29 */
+@media all and (min-width: 768px) {
+div.main-container.js-quickedit-main-content.testcontents {
+	padding-top: 0px;
+	}
+}
+
+/* AIR-557 Make Language Switcher into a Language Bar cw 2022-08-15 */
+/* https://alistapart.com/article/taminglists/ */
+.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix ul { /* the position */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: -15px;
+}
+.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix ul li{ /* make it a row */
+    display: inline;
+    }
+.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix ul li:before { /* add the pipe character */
+ content: "\07C";
+ }
+.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix ul li:first-child:before{ /* remove the very first pipe */
+   content: none;
+ }
+ 
+/* AIR-557 Control Language Switcher for screen width cw 2022-08-12 */
+.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix {
+	position: relative;
+	height:	0px;
+	top: 135px;
+	z-index: 1;
+}
+@media all and (max-width: 767px) {
+	/* mobile */
+	.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix {
+		top: 125px;
+		left: 65vw;
+		}
+	/*div.band-title-light {
+		padding-top: 50px;
+	}
+	*/
+}
+@media all and (min-width: 768px) {
+	/* ipsd snd small web */
+	.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix {
+		left: 80vw;
+		}
+	/*div.band-title-holder {
+		top: 10px;
+	}*/
+}
+@media all and (min-width: 900px) {
+	/* web */
+	.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix {
+		left: 75vw;
+		}
+	/*div.band-title-holder {
+		top: 10px;
+	}*/
+}
+@media all and (min-width: 1551px) {
+	/* large web */
+	.language-switcher-language-url.block.block-language.block-language-blocklanguage-interface.clearfix {
+		left: 70vw;
+		}
+	/*div.band-title-holder {
+		top: 10px;
+	}*/
+}
+ 
+
+	
+/* AirNowDrupal # 124 Tippy Close button holder; Hide it cw 2019-04-15 */
+.tippy-close-holder {
+  display: none;
+}
+
+@media all and (max-width: 767px) {
+  /* AirNowDrupal # 124 Tippy Close button holder; Show it for mobile cw 2019-04-15 */
+  .tippy-close-holder {
+    display: block;
+  }
+
+  .main-content {
+    margin-top: 100px;
+  }
+
+  img.banner-image {
+    height: 18em !important;
+  }
+
+  .publications-sidebar {
+    padding: 0;
+  }
+
+  .publications-sidebar-container {
+    margin-top: -15px !important;
+    padding: 0;
+  }
+
+  .subpage-header {
+    margin-top: 103px;
+  }
+
+}
+
+/* Styles targeting the WebForms cw 2019-02-25 */
+.webform-submission-form {
+    padding-top: 25px;
+	padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+}
+
+.webform-submission-form, .body {
+    background-color: white;
+}
+
+.publication-table-img {
+  max-width: 105px;
+}
+
+@media all and (min-width: 768px) {
+  .main-content {
+    margin-top: 115px;
+  }
+}
+
+.strip-padding {
+  padding: 0 !important;
+}
+
+.strip-margin {
+  margin: 0 !important;
+}
+
+body {
+  background-color: #BDBDBD;
+  font-family: "DroidSansFont";
+}
+
+.pollutant-status-circle.default {
+  background-color: grey;
+  color: white;
+}
+
+.pollutant-status-circle.good {
+  background-color: #00E400;
+  color: black;
+}
+
+.pollutant-status-circle.moderate {
+  background-color: #FFFF00;
+  color: black;
+}
+
+.pollutant-status-circle.unhealthy-sensitive {
+  background-color: #FF7E00;
+  color: white;
+}
+
+.pollutant-status-circle.unhealthy {
+  background-color: #FF0000;
+  color: white;
+}
+
+.pollutant-status-circle.very-unhealthy {
+  background-color: #8F3E96;
+  color: white;
+}
+
+.pollutant-status-circle.hazardous {
+  background-color: #7E0023;
+  color: white;
+}
+
+.aqi-orb.default {
+  background-color: grey;
+  color: white;
+}
+
+.aqi-orb.good {
+  background-color: #00E400;
+  color: black;
+}
+
+.aqi-orb.moderate {
+  background-color: #FFFF00;
+  color: black;
+}
+
+.aqi-orb.unhealthy-sensitive {
+  background-color: #FF7E00;
+  color: white;
+}
+
+.aqi-orb.unhealthy {
+  background-color: #FF0000;
+  color: white;
+}
+
+.aqi-orb.very-unhealthy {
+  background-color: #8F3E96;
+  color: white;
+}
+
+.aqi-orb.hazardous {
+  background-color: #7E0023;
+  color: white;
+}
+
+.user-login-form {
+  margin-top: 130px;
+}
+
+/*.show-under-nav {*/
+  /*margin-top: 15px;*/
+/*}*/
+
+.carousel-indicators-numbers li {
+  text-indent: 0;
+  margin: 0 2px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  line-height: 30px;
+  color: #ffffff;
+  background-color: #565656;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.carousel-indicators-numbers li.active, .carousel-indicators-numbers li:hover {
+  margin: 0 2px;
+  width: 30px;
+  height: 30px;
+  background-color: #337ab7;
+}
+
+.carousel-indicators {
+  left: 20px;
+  width: auto !important;
+  margin-left: 0px !important;
+}
+
+div.item.active > img.banner-image {
+  height: 25em;
+  width: 100%;
+}
+
+.banner-text-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: white;
+  padding: 0 10px 15px 20px;
+  background-color: rgba(0,0,0,0.5);
+  width: 60%;
+  height: auto;
+}
+
+.banner-description {
+  padding-top: 5px;
+}
+
+.banners-row {
+  padding-top: 15px;
+}
+
+.related-announcements-container {
+  background-color: #E0E0E0;
+  height: 350px;
+  width: 100%;
+  font-size: 17px;
+  padding: 20px 15px;
+}
+
+.contact-us-info {
+  white-space: nowrap;
+  margin-top: 15px;
+}
+
+.contact-us-info > a{
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.description-container {
+  padding: 0px 15px;
+  font-size: 16px;
+}
+
+.subpage-description {
+  padding: 25px 0px ;
+  padding-bottom: 15px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.publications-table {
+  width: 100%;
+}
+
+.publications-table, .publications-table th, .publications-table td {
+  border: 2px solid gray;
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+/*.publication-title {*/
+  /*!*margin-top: -15px;*!*/
+/*}*/
+
+.publication-description {
+  font-size: 16px;
+}
+
+.publications-header-row th {
+  background-color: #E0E0E0 !important;
+}
+
+.publications-sidebar li {
+  font-size: 15px;
+}
+
+.publications-sidebar {
+  list-style: none;
+}
+
+.publications-sidebar-container {
+  margin-top: -80px;
+  line-height: 3;
+}
+
+.current-term-link {
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+
+td.publication-info {
+  padding: 10px 20px 20px 20px;
+}
+
+.related-publications-item {
+  margin-left: 25px;
+}
+
+.publications-page {
+  padding-bottom: 50px;
+  margin-top: 100px !important;
+}
+
+/* Global Figure Styling */
+figure {
+  display: table;
+  margin: 1em 10px;
+}
+
+figure img {
+  display: block;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+
+.region-sidebar-first .menu--sections-menus {
+	position:none !important;
+}
+
+.region-content .sections {
+	position:inherit;
+}
+
+
+.region-content .articles-airnow {
+	position:inherit;
+}
+
+.item-list {
+	width:600px;
+	float:left;
+}
+
+.band-card-row a:visited {
+	color:none;
+}
+
+.nav>li>a {
+	padding:10px 0px !important;
+}
+
+@media all and (min-width: 320px) {
+	.item-list {
+		width:100%;
+	}
+}
+
+.searchMenu.suggestionsMenu.show {
+  display: block !important;
+}

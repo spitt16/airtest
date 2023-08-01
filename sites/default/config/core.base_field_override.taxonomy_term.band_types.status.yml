@@ -1,0 +1,22 @@
+uuid: 8056d361-bf8a-48de-a9d3-67fce978c470
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_types
+id: taxonomy_term.band_types.status
+field_name: status
+entity_type: taxonomy_term
+bundle: band_types
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

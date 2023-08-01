@@ -1,0 +1,18 @@
+uuid: f2d1dc81-4283-4bf1-8113-fca11ddef5ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.link_image
+id: paragraph.link_image.created
+field_name: created
+entity_type: paragraph
+bundle: link_image
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

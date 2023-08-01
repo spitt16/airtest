@@ -1,0 +1,11 @@
+name: Publications Pages
+type: module
+description: Publication page displays
+package: Custom
+
+type: module
+core: 8.x
+
+
+libraries:
+  - publications_pages/publications_pages_helper

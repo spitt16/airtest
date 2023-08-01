@@ -1,0 +1,95 @@
+{% set parentPath = band.getFormattedPath(band.getTermParent().getName()) %}
+
+<div class="container-fluid">
+    <div>
+      <h1>
+         {{ band.getTitle() }}
+      </h1>
+    {# find this Group of Partners cw 2018-05-22 #}
+	  {% set currentTerm = '' %}
+    {% for term in band.getRelatedTerms() %}
+		{% if (term.tid == band.getTid()) %}
+			  {% set currentTerm = term %}
+		{% endif %}
+    {% endfor %}
+    <div class="col-sm-8 no-padding" style="padding-bottom: 40px;">
+		<table class="Partners-table">
+		{% for state in currentTerm.children %}
+
+        <tr>
+          <td style="vertical-align: top;">
+			<h4><strong>{{ state.name }}</strong></h4>
+		  </td>
+          <td class="partner-info" style="padding: 10px;>
+            <div>
+              <h4 class="partner-title">
+
+              {# AirNowDrupal#334 Sort the list cw 2020-07-15 #}
+    
+			  	{% for agency in state.children %}
+          {% set agencies = band.getPartnersForTermId(agency.tid) %}
+					{% for agency in agencies %}
+            {% if (agency.partner_url is null) %} {# AirNowDrupal#334 No links without URL cw 2020-07-14  #}
+              {{ agency.partner_name }}<br>
+            {% else %}
+              <a href="{{ agency.partner_url }}">{{ agency.partner_name }}</a><br>
+            {% endif %}
+					{% endfor %}
+				{% endfor %}
+			  </h4>
+            </div>
+          </td>
+        </tr>
+
+		{% endfor %}
+
+      </table>
+    </div>
+	</div>
+
+    <div class="col-sm-4 publications-sidebar-container">
+      <div class="">
+        <ul class="publications-sidebar">
+          <li>
+            <h3>
+              <strong>
+                Partners
+              </strong>
+            </h3>
+          </li>
+
+          {% for term in band.getRelatedTerms() %}
+              {% if (term.tid == band.getTid()) %}
+                <li class="current-term-link">
+                  <strong>
+                      <a href="/partners/{{ "#{band.getFormattedPath(term.name)}" }}">
+                        {{ term.name }}
+                      </a>
+                  </strong>
+                </li>
+                {% for relatedpartner in band.getPartnersForTermId(term.tid) %}
+                  <li class="related-publications-item">
+                    {{ relatedpartner.partner_title }}
+                  </li>
+                {% endfor %}
+              {% else %}
+                <li>
+                    <a href="/partners/{{ "#{band.getFormattedPath(term.name)}" }}">
+                      {{ term.name }}
+                    </a>
+                </li>
+                {% for relatedpartner in band.getPartnersForTermId(term.tid) %}
+                  <li class="related-publications-item">
+                    {{ relatedpartner.partner_title }}
+                  </li>
+                {% endfor %}
+              {% endif %}
+
+
+          {% endfor %}
+
+      </ul>
+      </div>
+    </div>
+
+</div>

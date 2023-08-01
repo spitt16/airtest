@@ -1,0 +1,22 @@
+uuid: b7071465-e565-4f65-a5ad-d64a42f6cab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.articles_airnow
+id: node.articles_airnow.status
+field_name: status
+entity_type: node
+bundle: articles_airnow
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

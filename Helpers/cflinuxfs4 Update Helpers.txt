@@ -1,0 +1,21 @@
+We need to update the Linux File System to version 4 for exitisting and future deployments. See Cloud Foundry documentation here:
+
+	https://docs.cloudfoundry.org/adminguide/stack-auditor.html
+
+Important! The relesaes at this URL are already Unzipped.
+	https://github.com/cloudfoundry/stack-auditor/blob/master/README.md
+
+Use these installation steps... skip Step # 2:
+	
+	1) Download the Stack Auditor binary for your OS from Releases in the Stack Auditor repository on GitHub.
+	2) Install the plug-in with the cf CLI:
+		cf install-plugin PATH-TO-BINARY
+		cf install-plugin C:\Users\chris\Downloads\stack-auditor-windows-64
+
+To convert an app:
+
+	cf change-stack <app> cflinuxfs3
+
+To See the current state of all the apps:
+
+	cf audit-stack

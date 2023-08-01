@@ -1,0 +1,223 @@
+##################################################
+#### airnow.gov PRODUCTION #### cw 2021-04-21 ####
+##################################################
+
+# BLUE BLUE BLUE
+# Change directory to "prod"
+cf t -o epa-airnow -s airnow-prod
+
+# cd to YOUR root directory
+cd C:\Users\chris\sites\airnowtomed
+
+# Going Blue
+cf push airnow-blue -m 600m -i 1 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+
+### RUN Cypress Tests! on Blue 
+
+cf scale airnow-blue -i 5;cf a
+	# wait for 5 instances to build and CPU% to drop
+cf map-route airnow-blue www.airnow.gov; cf unmap-route airnow-green www.airnow.gov
+	#Flip Card; wait for cf top "airnow-green" "REQs" to drop to zero
+cf scale airnow-green -i 1
+cf scale airnow-blue -i 10
+cf stop airnow-green
+
+
+### RUN Cypress Tests! on www.airnow.gov
+
+# GREEN GREEN GREEN
+# Change directory to "prod"
+cf t -o epa-airnow -s airnow-prod
+
+# cd to YOUR root directory
+cd C:\Users\chris\sites\airnowtomed
+
+ 
+# Going Green  
+cf push airnow-green -m 600m -i 1 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+ 
+### RUN Cypress Tests! on Green
+
+cf scale airnow-green -i 5;cf a
+	# wait for 5 instances to build and CPU% to drop
+cf map-route airnow-green www.airnow.gov; cf unmap-route airnow-blue www.airnow.gov
+	#Flip Card; wait for cf top "airnow-blue" "REQs" to drop to zero
+cf scale airnow-blue -i 1; cf a;
+cf scale airnow-green -i 10;cf a
+cf stop airnow-blue; cf a
+
+### RUN Cypress Tests! on www.airnow.gov
+
+##################################################
+##################################################
+
+######## NEW Blue Rolling deployment ##########
+cf push airnow-blue -m 600m -b https://github.com/cloudfoundry/nginx-buildpack.git --strategy rolling; cf a
+
+## PowerShell Command to see the file changed in the last Hour
+Get-ChildItem -Path . -Recurse| ? {$_.LastWriteTime -gt (Get-Date).AddHours(-1)}
+# last day
+Get-ChildItem -Path . -Recurse| ? {$_.LastWriteTime -gt (Get-Date).AddDays(-15)}
+
+
+
+
+# Basic Steps with EXAMPLE "airnowdev" commands
+# 1
+#to deploy with an Nginx buildpack -- deploy to the Unused color!
+cf push airnowdev-green -m 40m -i 5 -b https://github.com/cloudfoundry/nginx-buildpack.git
+
+# 2 Blue/Green deployment -- change colors
+# going BLUE
+cf map-route airnowdev-blue app.cloud.gov -n airnowdev; cf unmap-route airnowdev-green app.cloud.gov -n airnowdev; cf a
+# OR
+# going GREEN
+cf map-route airnowdev-green app.cloud.gov -n airnowdev; cf unmap-route airnowdev-blue app.cloud.gov -n airnowdev; cf a
+
+# 3
+# Switch the CDN Route, TOO!
+cf map-route airnowdev-green airnow-cdn.epa.gov; cf unmap-route airnowdev-blue airnow-cdn.epa.gov; cf a
+ 
+# $
+# stop the old color -- to save cpu cycles, but still there as a roll back
+cf stop <-green OR -blue>
+
+#
+# Working commands for Copy and Paste below..
+#
+
+
+
+#### Development ####
+# Paths Changes... going Blue
+cf map-route airnowdev-blue app.cloud.gov -n airnowdev; cf unmap-route airnowdev-green app.cloud.gov -n airnowdev; cf a
+ 
+ # Paths Changes... going Green
+cf map-route airnowdev-green app.cloud.gov -n airnowdev; cf unmap-route airnowdev-blue app.cloud.gov -n airnowdev; cf a
+
+
+
+####### document.airnow.gov ######
+# BLUE
+cf map-route document-blue document.airnow.gov; cf unmap-route document-green document.airnow.gov
+# Green
+cf map-route document-green document.airnow.gov; cf unmap-route document-blue document.airnow.gov
+
+
+
+#### AirNow Fire STAGING for Sensor Data Pilot ##
+cf push airnowfirestage -m 40m -i 2 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+
+
+########## WIDGET #######
+## Green ##
+cf push airnowwidget-green -m 40m -i 3 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+cf map-route airnowwidget-green widget.airnow.gov; cf unmap-route airnowwidget-blue widget.airnow.gov; cf a
+
+## Blue ##
+cf push airnowwidget-blue -m 40m -i 3 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+cf map-route airnowwidget-blue widget.airnow.gov; cf unmap-route airnowwidget-green widget.airnow.gov; cf a
+
+
+
+
+### AirNow Fire PRODUCTION for fire.airnow.gov & mobilefire.airnow.gov ### FIRE ###
+# NOTE: we will keep the two F&S Map sites on the same color. #
+
+### GREEN GREEN GREEN ###
+# Change directory 
+cd C:\Users\cwilkes\Documents\data\airnowfire
+cd C:\Users\chris\sites\airnowfire
+
+# going Green...
+cf push airnowfire-green -m 50m -i 5 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+cf push airnowmobilefire-green -m 50m -i 5 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+	# test "green"
+cf map-route airnowfire-green fire.airnow.gov; cf unmap-route airnowfire-blue fire.airnow.gov
+cf map-route airnowmobilefire-green mobilefire.airnow.gov; cf unmap-route airnowmobilefire-blue mobilefire.airnow.gov; cf a
+	# Flip Card
+cf scale airnowfire-blue -i 1 
+cf scale airnowmobilefire-blue -i 1;cf a
+
+cf stop airnowfire-blue;cf a
+cf stop airnowmobilefire-blue;cf a
+
+### BLUE BLUE BLUE ###
+# Change directory
+cd C:\Users\cwilkes\Documents\data\airnowfire
+cd C:\Users\chris\sites\airnowfire
+
+
+# going BLUE...
+cf push airnowfire-blue -m 50m -i 5 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+cf push airnowmobilefire-blue -m 50m -i 5 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+	#test "blue"
+cf map-route airnowfire-blue fire.airnow.gov; cf unmap-route airnowfire-green fire.airnow.gov; cf a
+cf map-route airnowmobilefire-blue mobilefire.airnow.gov; cf unmap-route airnowmobilefire-green mobilefire.airnow.gov; cf a
+	#Flip Card
+cf scale airnowfire-green -i 1;cf a
+cf scale airnowmobilefire-green -i 1;cf a
+
+cf stop airnowfire-green;cf a;
+cf stop airnowmobilefire-green;cf a
+
+
+
+#### PRODUCTION -- SENSOR PILOT SITE ####
+
+# Change directory to "prod"
+cd C:\Users\cwilkes\Sites\devdesktop\airnowgov-dev\sensorpilot
+
+# Full Paths Changes... going Blue
+cf push sensorpilot-blue -m 40m -i 2 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+
+cf map-route sensorpilot-blue app.cloud.gov -n sensorpilot; cf unmap-route sensorpilot-green app.cloud.gov -n sensorpilot; cf a
+
+cf stop sensorpilot-green;cf a
+ 
+# Full Paths Changes... going Green
+cf push sensorpilot-green -m 40m -i 2 -b https://github.com/cloudfoundry/nginx-buildpack.git; cf a
+ 
+cf map-route sensorpilot-green app.cloud.gov -n sensorpilot; cf unmap-route sensorpilot-blue app.cloud.gov -n sensorpilot; cf a
+
+cf stop sensorpilot-blue; cf a
+
+
+
+cf curl '/v2/events?q=type:audit.app.process.scale&q=timestamp>2020-12-01&q=timestamp<2020-12-10&order-by=timestamp'
+
+
+#### PowerShell Tricks (all files that changed today)
+
+Get-ChildItem -Path . -Recurse| ? {$_.LastWriteTime -gt (Get-Date).AddDays(-1)}
+
+#### kill that nul file 
+// https://stackoverflow.com/questions/17883481/delete-a-file-named-nul-on-windows
+### Run this from the DOS Shell!
+del \\?\C:\Users\cwilkes\Sites\devdesktop\airnowgov-dev\docroot\sites\default\files\nul
+
+del \\?\C:\Users\cwilkes\Desktop\airnowgov-dev\docroot\sites\default\files\nul
+
+
+### Drush command on DevDesktop to backup database
+drush sql-dump > 2021_07_06_database-backup.sql
+
+### Drush commands on DevCloud
+# Use root parameter to pick a cloud instance
+# https://support.acquia.com/hc/en-us/articles/360049825534-Troubleshooting-Drush-error-Command-XXXXX-needs-a-higher-bootstrap-level-to-run-
+drush --root=/var/www/html/airnowgov.dev/docroot status
+drush --root=/var/www/html/airnowgov.test/docroot status
+
+
+drush --root=/var/www/html/airnowgov.dev/docroot pm-info pathauto
+drush --root=/var/www/html/airnowgov.dev/docroot pm-uninstall pathauto
+
+drush --root=/var/www/html/airnowgov.test/docroot pm-info appscan
+drush --root=/var/www/html/airnowgov.test/docroot pm-uninstall appscan
+
+
+
+### import a database with drush
+drush sql-drop -y
+drush sqlc < ~/path/to/db-file.sql
+

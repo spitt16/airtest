@@ -1,0 +1,7 @@
+publications_pages.publications_page:
+  path: '/publications/{term_name}/{publication_id}'
+  defaults:
+    _controller: '\Drupal\publications_pages\Controller\PublicationsPagesController::publicationsPage'
+    _title: 'Publications Page'
+  requirements:
+    _permission: 'access content'

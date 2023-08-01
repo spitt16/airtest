@@ -1,0 +1,20 @@
+uuid: 7cfef83c-fde7-4f67-af37-e214ff13ec17
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.card_types
+  module:
+    - text
+id: taxonomy_term.card_types.description
+field_name: description
+entity_type: taxonomy_term
+bundle: card_types
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

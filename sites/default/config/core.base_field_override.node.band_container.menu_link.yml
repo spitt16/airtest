@@ -1,0 +1,20 @@
+uuid: 3da56dd8-0fd7-4288-b86a-f9f87ea78b36
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band_container
+id: node.band_container.menu_link
+field_name: menu_link
+entity_type: node
+bundle: band_container
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

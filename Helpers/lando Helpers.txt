@@ -1,0 +1,231 @@
+### TWIG Tricks ### 
+to make changes in TWIG files using Lando
+	lando drush cr
+
+<<<<<<< HEAD
+## Dev Desktop database pull problem workaround
+https://docs.acquia.com/cloud-platform/manage/back-up/cli/
+
+=======
+### import a database with drush
+drush sql-drop -y
+drush sqlc < ~/path/to/db-file.sql
+>>>>>>> 3e6bae4a630086e0054077586352f8befd45549c
+
+
+Pantheon Lando Machine Token
+EgsLCfln-Cph3sGik8eZgvHkePk0ZC7kB2QZFcyfO3ySl
+
+
+lando terminus backup:get airgov.dev --element=db --to=airgov_dev_2022-05-18_UTC_database.sql
+lando db-import airgov_dev_2022-05-18_UTC_database.sql
+
+
+USE Lando version 3.11.0
+
+
+
+START OVER
+
+# Go through interactive prompts to get your site from pantheon
+lando init --source pantheon
+
+# Start it up
+# Go through interactive prompts to get your site from pantheon
+lando init --source pantheon
+
+
+# Start it up
+lando start
+
+# Import your database and files
+lando pull
+
+# List information about this app.
+lando info
+
+# Import your database and files
+lando pull
+
+# List information about this app.
+lando info
+
+
+
+
+
+
+
+
+
+
+
+### LANDO PULL -- General Info 
+
+# Fixing "max_allowed_packet" error
+lando mysql
+# set it to 256M
+set GLOBAL max_allowed_packet=268435456;
+exit
+# restart mysql to verifiy the new setting
+lando mysql
+show variables like "max_allowed_packet";
+exit
+
+# Pull database down from Pantheon
+lando pull --database=dev --code=none --files=none
+
+# clear (rebuild) all the Caches
+lando drush cr
+ 
+ 
+### Migrate Content database FROM Pantheon to DevDesktop for high speed TOME
+## May also need to move Files & Code
+
+Go to Pantheon Dashboard for  "Dev", open Database/Files, and click "Export"
+Click "Export database"
+wait...
+Click the "download" button for the latest export
+Click "Direct Download"
+wait...
+use Windows to Move the export to the docroot root folder .. ie..
+	C:\Users\chris\Sites\devdesktop\airnowgov-dev\docroot
+Use WinZip or 7zip the expand the gzip file to a .sql file
+copy that .sql file name... ie...airnowgov_dev_2022-08-08T17-39-50_UTC_database.sql
+In DevDesktop Open local Drush
+verifiy that you are in "airnowgov-dev/docroot"
+
+# import a database with drush
+drush sql-drop -y
+# example: drush sqlc < ~/path/to/db-file.sql
+drush sqlc < airnowgov_dev_2022-08-09T18-25-10_UTC_database.sql
+drush cr # to reload the caches
+
+move the database .gz & .sql file BACK to the Downloads directory for storage
+
+...continue to TOME...
+
+
+### Migrate Content from DevDesktop to Pantheon
+
+In Dev Desktop click on More Button
+Select Export to Drupal Archive
+Save it to "C:/"  ... this is a full site archive just in case...
+Wait... Wait... 
+
+If you get Max_packet_size error...
+	Make max_allowed_packet bigger, like 256M, in c:/Program Files (x86)/DevDesktop/mysql/my.cnf
+	
+Another trick is to reduce the size of the database by using phpmyadmin to TRUNCATE the "batch" & "watchdog" tables... also look at any "cache" tables.
+	# https://drupal.stackexchange.com/questions/22041/which-tables-are-safe-to-clear
+
+	The "archive" is the entire site. database & Code & Files
+
+In DevDesktop open a local drush window...
+drush sql-dump > dump.sql
+Wait... Wait... Wait...
+	
+	The "dump" file is JUST the database in a giant file of SQL statements.
+	
+Use OS to copy the dump.sql file to the lando root.
+Use OS to Copy from airnowgov-dev (DevDesktop) to airnowgov (lando) the directories
+	sites
+	themes
+	
+Open Powershell
+Cd the lando directory... C:\Users\chris\Sites\airnowgov
+
+Use lando tooling to import the database dump:
+
+	lando info   ...to verify
+	lando db-import dump.sql
+		OR IF you get a "binary Error" use... lando mysql -u pantheon -p pantheon -h database -D pantheon --binary-mode -o > dump.sql
+
+	Wait... Wait...  Wait for Import Complete!
+
+IF you get "Drupal Core Install", then FIRST restart Docker.
+
+		... Rebuild your lando Drupal database connection ...
+		Lang = English
+		Profile = Standard
+		Database
+			name= pantheon
+			usertname = pantheon
+			password = pantheon
+			Under advanced
+				hostname = database
+		
+	Then	
+	
+		lando restart   ... to reconnect to the new database
+
+		Wait...
+	
+		lando info 
+
+
+login to lando site admin to verify most recent content
+
+lando push
+
+	
+OR OR OR use Databse tools to load the sql dump directly into Mysql on Pantheon !!!
+	this worked on 2022-08-20
+
+
+
+Maybe...
+Stop the airnowgov app in docker
+		Stop Docker
+		pause ... two minutes 
+		Start Docker
+		Start the ainowgov app
+		
+		OR
+
+
+
+
+
+
+
+
+# When "lando composer install" times out, when installing or updated the Drupal core
+#    https://stackoverflow.com/questions/18917768/why-composer-install-timeouts-after-300-seconds
+lando composer install -o -vvv --prefer-dist --no-dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Problem Exporting database ... lost connection at a given row number... look at the row and the ones after it. 
+	If possible just delete the bad row..
+
+Use myphpadmin to delete... "offset" is 1 less than offending row!
+
+SET @row_number = 0;   
+
+SELECT *,  
+    (@row_number:=@row_number + 1) AS row_num  
+FROM `paragraph_revision__field_content_body`
+LIMIT 5
+OFFSET 7115;

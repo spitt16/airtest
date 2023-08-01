@@ -1,0 +1,4 @@
+partners_helper:
+  css:
+    base:
+      css/PluginData/partners_helper.css: {}

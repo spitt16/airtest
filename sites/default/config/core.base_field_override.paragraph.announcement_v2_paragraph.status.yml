@@ -1,0 +1,22 @@
+uuid: 3d4b2365-8f5c-4637-a81d-6d76ea175f05
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.announcement_v2_paragraph
+id: paragraph.announcement_v2_paragraph.status
+field_name: status
+entity_type: paragraph
+bundle: announcement_v2_paragraph
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

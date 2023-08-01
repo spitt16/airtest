@@ -1,0 +1,18 @@
+uuid: b75d19a1-db1c-4032-a6e3-25b22104f9c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.card
+id: node.card.metatag
+field_name: metatag
+entity_type: node
+bundle: card
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

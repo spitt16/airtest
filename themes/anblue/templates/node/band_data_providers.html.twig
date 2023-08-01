@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div>
+      <h1>
+         {% if band.getReportingAreaId() is null %}
+		 	Data Providers
+		 {% else %}
+		 	{{ band.getTitle() }} for {{ band.getReportingAreaName() }}, {{ band.getReportingAreaId()|slice(0,2)|upper }}
+		 {% endif %}
+	  </h1>
+	</div>
+    
+	<div class="col-sm-8 no-padding" style="padding-bottom: 40px;">
+		<table class="Partners-table">  
+		{# find this term in the Group of Data Providers cw 2018-07-11 #} 
+    	{% for term in band.getDataProviders() %}
+			<tr>
+				<td style="vertical-align: top;">
+					<h4>
+					<strong><a href="{{  band.getPartnerUrlForTermId(term) }}" target="_new"> {{ band.getDataProviderName(term) }} </a></strong>
+					<img src="/sites/default/files/inline-images/exit.gif">
+					</h4>
+					
+		  		</td>
+        	</tr>	
+		{% endfor %}	
+      </table>
+	  <P>
+    </div>
+	</div>
+</div>

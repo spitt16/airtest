@@ -1,0 +1,12 @@
+top_ten_helper:
+  css:
+    base:
+      css/PluginData/top_ten_helper.css: {}
+      css/PluginData/aqi_legend.css: {}
+  js:
+    js/PluginData/top_ten_helper.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - anblue/airnowgov-base
+    - anblue/airnowgov-reportingarea

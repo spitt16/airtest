@@ -1,0 +1,22 @@
+uuid: 85d961f1-63c1-49bf-a460-ba26ea990b6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.articles_airnow
+id: node.articles_airnow.sticky
+field_name: sticky
+entity_type: node
+bundle: articles_airnow
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

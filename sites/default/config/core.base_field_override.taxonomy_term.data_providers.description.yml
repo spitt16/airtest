@@ -1,0 +1,20 @@
+uuid: d6946e64-ab97-409f-bcc3-c3a6fb7b0fc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.data_providers
+  module:
+    - text
+id: taxonomy_term.data_providers.description
+field_name: description
+entity_type: taxonomy_term
+bundle: data_providers
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

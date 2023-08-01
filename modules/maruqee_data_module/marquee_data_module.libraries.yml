@@ -1,0 +1,23 @@
+marquee_data_helper:
+  css:
+    base:
+      css/PluginData/marquee_data_helper.css: {}
+  js:
+    js/PluginData/marquee_data_helper.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - anblue/airnowgov-base
+    - anblue/airnowgov-reportingarea
+    - anblue/airnowgov-geolocation
+
+marquee_data_helper_test:
+  js:
+    js/PluginData/marquee_data_helper_test.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - anblue/airnowgov-base
+    - anblue/airnowgov-reportingarea
+    - anblue/airnowgov-geolocation
+

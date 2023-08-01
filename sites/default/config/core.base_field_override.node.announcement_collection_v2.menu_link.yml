@@ -1,0 +1,20 @@
+uuid: 3d3f6706-7eb8-4dd8-a644-13f1a360b3fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement_collection_v2
+id: node.announcement_collection_v2.menu_link
+field_name: menu_link
+entity_type: node
+bundle: announcement_collection_v2
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

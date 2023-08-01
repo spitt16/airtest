@@ -1,0 +1,7 @@
+site_map.site_map:
+  path: '/site-map'
+  defaults:
+    _controller: '\Drupal\site_map\Controller\SiteMapController::siteMap'
+    _title: 'Site Map'
+  requirements:
+    _permission: 'access content'

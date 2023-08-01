@@ -1,0 +1,20 @@
+uuid: 69bf3646-2305-4915-82b9-1e2d702e5ccd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_types
+  module:
+    - text
+id: taxonomy_term.band_types.description
+field_name: description
+entity_type: taxonomy_term
+bundle: band_types
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

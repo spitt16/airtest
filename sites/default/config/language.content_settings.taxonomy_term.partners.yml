@@ -1,0 +1,18 @@
+uuid: 4fd99f41-834c-46a1-ad50-87978682c674
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.partners
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.partners
+target_entity_type_id: taxonomy_term
+target_bundle: partners
+default_langcode: site_default
+language_alterable: false

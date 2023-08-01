@@ -1,0 +1,29 @@
+uuid: 82fb24d6-d20e-4bf7-855f-b13038e7abb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_band_partners_type
+    - node.type.band
+    - taxonomy.vocabulary.partners
+id: node.band.field_band_partners_type
+field_name: field_band_partners_type
+entity_type: node
+bundle: band
+label: 'Band Partners Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      partners: partners
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

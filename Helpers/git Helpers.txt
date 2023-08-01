@@ -1,0 +1,31 @@
+git add
+
+git diff
+	to see all the changes in sample format
+
+git diff --stat
+	to see a list of files that have changed and the number of canges
+
+git reset --hard HEAD
+	
+git log
+
+
+### Elimate the line feed issue
+	from: https://stackoverflow.com/questions/6500880/with-git-how-do-i-turn-off-the-lf-will-be-replaced-by-crlf-warning
+
+git config --global core.safecrlf false
+
+
+
+If git diff gives you modified files, but NOT text modifications.. ie only "mode" changes.. try these commands:
+	from: https://stackoverflow.com/questions/61633562/sourcetree-showing-files-as-modified-right-after-checkout
+
+git config core.filemode false
+git config core.autocrlf true
+
+
+### git ignore 
+Note: .gitignore ignores untracked files. Files already tracked by Git are not affected. To stop tracking a file that is currently tracked, use 
+
+git rm --cached

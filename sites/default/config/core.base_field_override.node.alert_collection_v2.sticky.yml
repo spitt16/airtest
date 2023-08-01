@@ -1,0 +1,22 @@
+uuid: 9c4f263f-7e34-497e-8e6d-bf813b73d77a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.alert_collection_v2
+id: node.alert_collection_v2.sticky
+field_name: sticky
+entity_type: node
+bundle: alert_collection_v2
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

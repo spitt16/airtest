@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function partners_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'partners_template' => array(
+      'variables' => array(
+        'term_name' => NULL,
+        'partner_id' => NULL,
+      ),
+      'template' => 'block--partners',
+    ),
+  );
+  return $variables;
+}

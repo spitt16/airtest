@@ -1,0 +1,18 @@
+uuid: ac66e8d5-ba82-4fb7-b4b3-31ccb15a0e9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_types
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.band_types
+target_entity_type_id: taxonomy_term
+target_bundle: band_types
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,10 @@
+name: Current Air Quality Data Module
+type: module
+description: Provides the functions to create a Current Air Quality Data Component
+package: Custom
+
+type: module
+core: 8.x
+
+libraries:
+  - current_aq_data_module/current_aq_data_helper

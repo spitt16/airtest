@@ -1,0 +1,33 @@
+uuid: 53e66c24-ef1a-4a45-80f0-4d6c57b8fb6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_band_type
+    - node.type.band
+    - taxonomy.vocabulary.band_types
+  content:
+    - 'taxonomy_term:band_types:2b2d092d-a713-4261-aafc-f64dbdae49fd'
+id: node.band.field_band_type
+field_name: field_band_type
+entity_type: node
+bundle: band
+label: 'Band Type'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: 2b2d092d-a713-4261-aafc-f64dbdae49fd
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      band_types: band_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

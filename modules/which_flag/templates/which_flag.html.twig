@@ -1,0 +1,199 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display the "Which Flag Do I Fly" block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+<style type="text/css">.centered {
+   text-align: center;
+  padding:10px;
+}
+.centered > div {
+   float: none;
+   display: inline-block;
+     
+}
+</style>
+
+<div class="band-card-row container-fluid which-flag-container">
+  <div class="col-sm-12">
+<div class="row centered">
+<div class="col-md-1"><img alt="Green Flag" data-entity-type="file" data-entity-uuid="398c940f-6304-4b5f-b3e8-0d29e6a28e80" src="/sites/default/files/inline-images/green-flag-sm.gif" /></div>
+
+<div class="col-md-1"><img alt="Yellow Flag" data-entity-type="file" data-entity-uuid="cf610671-e2e1-4d1f-9a87-b415b499b0ff" src="/sites/default/files/inline-images/yellow-flag-sm.gif" /></div>
+
+<div class="col-md-1"><img alt="Orange Flag" data-entity-type="file" data-entity-uuid="5012fc5d-f1d7-4cb0-8aec-c9b087bd3e7f" src="/sites/default/files/inline-images/orange-flag-sm.gif" /></div>
+
+<div class="col-md-1"><img alt="Red Flag" data-entity-type="file" data-entity-uuid="2dea0b69-1258-4bdf-933f-8f758d6d8e21" src="/sites/default/files/inline-images/red-flag-sm.gif" /></div>
+
+<div class="col-md-1"><img alt="Purple Flag" data-entity-type="file" data-entity-uuid="f026f56f-a74d-4005-9f2b-5903d4b41c97" src="/sites/default/files/inline-images/purple-flag-sm.gif" /></div>
+</div>
+<div class="centered">
+ <h2 style="padding:10px;" align="center">Which Flag Do I Fly? </h2>  </div>
+ 
+ <div id="floatingGeoSearchBox"  style="padding:10px" align="center"></div>
+       
+<div class="row">
+  <div class="col-md-6">
+  
+  			
+  				<table class="table table-border detail" id="detail_table_today" style="border:1px solid #09f;background-color:white;" >
+  				<tbody>
+  					<tr style="background-color:#FFFFFF;border-color:#29AAE3;">
+  						<td style="color:#FFF;text-align:center;background-color:#29AAE3;padding:5px;" id="today-location-name">&nbsp;</td>
+            
+  					</tr>
+  					<tr align="center">
+  						<td style="padding:5px;"><img style="padding:5px;" id="today-flag" src="/themes/anblue/images/which-flag/todayBW.gif" alt="Today's Flag icon" /></td>
+  					</tr>
+					
+  					<tr >
+  						<td style="padding:5px;">
+  						<hr style="background-color:#09f;color:#09f; height: 1px; border: 0; margin: .2em 0 .2em 0;" /></td>
+  					</tr>
+					
+					<tr>
+  						<td style="color:#000;text-align:center;padding:5px;" width="50%">
+  						<div style="font-size:18px" id="today-middle-text"><strong>Today's Air Quality<br />Forecast
+  						
+  						</strong></div>
+  						</td>
+  					</tr>
+					
+					<tr height="4">
+  						<td style="padding:5px;">
+  						<hr style="background-color:#09f;color:#09f;height: 1px; border: 0; margin: .2em 0 .2em 0;" /></td>
+  					</tr>
+					
+					
+  					<tr>
+  						<td valign="top" style="padding:5px;">
+              <div id="today_details_button_div" style="cursor: pointer; display: block;" title="Click to expand/collapse" onClick="toggle('today_div')"">
+              Pollutant Details
+              </div>
+              <div id='today_div' style="display: table-row;">
+  						<table width="100%" style="align: center;">
+  							<tbody>
+  								<tr class="child-today_row123" id="today_row" style="display: table-row;">
+  									<td width="55" id="today-poll-name" align="center"></td>
+  									<td style="padding:5px;" align="center"><img id="today-poll-dot" alt="Today's AQI"></td>
+  									<td height="50" width="35" id="today-poll-cat" style="padding:5px;" align="center"></td>
+  								</tr>
+  								<tr class="child-today_row123" style="display: none;" id="today_row0">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="today_row1">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="today_row2">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="today_row3">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="today_row4">
+  								</tr>
+  							</tbody>
+  						</table>
+            
+              </div>
+  						</td>
+  					</tr>
+  				</tbody>
+  			</table>
+        </div>
+		<div class="col-md-6">
+      	<table class="table table-border detail" id="detail_table_tomorrow" style="border:1px solid #09f;background-color:white;" >
+  				<tbody>
+  					<tr style="background-color:#FFFFFF;border-color:#29AAE3;">
+  						<td style="color:#FFF;text-align:center;background-color:#29AAE3;padding:5px;" id="tomorrow-location-name">&nbsp;</td>
+            
+  					</tr>
+  					<tr align="center">
+  						<td style="padding:5px;"><img style="padding:5px;" id="tomorrow-flag" src="/themes/anblue/images/which-flag/todayBW.gif" alt="Tomorrow's Flag icon" /></td>
+  					</tr>
+  					<tr >
+  						<td style="padding:5px;">
+  						<hr style="background-color:#09f;color:#09f; height: 1px; border: 0; margin: .2em 0 .2em 0;" /></td>
+  					</tr>
+  					<tr>
+  						<td style="color:#000;text-align:center;padding:5px;" width="50%">
+  						<div style="font-size:18px" id="tomorrow-middle-text"><strong>Tomorrow's Air Quality<br />Forecast
+  						
+  						</strong></div>
+  						</td>
+  					</tr>
+  					<tr height="4">
+  						<td style="padding:5px;">
+  						<hr style="background-color:#09f;color:#09f;height: 1px; border: 0; margin: .2em 0 .2em 0;" /></td>
+  					</tr>
+  					<tr>
+  						<td valign="top" style="padding:5px;">
+              <div id="tomorrow_details_button_div" style="cursor: pointer; display: block;" title="Click to expand/collapse" onClick="toggle('tomorrow_div')">
+              Pollutant Details
+              </div>
+              <div id='tomorrow_div' style="display: table-row;">
+  						<table width="100%" style="align: center;">
+  							<tbody>
+  								<tr class="child-today_row123" id="tomorrow_row" style="display: table-row;">
+  									<td width="55" id="tomorrow-poll-name" align="center"></td>
+  									<td style="padding:5px;" align="center"><img id="tomorrow-poll-dot" alt="Tomorrow's AQI"></td>
+  									<td height="50" width="35" id="tomorrow-poll-cat" style="padding:5px;" align="center"></td>
+  								</tr>
+  								<tr class="child-today_row123" style="display: none;" id="tomorrow_row0">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="tomorrow_row1">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="tomorrow_row2">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="tomorrow_row3">
+  								</tr>
+                  <tr class="child-today_row123" style="display: none;" id="tomorrow_row4">
+  								</tr>
+  							</tbody>
+  						</table>
+            
+              </div>
+  						</td>
+  					</tr>
+  				</tbody>
+  			</table>
+</div></div>
+   
+          <div id="forecast_disscusion" style="display: none; padding:10px;">
+          </div>
+         
+          <div  class="centered" id="learnMore" style="padding:10px; text-align=center"><p>Learn about the <a href="/aqi/aqi-basics">Air Quality Index colors</a>.</p><p>See what <a href="/activity-guides-publications">actions to take</a> for each color.</p></div>
+          		
+
+  <script>
+    function toggle(thisDiv) {
+      var x = document.getElementById(thisDiv);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        } else {
+        x.style.display = "none";
+        }
+      }
+  </script>
+
+</div>

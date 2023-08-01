@@ -1,0 +1,82 @@
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+files/*
+
+# Cypress paths to ignore cw 2023-02-01
+node_modules
+cypress/downloads
+cypress/screenshots
+cypress/videos
+cypress/reports/**
+
+# skip Circle CI & idea -- these are from PhpStorm cw 2023-01-03
+.circleci/
+.idea/
+
+# Avoid accidental modification of pantheon.upstream.yml in sites
+# created from this upstream
+pantheon.upstream.yml
+
+# Pantheon commits a settings.php for environment-specific settings.
+# Place local settings in settings.local.php
+sites/*/settings.local.php
+
+# Note that services.local.yml is not loaded by default. If you would like
+# to use this file add the following to your settings.local.php file:
+#   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
+sites/*/services.local.yml
+
+# ** Only works in OSs that support newer versions of fnmatch (Bash 4+)
+/sites/default/**/files
+/sites/default/**/private
+
+# Ignore SimpleTest multi-site environment.
+sites/simpletest
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+# Things in the core directory that Drupal 8 commits in the repository.
+!core/**/*.gz
+
+node_modules
+
+core/**
+
+/tome/html/
+tome/html/
+vendor/
+.ddev
+/e people don't have core.autocrlf set.

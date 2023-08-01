@@ -1,0 +1,65 @@
+<?php
+/**
+ * 	Stops the Drupal core form processing to defeat IBM App Scan hack attempts.
+ *
+ *	Initial version by Chris Wilkes cw 2019-05-21
+ *
+*/
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter() so that the hack check is done on every form page.
+ */
+function AppScan_Shield_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+	// We may need to hook into more than one form eventually. Using If..Then structure to find the required form and hack.
+   
+	// When adding new hacks.. 	1) Change the values in the top two lines and the Documentation label.
+	//								Note: form_id s use underscores.
+	//							2) Update the date on the print line.
+	//
+	// The actual URL should contain the hacks
+	$actual_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	//print($actual_URL);
+	//
+  
+	// XSS hacks on Block Add form cw 2019-05-21
+	//	/admin/structure/block/add/block_content%3A0c452b0d-4287-4b26-8476-3450b97df1f6"onmouseover="alert(615)"/anblue?region=froze_nav"
+	//	/admin/structure/block/add/block_content%3A0c452b0d-4287-4b26-8476-3450b97df1f6"onmouseover="alert(601)"
+	//	/admin/structure/block/add/block_content%3A1a5576f3-24bd-4f0c-b03caac117c8d0e6"onmouseover="alert(32)"/anblue
+	//	/admin/structure/block/add/entity_view%3Auser/"onmouseover="alert(152)"
+	//	/admin/structure/block/add/block_content%3A0c452b0d-4287-4b26-8476-3450b97df1f6/"onmouseover="alert(360)"
+	//	/admin/structure/block/add/system_menu_block%3Aadmin/"onmouseover="alert(434)"
+	//
+	if ($form_id == "block_form") {
+		$hack = "onmouseover";
+	
+		if(preg_match("/{$hack}/i", $actual_URL)) {
+			// Hit!
+			print("AppScan Shields are Up!");print("<br/><br/>");print("2019-05-21");
+			// Let's just stop doing this page... okay?
+			exit;
+		}
+	}
+	
+	// XSS hacks on Node Revision Revert form cw 2019-05-21
+	//	/node/1/revisions/20246/revert/"onmouseover="alert(4912)"
+	//
+	if ($form_id == "node_revision_revert_translation_confirm") {
+		$hack = "onmouseover";
+		
+	if(preg_match("/{$hack}/i", $actual_URL)) {
+		// Hit!
+		print("AppScan Shields are Up!");print("<br/><br/>");print("2019-05-21");
+		// Let's just stop doing this page... okay?
+		exit;
+		}
+  
+	}
+	
+	
+	
+	
+	
+	
+}	// End of the function

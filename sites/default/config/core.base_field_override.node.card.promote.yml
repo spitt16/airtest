@@ -1,0 +1,22 @@
+uuid: e04a782e-f9d6-4282-96a4-af4d5e768f24
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.card
+id: node.card.promote
+field_name: promote
+entity_type: node
+bundle: card
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

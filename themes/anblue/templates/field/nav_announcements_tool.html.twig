@@ -1,0 +1,40 @@
+{% set announcementCollection = constructAnnouncementCollectionV2() %}
+{% set announcements = announcementCollection.getAnnouncements() %}
+
+{% if announcements|length > 0 %}
+  {# Announcements Icon #}
+  <div id="nav-announcements-tool" class="nav-tool" tabindex="0">
+    <button id="nav-announcements-toggle" class="nav-tool-toggle" tabindex="-1" name="Announcements">
+      <span class="sr-only"><nav id="show-announcements">Show Announcements Popup</nav></span>
+    </button>
+    <div class="nav-tool-counter blue"><nav id="announcements-length">
+      {{ announcements|length }}
+      </nav></div>
+    <div id="nav-announcements-popup-arrow" class="nav-tool-popup-arrow">
+      <span class="sr-only">Arrow pointing from Announcements Popup to the Tool button</span>
+    </div>
+  </div>
+
+  {# Announcement Popup #}
+  <div id="nav-announcements-popup" class="nav-tool-popup">
+    <span class="popup-dismiss">&#10799;</span>
+    <h1 class="popup-title">Announcements</h1>
+    <div class="popup-container">
+      {% for announcement in announcements %}
+        {% if announcement.isVisible() and not announcement.isArchived() %}
+          <div class="announcement-container">
+            <a class="link" href="/announcement/{{ announcement.getNodeId() }}">
+              <span class="sr-only">{{ url('<front>') }}announcement/{{ announcement.getNodeId() }}</span>
+            </a>
+            <h2 class="title">{{ announcement.getTitle() }}</h2>
+            <h3 class="date">{{ announcement.getDate()|date("Y-m-d") }}</h3>
+            <div class="message">{{ announcement.getMainText() }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="view-all-link">
+      <a href="/announcements">View All ({{ announcements|length }})</a>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,12 @@
+name: Maruqee Data Module
+type: module
+description: Provides the functions to create a Maruqee Data Component
+package: Custom
+
+type: module
+core: 8.x
+
+
+libraries:
+  - marquee_data_module/marquee_data_helper
+  - marquee_data_module/marquee_data_helper_test

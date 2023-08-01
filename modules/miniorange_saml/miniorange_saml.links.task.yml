@@ -1,0 +1,41 @@
+miniorange_saml.customer_setup:
+  route_name: miniorange_saml.customer_setup
+  title: '1. Customer Setup'
+  weight: 10
+  base_route: miniorange_saml.customer_setup
+
+miniorange_saml.idp_setup:
+  route_name: miniorange_saml.idp_setup
+  title: '2. Identity Provider Setup'
+  weight: 20
+  base_route: miniorange_saml.customer_setup
+  
+miniorange_saml.sp_setup:
+  route_name: miniorange_saml.sp_setup
+  title: '3. Service Provider Setup'
+  weight: 30
+  base_route: miniorange_saml.customer_setup
+  
+miniorange_saml.login_options:
+  route_name: miniorange_saml.login_options
+  title: '4. Signin Settings'
+  weight: 40
+  base_route: miniorange_saml.customer_setup
+
+miniorange_saml.mapping:
+  route_name: miniorange_saml.mapping
+  title: '5. Custom Attribute/Role Mapping'
+  weight: 50
+  base_route: miniorange_saml.customer_setup
+
+miniorange_saml.licensing:
+  route_name: miniorange_saml.licensing
+  title: '6. Licensing'
+  weight: 60
+  base_route: miniorange_saml.customer_setup
+
+miniorange_saml.support:
+  route_name: miniorange_saml.support
+  title: '7. Support'
+  weight: 70
+  base_route: miniorange_saml.customer_setup

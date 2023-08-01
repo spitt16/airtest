@@ -1,0 +1,18 @@
+uuid: 2bc99579-d7fc-411f-bf8c-7a08f5f24bf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.home_marquee
+id: node.home_marquee.changed
+field_name: changed
+entity_type: node
+bundle: home_marquee
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

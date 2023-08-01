@@ -1,0 +1,18 @@
+uuid: 632a0950-44a4-439a-a79e-1dd430e64e6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.plan_your_day_descriptions
+id: taxonomy_term.plan_your_day_descriptions.name
+field_name: name
+entity_type: taxonomy_term
+bundle: plan_your_day_descriptions
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

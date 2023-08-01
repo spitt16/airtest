@@ -1,0 +1,16 @@
+miniorange_saml.admin:
+  version: VERSION
+  css:
+    layout:
+      css/miniorange_saml.admin.css: {}
+      css/miniorange_saml.module.css: {}
+    theme:
+      css/miniorange_saml.theme.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+miniorange_saml.test:
+  version: VERSION
+  js:
+    js/testconfig.js: {}

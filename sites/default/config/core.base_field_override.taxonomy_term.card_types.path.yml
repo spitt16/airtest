@@ -1,0 +1,20 @@
+uuid: a220bc02-0bcd-4b6e-9131-a046d1a5627a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.card_types
+  module:
+    - path
+id: taxonomy_term.card_types.path
+field_name: path
+entity_type: taxonomy_term
+bundle: card_types
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

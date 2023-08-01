@@ -1,0 +1,126 @@
+{% set parentPath = band.getFormattedPath(band.getTermParent().getName()) %}
+
+<div class="container-fluid">
+    <div>
+      <h1>
+        {{ band.getTitle() }}
+      </h1>
+  
+      {% set currentTermName = band.getFormattedPath(currentTerm.name) %}
+	  
+	  {% if band.getMoreAboutLine()|length > 0 %} {# AirNowDrupal Issue 64: cw 2018-08-31 #}
+	    <h2 style="padding: 15px 0; font-size: 18px">
+	      {{ band.getMoreAboutLine()|raw }}
+	    </h2>
+	  {% else %}
+	  	&nbsp;
+	  {% endif %} 
+  </div>
+  
+  {% set currentTerm = '' %}
+  {% for t in band.getRelatedTerms() %}
+    {% if (t.tid == band.getTid()) %}
+      {% set currentTerm = t %}
+    {% endif %}
+  {% endfor %}
+    <div class="col-sm-8 no-padding" style="padding-bottom: 40px;">
+	 {# AIR 457- Add scrolling Index Samson 20210914 #}
+	<div class="list-pub" >
+	   <ul style="list-style-type:none;  text-decoration: underline;">
+	   {% for publication in band.getPublications %}
+           <li><a href={{ "#{currentTermName}##{publication.getPublicationId()}" }}>{{ publication.getPublicationTitle() }}</a></li>
+	     {% endfor %}
+       </ul>
+	 </div>
+
+      <table class="publications-table">
+        {# AIR 450 - Remove publication top row in publication table Samson 20210914 #}
+		{# <tr class="publications-header-row">
+          <th><h3 class="hidden">Publication Images</h3></th>
+          <th><h3><strong>Publication</strong></h3></th>
+        </tr> #}
+        {% for publication in band.getPublications %}
+        <tr>
+          <td>
+		  	<a id="{{ publication.getPublicationId() }}" href="{{ publication.getPublicationFile().getFileUrl() }}"> {# AirtNowDrupal Issue 35: cw 2018-04-03 #}
+            <img class="publication-table-img" alt="{{ publication.getPublicationImage().getAltText() }}" src="{{ publication.getPublicationImage().getImageUrl() }}">
+			</a>
+          </td>
+          <td class="publication-info">
+
+            <div>
+              <h4 class="publication-title">
+
+                {% set currentTermName = band.getFormattedPath(currentTerm.name) %}
+                {% set path = currentTermName ~"/"~publication.getPublicationId()  %}
+
+                <strong><a href={{ "/publications/#{currentTermName}/#{publication.getPublicationId()}" }}>{{ publication.getPublicationTitle() }}</a></strong>
+              </h4>
+              <span class="publication-description">
+                {{ publication.getPublicationDescription() | raw}}
+              </span>
+            </div>
+
+          </td>
+        </tr>
+        {% endfor %}
+
+      </table>
+
+    </div>
+{# remove for Tome cw 2019-09-04
+    <div class="col-sm-4 publications-sidebar-container">
+      <div class="">
+        <ul class="publications-sidebar">
+          <li>
+            <h3>
+              <strong>
+                Publications
+              </strong>
+
+            </h3>
+
+          </li>
+
+          {% for term in band.getRelatedTerms() %}
+
+              {% if (term.tid == band.getTid()) %}
+                <li class="current-term-link">
+                  <strong>
+                    <u>
+                      <a href="{{ "#{band.getFormattedPath(term.name)}-publications" }}">
+                        {{ term.name }}
+                      </a>
+                    </u>
+                  </strong>
+                </li>
+                {% for relatedPublication in band.getPublicationsForTermId(term.tid) %}
+                  <li class="related-publications-item">
+                    {{ relatedPublication.publication_title }}
+                  </li>
+                {% endfor %}
+              {% else %}
+                <li>
+                  <u>
+                    <a href="{{ "#{band.getFormattedPath(term.name)}-publications" }}">
+                      {{ term.name }}
+                    </a>
+                  </u>
+                </li>
+                {% for relatedPublication in band.getPublicationsForTermId(term.tid) %}
+                  <li class="related-publications-item">
+                    {{ relatedPublication.publication_title }}
+                  </li>
+                {% endfor %}
+              {% endif %}
+
+
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+#}
+
+</div>
+

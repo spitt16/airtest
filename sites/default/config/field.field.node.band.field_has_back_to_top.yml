@@ -1,0 +1,23 @@
+uuid: 3b81d568-1ffb-43b3-81ab-54d62ba00fa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_back_to_top
+    - node.type.band
+id: node.band.field_has_back_to_top
+field_name: field_has_back_to_top
+entity_type: node
+bundle: band
+label: 'Show Back To Top'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Show
+  off_label: Hide
+field_type: boolean

@@ -1,0 +1,7 @@
+recent_trends.recent_trends:
+  path: '/trends'
+  defaults:
+    _controller: '\Drupal\recent_trends\Controller\RecentTrendsController::recentTrends'
+    _title: 'Recent AQI Trends'
+  requirements:
+    _permission: 'access content'

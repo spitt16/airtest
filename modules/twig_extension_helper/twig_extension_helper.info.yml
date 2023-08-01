@@ -1,0 +1,7 @@
+name: Twig Ext Helper
+type: module
+description: Provides some extra Twig helper functions.
+package: Custom
+
+type: module
+core: 8.x

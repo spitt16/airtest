@@ -1,0 +1,18 @@
+uuid: c908ca56-5055-4d1a-9cb8-255ce07b7a54
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.band_types
+id: taxonomy_term.band_types.name
+field_name: name
+entity_type: taxonomy_term
+bundle: band_types
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

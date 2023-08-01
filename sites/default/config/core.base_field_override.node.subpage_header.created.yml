@@ -1,0 +1,18 @@
+uuid: 82f3f883-53aa-4a27-81d9-34f17d345d71
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.subpage_header
+id: node.subpage_header.created
+field_name: created
+entity_type: node
+bundle: subpage_header
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

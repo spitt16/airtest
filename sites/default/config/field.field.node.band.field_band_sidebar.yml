@@ -1,0 +1,52 @@
+uuid: cb3539e0-3bad-4f44-ab27-0e56c95595e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_band_sidebar
+    - node.type.band
+    - paragraphs.paragraphs_type.sidebar
+  module:
+    - entity_reference_revisions
+id: node.band.field_band_sidebar
+field_name: field_band_sidebar
+entity_type: node
+bundle: band
+label: 'Band Sidebar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      sidebar: sidebar
+    target_bundles_drag_drop:
+      basic_link:
+        weight: 9
+        enabled: false
+      content:
+        weight: 10
+        enabled: false
+      header_title:
+        weight: 11
+        enabled: false
+      link_image:
+        weight: 12
+        enabled: false
+      main_navigation_link:
+        weight: 13
+        enabled: false
+      navigation_link:
+        weight: 14
+        enabled: false
+      parameter_message:
+        weight: 15
+        enabled: false
+      sidebar:
+        enabled: true
+        weight: 16
+field_type: entity_reference_revisions

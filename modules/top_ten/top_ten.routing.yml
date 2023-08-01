@@ -1,0 +1,7 @@
+top_ten.top_ten:
+  path: '/highest-aqi'
+  defaults:
+    _controller: '\Drupal\top_ten\Controller\TopTenController::topTenPage'
+    _title: 'Highest AQI Locations'
+  requirements:
+    _permission: 'access content'

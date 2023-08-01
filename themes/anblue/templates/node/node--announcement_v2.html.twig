@@ -1,0 +1,24 @@
+{% set announcement = constructAnnouncementV2(node) %}
+
+<div class="container inner-card-style">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="article-title">
+        {{ announcement.getTitle() }}
+      </h1>
+      {%  if announcement.getDate() %}
+        <h4 class="article-date">
+          {{ announcement.getDate()|date("Y-m-d") }}
+        </h4>
+      {% endif %}
+    </div>
+    <div class="col-xs-12">
+      <p>{{ announcement.getMainText() }}</p>
+    </div>
+    {% if announcement.getAdditionalText() %}
+      <div class="col-xs-12">
+        <p>{{ announcement.getAdditionalText() }}</p>
+      </div>
+    {% endif %}
+  </div>
+</div>

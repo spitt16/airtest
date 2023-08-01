@@ -1,0 +1,29 @@
+uuid: 009787d1-b87b-4551-a3c3-62aef3a2b275
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_band_publications_type
+    - node.type.band
+    - taxonomy.vocabulary.publications
+id: node.band.field_band_publications_type
+field_name: field_band_publications_type
+entity_type: node
+bundle: band
+label: 'Band Publications Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      publications: publications
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

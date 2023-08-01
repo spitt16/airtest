@@ -1,0 +1,22 @@
+uuid: 0add8f9b-f493-4188-bbe2-d7a05739e5e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcement_collection_v2
+id: node.announcement_collection_v2.status
+field_name: status
+entity_type: node
+bundle: announcement_collection_v2
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

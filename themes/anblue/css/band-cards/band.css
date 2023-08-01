@@ -1,0 +1,341 @@
+.band-style-general {
+}
+
+.band-card-row a:link {
+  color: #1f496e;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.band-card-row a:visited {
+  color: #7d22b6;
+  text-decoration: underline;
+}
+
+/*.band-card-row a:hover {
+  text-decoration: underline;
+}*/
+
+.band-card-row a:active {
+  color: #1f496e;
+}
+
+.band-style-general.noData {
+  display: none !important;
+}
+
+.band-title-row {
+  /*background-color: var(--color-dim-grey);*/
+  /*padding: 5px;*/
+  width: 100%;
+  max-width: 1280px; /* Limits width to necessary max*/
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #757575;
+}
+
+.band-title-holder {
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+  height: 100%;
+}
+
+.band-style-content .band-title-row {
+  background-color: rgb(245, 245, 245);
+}
+
+.band-title-row h1.band-title { /* AirNowDrupal #57 cw 2018-07-11 */
+  /*margin-bottom: 0px;*/
+  font-size: 36px;
+  height: 100%;
+  padding: 10px;
+  white-space: pre-wrap;
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+	background-color: #757575;
+}
+
+/* AirNowDrupal #115  Forecast section is ALWAYS "light"; then every other section cw 2019-04-30 */
+ .band-title-row-light h1.band-title-light {
+    font-size: 36px;
+  height: 100%;
+  padding: 10px;
+  white-space: pre-wrap;
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+	 background-color:  #F5F5F5; /* Light */
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+  }
+
+/* AirNowDrupal #115  cw 2019-04-30 */
+ .band-title-row-white h1.band-title-white {
+    font-size: 36px;
+  height: 100%;
+  padding: 10px;
+  white-space: pre-wrap;
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+	 background-color:  #FFFFFF; /* white */
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+  }
+
+.band-title-row h2.band-title {
+  /*margin-bottom: 0px;*/
+  font-size: 28px;   /* AirNowDrupal #4  Modified to bring in line with the dial page styles  cw 2018-04-10 */
+  height: 100%;
+  padding: 10px;
+  white-space: pre-wrap;
+
+  /*Prevent text that is too long from interfering with the back to top button*/
+  width: 67%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.band-style-content .band-title-row h2.band-title {
+  /*margin-bottom: 0px;*/
+  font-size: 24px;
+  height: 100%;
+  padding: 10px;
+  white-space: pre-wrap;
+
+  /*Prevent text that is too long from interfering with the back to top button*/
+  width: 97%;
+  margin: 0px auto;
+  text-align: left;
+}
+
+
+
+.band-title-row .band-back-to-top p {
+  font-size: 14px;
+  margin-top: 2px;
+  width: 90px;
+}
+
+.band-title-row .band-back-to-top p .back-to-top-text {
+  position: absolute;
+  right: 30px;
+  top: 7px;
+}
+
+.band-title-holder .band-back-to-top p .back-to-top-text { /*AirNowDrupal #115 cw 2019-05-08 */
+  position: absolute;
+  right: 30px;
+  top: 7px;
+}
+
+.band-title-row .band-back-to-top p .fa {
+  margin-top: 4px;
+  font-size: 22px;
+}
+
+.content-back-to-top p .fa {
+  margin-top: 4px;
+}
+
+.band-title-row .band-title {
+  color: #FFFFFF;
+}
+
+.basic-sidebar img {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inherit;
+}
+
+.basic-sidebar iframe {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inherit;
+}
+
+.sidebar-template {
+  margin-bottom: 10px;
+}
+
+.sidebar-template .sidebar-title {
+  font-size: 1.5em;
+  padding: 5px;
+  text-align: center;
+}
+
+.band-style-content .band-title-row h2.band-title {
+  color: #000000;
+  font-size: 28px;
+}
+
+
+.band-title-row .band-back-to-top {
+  width: 110px;
+  position: absolute;
+  margin-top: -39px;
+  right: 25px;
+  color: #FFFFFF;
+}
+
+.band-style-content .band-title-row .band-back-to-top {
+  color: #000000;
+  margin-top: -43px;
+}
+
+.band-card-row {
+  /*max-width: var(--global-width);*/
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F5F5F5;
+}
+
+/* AirNowDrupal #115  Forecast section is ALWAYS "white"; then every other section cw 2019-04-30 */
+.band-card-row-light {
+  /*max-width: var(--global-width);*/
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F5F5F5; /* Light */
+  border-bottom: solid 1px #C0C0C0; /* Thin grey line */
+}
+
+/* AirNowDrupal #115  Adding thin gray lines at the bottom cw 2019-05-16 */
+.band-card-row-white {
+  /*max-width: var(--global-width);*/
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF; /* White */
+  border-bottom: solid 1px #C0C0C0; /* Thin grey line */
+}
+
+.band-card-row.band-basic {
+  /*max-width: var(--global-padded-width);*/
+  max-width: 1280px;
+}
+
+.band-style-content .band-card-row.band-basic {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.content-back-to-top-container {
+  padding-bottom: 10px;
+}
+
+hr.content-hr {
+  border-top: 1px solid #000;
+  border: solid 0.5px #000;
+}
+
+.band-tab-row {
+  display: block;
+}
+
+.band-tab-row.band-tab-row-hidden {
+  display:none;
+}
+
+h1.article-title {
+  font-size: 28px;
+}
+
+h2.article-title {
+  font-size: 28px;
+}
+h3.article-date {
+  font-size: 18px;
+  margin-top: 10px;
+}
+/*@media all and (max-width: 1280px) {*/
+  /*.band-card-row.band-basic {*/
+    /*margin: 0px 20px;*/
+  /*}*/
+/*}*/
+
+@media all and (min-width: 992px) {
+  .band-card-row {
+    padding-left: 1vw;
+    padding-right: 1vw;
+	/* AirNowDrupal #4  Modified to add top and bottom space on the band  cw 2018-04-10 */
+	padding-top: 0vw;
+	padding-bottom: 0vw;
+  }
+}
+
+/* Targeting ALL mobile devices SMALLER than iPad Mini; the iPad Mini is 768 px wide. cw 2019-02-27 */
+/* Created for AirNowDrupal#106 cw 2019-02-27 */
+@media all and (max-width: 767px) {
+  .band-title-row h1.band-title {
+    font-size: 20px;
+  }
+
+  /* AirNowDrupal #115  Control Font size on Mobile cw 2019-05-07 */
+  .band-title-row-light h1.band-title-light {
+    font-size: 28px;
+  /* AirNowDrupal #157  Control Padding size on Mobile jb 2019-06-10 */
+	padding-top: 35px; /* AIR-557 Up from 13px cw 2022-08-15 */ 
+	padding-bottom: -10px; /* AIR-557 Down from 13px cw 2022-08-15 */
+  }
+
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-05-30 */
+  .band-title-row-white h1.band-title-white {
+    font-size: 28px;
+  /* AirNowDrupal #157 Control Padding size on Mobile jb 2019-06-10 */
+	padding-top: 135px; 
+  }
+
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-05-31 */
+  div.band-card-row-white.band-basic.row {
+	padding: 1px;
+	background-color: #C0C0C0;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	border-top: 1px;
+
+  }
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-05-31 */
+  div.views-row {
+	background-color: #FFFFFF;
+  }
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-06-03 */
+ div.col-sm-4.outer-card-style.announcement-card {
+	background-color: #FFFFFF;
+  }
+ /* AirNowDrupal #145 Mobile Fixes cw 2019-06-03 */
+ div.band-card-row-light.band-basic.row {
+  	padding-top: 0px;
+  }
+  /* AirNowDrupal #145 Mobile Fixes cw 2019-06-03 */
+ div.band-card-row-white.band-basic.row {
+  	padding-top: 1px;
+  }
+
+  .band-style-nondesc .band-card-row.band-basic {
+    margin: 0;
+  }
+
+  .band-style-announcements .band-card-row.band-basic {
+    margin: 0;
+  }
+
+  .publications-row {
+    margin-top: 50px !important;
+  }
+}
+
+.flex {
+  display: flex;
+}
+@media all and (max-width: 767px) { /* mobile screens */
+  .flex-hidden-xs {
+    display: block;
+  }
+}

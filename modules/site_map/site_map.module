@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function site_map_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'site_map_template' => array(
+      'variables' => array(
+      ),
+      'template' => 'block--site_map',
+    ),
+  );
+  return $variables;
+}

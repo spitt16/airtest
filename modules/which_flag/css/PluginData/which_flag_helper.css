@@ -1,0 +1,87 @@
+hr {
+    height: 1px;
+    color: #aaa;
+    background-color: #aaa;
+    border: 0;
+    margin: .2em 0 .2em 0;
+}
+
+/* @media (max-width: 610px) {
+  .which-flag-container {
+    margin-top: -38px;
+  }
+}
+
+.pollutant-status-circle {
+  background-color: #5E5E5E;
+  border: solid 1px white;
+  font-size: 17px;
+  font-weight: bold;
+  width: 46px !important;
+  padding: 10px 0px !important;
+  margin: auto;
+  height: 46px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+
+.text-align-left {
+  text-align: left !important;
+}
+
+
+.scrollable {
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+@media all and (max-width: 767px) {
+  .which-flag-container .state-aqi-category {
+    margin: 0 0 0 -15px !important;
+    display: inline-block !important;
+    width: 75px;
+  }
+
+  .which-flag-container,
+  .which-flag-container .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .which-flag-container .state-tabs-container {
+    padding-left: 0 !important;
+  }
+
+  .which-flag-container .state-table tr td,
+  .which-flag-container .state-table tr th {
+    padding: 10px;
+    white-space: normal;
+    min-width: 75px !important;
+    vertical-align: top;
+  }
+  .which-flag-container .state-table tr th {
+    text-align: center;
+  }
+
+  .which-flag-container .state-table .city-time-cell {
+     padding-top: 0;
+     margin-left: 0;
+     width: auto;
+     vertical-align: inherit;
+  }
+
+  /*.which-flag-container .state-table td.currentAirQualityColumn {*/
+  /*}*/
+/*}
+
+/* iPhone5 support
+@media all and (max-width: 320px) {
+  .which-flag-container .state-table tr td:first-child,
+  .which-flag-container .state-table tr th:first-child {
+    max-width: 90px !important;
+  }
+} */

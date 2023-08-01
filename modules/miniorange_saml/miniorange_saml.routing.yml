@@ -1,0 +1,83 @@
+miniorange_saml.customer_setup:
+  path: /admin/config/people/miniorange_saml/customer_setup
+  defaults:
+    _title: 'miniOrange SAML Login Configuration'
+    _form: \Drupal\miniorange_saml\Form\MiniorangeSamlCustomerSetup
+  requirements:
+    _permission: 'administer site configuration'
+
+miniorange_saml.sp_setup:
+  path: /admin/config/people/miniorange_saml/sp_setup
+  defaults:
+    _title: 'miniOrange SAML Login Configuration'
+    _form: \Drupal\miniorange_saml\Form\MiniorangeSPInformation
+  requirements:
+    _permission: 'administer site configuration'
+
+miniorange_saml.idp_setup:
+  path: /admin/config/people/miniorange_saml/idp_setup
+  defaults:
+    _title: 'miniOrange SAML Login Configuration'
+    _form: \Drupal\miniorange_saml\Form\MiniorangeIDPSetup
+  requirements:
+    _permission: 'administer site configuration'
+
+miniorange_saml.login_options:
+  path: /admin/config/people/miniorange_saml/signon_settings
+  defaults:
+    _title: 'miniOrange SAML Login Configuration'
+    _form: \Drupal\miniorange_saml\Form\MiniorangeSignonSettings
+  requirements:
+    _permission: 'administer site configuration'
+
+miniorange_saml.mapping:
+  path: /admin/config/people/miniorange_saml/Mapping
+  defaults:
+    _title: 'miniOrange SAML Login Configuration'
+    _form: \Drupal\miniorange_saml\Form\Mapping
+  requirements:
+    _permission: 'administer site configuration'
+
+miniorange_saml.licensing:
+  path: /admin/config/people/miniorange_saml/Licensing
+  defaults:
+    _title: 'miniOrange SAML Login Configuration'
+    _form: \Drupal\miniorange_saml\Form\MiniorangeLicensing
+  requirements:
+    _permission: 'administer site configuration'
+
+miniorange_saml.support:
+  path: /admin/config/people/miniorange_saml/Support
+  defaults:
+    _title: 'miniOrange SAML Login Configuration'
+    _form: \Drupal\miniorange_saml\Form\MiniorangeSupport
+  requirements:
+    _permission: 'administer site cofiguration'
+
+miniorange_saml.saml_login:
+  path: /samllogin
+  defaults:
+    _controller: '\Drupal\miniorange_saml\Controller\miniorange_samlController::saml_login'
+  requirements:
+    _access: 'TRUE'
+
+miniorange_saml.test_configuration:
+  path: /testConfig
+  defaults:
+    _controller: '\Drupal\miniorange_saml\Controller\miniorange_samlController::test_configuration'
+  requirements:
+    _access: 'TRUE'
+
+miniorange_saml.saml_response:
+  path: /samlassertion
+  defaults:
+    _controller: '\Drupal\miniorange_saml\Controller\miniorange_samlController::saml_response'
+  requirements:
+    _access: 'TRUE'
+
+miniorange_saml.saml_logout:
+  path: /user/logout
+  defaults:
+    _controller: '\Drupal\miniorange_saml\Controller\miniorange_samlController::saml_logout'
+  requirements:
+    _access: 'TRUE'

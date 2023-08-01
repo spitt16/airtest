@@ -1,0 +1,20 @@
+uuid: eecff379-a2ce-4457-a5e6-0de95e414e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pollutant_status_descriptions
+  module:
+    - path
+id: taxonomy_term.pollutant_status_descriptions.path
+field_name: path
+entity_type: taxonomy_term
+bundle: pollutant_status_descriptions
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

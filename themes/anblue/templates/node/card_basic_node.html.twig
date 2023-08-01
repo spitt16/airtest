@@ -1,0 +1,34 @@
+<div class="inner-card-style inner-card-style-basic" style="overflow: visible;">{# Site Improve "Text is clipped when resized" fix cw 2023-04-24 #}
+  {% if has_description and has_image %}
+    <div class="col-xs-12 basic-image basic-image-default">
+      <img alt="{{ card.getImage().altText() }}" src="{{ card.getImage().getImageUrl() }}">
+    </div>
+  {% endif %}
+
+  {% if not has_description and has_image  %}
+    {% set title_float = "text-center" %}
+  {% endif %}
+
+  <div class="col-xs-12">
+    <h2 class="{{ title_float }} card-name">
+      {{ card.getName() }}
+    </h2>
+    <h2 class="{{ title_float }} card-name-mobile">
+      {{ card.getSmartName() }}
+    </h2>
+  </div>
+
+  {% if has_description %}
+    <div class="col-xs-12">
+      <p>
+        {{ card.getDescription() }}
+      </p>
+    </div>
+  {% endif %}
+
+  {% if not has_description and has_image %}
+    <div class="col-xs-12 basic-image basic-image-nondesc">
+      <img alt="{{ card.getImage().altText() }}" src="{{ card.getImage().getImageUrl() }}">
+    </div>
+  {% endif %}
+</div>

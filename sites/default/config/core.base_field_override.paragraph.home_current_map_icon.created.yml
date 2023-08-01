@@ -1,0 +1,18 @@
+uuid: 603e9cc9-e370-4347-a42a-fd1fca1adab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.home_current_map_icon
+id: paragraph.home_current_map_icon.created
+field_name: created
+entity_type: paragraph
+bundle: home_current_map_icon
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

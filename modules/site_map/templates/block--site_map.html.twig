@@ -1,0 +1,84 @@
+{%
+set classes = [
+'field',
+'field--name-' ~ field_name|clean_class,
+'field--type-' ~ field_type|clean_class,
+'field--label-' ~ label_display,
+]
+%}
+{%
+set title_classes = [
+'field--label',
+label_display == 'visually_hidden' ? 'sr-only',
+]
+%}
+
+{% set navigation_obj = constructNavigation(1) %}
+{% set navigation = navigation_obj.getFooterNavigationObjs() %}
+{% set navigation_column_count = getBootstrapColumnCount(navigation|length) %}
+
+<div class="container">
+  <div class="row">
+    <div class="band-style-general band-style-content">
+      <div class="band-title-row">
+        <div class="band-title-holder">
+          <h1 id="using-air-quality-index" class="band-title">Site Map</h1>
+        </div>
+      </div>
+
+      <div class="band-card-row container site-map">{# AirNowDrupal Issue # 26 Container Look & Feel #}
+        <div class="col-sm-12">
+          {% set loopIdx = 0 %}
+          {% for obj in navigation %}
+            {% set loopIdx = loop.index0 %}
+
+            {% if loopIdx % 4 == 0 %}
+              <div class="row navigation-row">
+            {% endif %}
+
+            <div class="col-sm-3 navigation-col">
+              {% set current_header_link = obj.getHeaderNavigationLink() %}
+              {% set navigation_links = obj.getNavigationLinks() %}
+              <div class="header-title">
+                <h2>
+                  {% if current_header_link.getLinkUrl()|length > 0 %}
+                    <a class="header-link" href="{{ current_header_link.getLinkUrl() }}" target="_blank">{{ current_header_link.getLinkTitle() }}</a>
+                  {% else %}
+                    {{ current_header_link.getLinkTitle() }}
+                  {% endif %}
+                </h2>
+              </div>
+              {% for navigation_link in navigation_links %}
+                {% set current_main_link = navigation_link.getMainNavigationLinks()[0] %}
+                <div>
+                  <div>
+                    <a class="main-link" href="{{ current_main_link.getLinkUrl() }}" target="_blank">{{ current_main_link.getLinkTitle() }}</a>
+                  </div>
+                  {% for sub_navigation_link in navigation_link.getSubNavigationLinks() %}
+                    <div>
+                      {% if sub_navigation_link.getInHeader() %}
+                        {% if sub_navigation_link.getOpenNewTab() %}
+                          {% set target = "_blank" %}
+                        {% else %}
+                          {% set target = "" %}
+                        {% endif %}
+                        <a class="sub-link nav-link" href="{{ sub_navigation_link.getLinkUrl() }}" target="{{ target }}">{{ sub_navigation_link.getLinkTitle() }}</a>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+
+            {% if loopIdx % 4 == 3 %}
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% if loopIdx % 4 != 3 %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

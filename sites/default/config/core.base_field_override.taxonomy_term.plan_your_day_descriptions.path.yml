@@ -1,0 +1,20 @@
+uuid: 364195ca-acd7-49e2-bd8f-d1e07324645c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.plan_your_day_descriptions
+  module:
+    - path
+id: taxonomy_term.plan_your_day_descriptions.path
+field_name: path
+entity_type: taxonomy_term
+bundle: plan_your_day_descriptions
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

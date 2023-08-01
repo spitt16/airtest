@@ -1,0 +1,23 @@
+uuid: 94f67ae2-988d-4815-b5a5-a9bb435b3385
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_open_settngs
+    - paragraphs.paragraphs_type.link_image
+  module:
+    - options
+id: paragraph.link_image.field_open_settngs
+field_name: field_open_settngs
+entity_type: paragraph
+bundle: link_image
+label: 'Open Settings'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'New Tab'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

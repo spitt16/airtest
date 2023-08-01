@@ -1,0 +1,18 @@
+uuid: 8a8b71e3-7ce4-4b2a-88db-aeef0b2bed30
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.band_container
+id: node.band_container.metatag
+field_name: metatag
+entity_type: node
+bundle: band_container
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

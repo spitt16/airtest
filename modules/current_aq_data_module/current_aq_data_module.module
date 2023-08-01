@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function current_aq_data_module_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'current_aq_data_template' => array(
+      'variables' => array(
+        'band' => null
+      ),
+      'template' => 'block--current_aq_data',
+    ),
+  );
+  return $variables;
+}

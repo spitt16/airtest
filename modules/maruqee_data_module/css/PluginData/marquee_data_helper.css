@@ -1,0 +1,1613 @@
+.tippy-tooltip.marquee-theme {
+  background-color: #000000;
+  opacity: 0.7;
+  max-width: 500px;
+  padding: 5px 10px 10px 10px;
+  font-size: 14px;
+
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-filter: blur(0);
+}
+
+.tippy-tooltip.marquee-theme h4 {
+  font-size: 18px;
+}
+
+.tippy-tooltip.marquee-theme ul {
+  display:table;
+  margin:0 auto;
+  text-align: left;
+}
+
+.tippy-tooltip.marquee-theme p a {
+  color: inherit;
+  text-decoration: underline;
+}
+.tippy-tooltip.marquee-theme p a:hover {
+  color: rgba(106, 208, 255, .9);
+}
+.aq-data-aqi-holder {
+  border-right: 1px solid #fff;
+}
+
+/*.marquee-dial-arrow-container {*/
+  /*position: relative;*/
+/*}*/
+
+/*.marquee-dial-arrow {*/
+  /*!* Sets rotation animation *!*/
+  /*-webkit-transition: all 1.25s ease-in-out;*/
+  /*-moz-transition: all 1.25s ease-in-out;*/
+  /*-o-transition: all 1.25s ease-in-out;*/
+  /*transition: all 1.25s ease-in-out;*/
+
+  /*!* Sets rotation to pivot around the end of the div *!*/
+  /*-webkit-transform-origin: center;*/
+  /*-moz-transform-origin: center;*/
+  /*-o-transform-origin: center;*/
+  /*transform-origin: center;*/
+/*}*/
+
+/*.marquee-dial-arrow-head {*/
+  /*!* Use borders to create the arrow triangle *!*/
+  /*width: 0;*/
+  /*height: 0;*/
+  /*border-top: 10px solid transparent;*/
+  /*border-bottom: 10px solid transparent;*/
+  /*border-right: 30px solid white;*/
+/*}*/
+
+.marquee {
+  display: block;
+  width: 100%;
+  /*max-width: var(--global-outer-width);*/
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 600px;
+  background-color: #757575;
+}
+
+.marquee-background {
+  height: 100%;
+  width: 100%;
+  /*opacity: 1;*/
+
+  /* Allows fade in */
+  transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -webkit-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+}
+
+/* Initially is hidden, allowing for fade in */
+.marquee-background.marquee-background-hide {
+  /*opacity: 0;*/
+}
+
+.marquee-img {
+  position: absolute;
+}
+
+.marquee-holder {
+  display: block;
+  /*width: 100%;*/
+  /*max-width: var(--global-padded-width);*/
+  max-width: 1240px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.po-aqi-scale.noData,
+.marquee-forecast-col.noData,
+.marquee-dial-col.noData,
+.marquee-location-col.noData .location-btn-holder {
+  display: none !important;
+}
+
+.marquee-location-col.noData,
+.marquee-location-col.noData .marquee-col-holder {
+  width: 100%;
+
+}
+
+.marquee-location-col.noData #location-input,
+.marquee-location-col.noData .arcgisSearch .searchGroup .searchInput {
+  line-height: 35px; /* intended to roughly be 75% increase */
+  font-size: 24px; /* intended to roughly be 75% increase */
+  width: 390px; /* intended to roughly be 75% increase */ /* AIR-537 Make Geosearch box fit Spanish cw 2022-04-14 */
+  height: 38px;
+  font-family: "DroidSansFont";
+}
+
+.marquee-location-col .arcgisSearch .searchGroup .searchInput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  text-align: center;
+  opacity: .75;
+}
+
+.marquee-location-col .arcgisSearch .searchGroup .searchInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  text-align: center;
+  opacity: .75;
+}
+
+.marquee-location-col .arcgisSearch .searchGroup .searchInput::-ms-input-placeholder { /* Microsoft Edge */
+  text-align: center;
+  opacity: .75;
+}
+
+.marquee-location-col .arcgisSearch .searchGroup .searchInput::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.marquee-location-col .arcgisSearch .searchGroup .searchInput:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+
+.marquee-location-col .arcgisSearch .searchGroup .searchInput::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+}
+
+.marquee-location-col .arcgisSearch .searchGroup .searchInput:-ms-input-placeholder {
+  text-align: center;
+}
+
+.marquee-forecast-col {
+  /*position: absolute;*/
+  /*width: 200px;*/
+  /*margin-top: 200px;*/
+  color: white;
+  text-align: center;
+}
+
+.marquee-forecast-col .aq-day-category {
+  width: 60px;
+  height: 30px;
+  background-color: #5E5E5E;
+  border: 1px solid white;
+  margin: 0 auto;
+}
+
+.marquee-forecast-col #aq-current-day,
+.marquee-forecast-col #aq-next-day{
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.marquee-forecast-col p.aq-day-label {
+  margin: 0;
+}
+
+.marquee-forecast-col p.aq-day-action {
+  margin: 3px 0 0 0;
+}
+
+.marquee-forecast-col div.aq-day-category {
+  margin-top: 1px;
+}
+
+.marquee-forecast-col .aq-day-category.halfcircle {
+  border-radius: 50px 50px 0 0;
+}
+
+.marquee-forecast-col .aq-day-category.good {
+  background-color: #00E400;
+}
+
+.marquee-forecast-col .aq-day-category.moderate {
+  background-color: #FFFF00;
+}
+
+.marquee-forecast-col .aq-day-category.unhealthy-sensitive {
+  background-color: #FF7E00;
+}
+
+.marquee-forecast-col .aq-day-category.unhealthy {
+  background-color: #FF0000;
+}
+
+.marquee-forecast-col .aq-day-category.very-unhealthy {
+  background-color: #8F3E96;
+}
+
+.marquee-forecast-col .aq-day-category.hazardous {
+  background-color: #7E0023;
+}
+
+/*.marquee-dial-col {*/
+  /*!*padding: 10px;*!*/
+  /*!*width: 290px;*!*/
+  /*!*margin-left: 200px;*!*/
+/*}*/
+
+/*.marquee-location-col {*/
+  /*color: white;*/
+  /*!*position: absolute;*!*/
+  /*!*left: 67%;*!*/
+  /*!*right: auto;*!*/
+  /*!*top: 172px;*!*/
+/*}*/
+
+.marquee-col-holder {
+  height: inherit;
+  position: relative;
+  width: 90%
+}
+
+.forecast-container {
+  position: absolute;
+  bottom: -20px;
+}
+
+/*.location-input-style {*/
+  /*border: 1px solid #FFFFFF;*/
+  /*border-radius: 4px;*/
+  /*background-color: rgba(0,0,0,0);*/
+  /*color: #FFFFFF;*/
+  /*padding-left: 10px;*/
+  /*width: 170px;*/
+  /*padding-right: 10px;*/
+/*}*/
+
+/*.location-input-style::-webkit-input-placeholder {*/
+  /*color: #FFFFFF;*/
+/*}*/
+
+/*.location-input-style::-moz-placeholder {*/
+  /*color: #FFFFFF;*/
+/*}*/
+
+/*.location-input-style::-ms-input-placeholder {*/
+  /*color: #FFFFFF;*/
+/*}*/
+
+/*.location-input-style::-moz-placeholder {*/
+  /*color: #FFFFFF;*/
+/*}*/
+
+/*.dial-data-info {*/
+  /*position: absolute;*/
+  /*color: white;*/
+  /*top: 290px;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*width: 100%;*/
+/*}*/
+
+/*.aqi-dial-nav .dial-data-info {*/
+  /*top: 117px;*/
+/*}*/
+
+/*.current-aq-label {*/
+  /*text-align: center;*/
+/*}*/
+
+/*.current-aq-label h3 {*/
+  /*margin-top: 5px;*/
+  /*margin-bottom: 3px;*/
+/*}*/
+
+/*.updated-time-row {*/
+  /*text-align: center;*/
+/*}*/
+
+/*.aq-data-row .col-xs-5 {*/
+  /*text-align: right;*/
+/*}*/
+
+/*.marquee-forecast-col {*/
+  /*!*position: absolute;*!*/
+  /*!*width: 200px;*!*/
+  /*!*margin-top: 210px;*!*/
+/*}*/
+
+/*.aq-day-status {*/
+  /*width: 60px;*/
+/*}*/
+
+#popup-announcement-container {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 100000;
+  top: -15px;
+  bottom: 0;
+}
+
+#popup-announcement-container #popup-announcement {
+  position: fixed;
+  top: 30%;
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+}
+
+#popup-announcement-container #popup-announcement h3 {
+  background-color: #E0E0E0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 13px;
+  border-radius: 5px 5px 0 0;
+}
+
+#popup-announcement-container #popup-announcement span.popup-announcement-title-dismiss {
+  position: absolute;
+  right: 0;
+  padding: 10px 18px;
+  top: 0;
+  user-select: none;
+  border-radius: 0 5px 0 0;
+}
+
+#popup-announcement-container #popup-announcement span.popup-announcement-title-dismiss:hover {
+  cursor: pointer;
+  background-color: #C0C0C0;
+}
+#popup-announcement-container #popup-announcement span.popup-announcement-title-dismiss:active {
+  cursor: pointer;
+  background-color: #A0A0A0;
+}
+
+#popup-announcement-container #popup-announcement .popup-announcement-message {
+  background-color: white;
+  padding: 13px;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+}
+
+@media all and (max-width: 767px) {
+  #popup-announcement-container #popup-announcement {
+    width: 300px;
+    margin-left: -150px;
+    top: 25%;
+  }
+}
+
+
+@media all and (min-width: 768px) {
+  #popup-data-provider-container {
+    display: none;
+  }
+}
+@media all and (max-width: 767px) {
+  #popup-data-provider-container {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100000;
+    top: -15px;
+    bottom: 0;
+  }
+
+  #popup-data-provider-container #popup-data-provider {
+    position: fixed;
+    top: 25%;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+  }
+
+  #popup-data-provider-container #popup-data-provider h3 {
+    background-color: #E0E0E0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 13px;
+    border-radius: 5px 5px 0 0;
+  }
+
+  #popup-data-provider-container #popup-data-provider span.popup-data-provider-title-dismiss {
+    position: absolute;
+    right: 0;
+    padding: 10px 18px;
+    top: 0;
+    user-select: none;
+    border-radius: 0 5px 0 0;
+  }
+
+  #popup-data-provider-container #popup-data-provider span.popup-data-provider-title-dismiss:hover {
+    cursor: pointer;
+    background-color: #C0C0C0;
+  }
+
+  #popup-data-provider-container #popup-data-provider span.popup-data-provider-title-dismiss:active {
+    cursor: pointer;
+    background-color: #A0A0A0;
+  }
+
+  #popup-data-provider-container #popup-data-provider .popup-data-provider-message {
+    background-color: white;
+    padding: 13px;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+.marquee-forecast-col .aq-forecast-label {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+.marquee-dataprovider-col {
+  position: absolute;
+  right: 5px;
+  color: #fff;
+  text-align: right;
+  bottom: 20px;
+  z-index: 1;
+}
+
+.marquee-dataprovider-col p {
+  margin-bottom: 0;
+}
+.marquee-dataprovider-col p.dataProviderLabel a,
+.marquee-dataprovider-col p.dataProviderLabel a:visited {
+  color: #FFFFFF !important;
+  text-decoration: underline !important;
+}
+.marquee-dataprovider-col p.dataProviderLabel a:hover {
+  color: rgba(106,208,255,.9) !important;
+  text-decoration: underline !important;
+}
+.marquee-dataprovider-col p.dataProviderAgency {
+  font-size: 12px;
+}
+
+.marquee-dataprovider-col p.dataProviderAgency a {
+  color: white;
+  text-decoration: underline;
+}
+@media all and (max-width: 1260px) {
+  .marquee-dataprovider-col {
+    right: 25px;
+  }
+}
+
+
+.btn.btn-custom-blue {
+  color: white;
+  background: #167fac;
+  border-radius: 9px;
+  font-size: 11px;
+  padding: 4px 12px;
+}
+
+.btn.btn-custom-blue-state {
+  color: white;
+  background: #167fac;
+  border-radius: 9px;
+  font-size: 11px;
+  padding: 4px 12px;
+  margin-top: 5px;
+}
+
+.btn.btn-custom-grey {
+  color: white;
+  background: grey;
+  border-radius: 9px;
+  font-size: 11px;
+  padding: 4px 12px;
+}
+
+.btn.btn-custom-blue:hover,
+.btn.btn-custom-blue-state:hover {
+  color: rgba(106,208,255,.9);
+  text-decoration: none;
+}
+
+.reporting-location {
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.reporting-location > .reporting-location-name {
+  overflow: hidden;
+  display: inline-block;
+  white-space : nowrap;
+  text-overflow: ellipsis;
+}
+
+.mobile-reporting-location {
+  overflow: hidden;
+  font-size: 10px;
+  /*display: inline-block;*/
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.mobile-reporting-location > .mobile-reporting-location-name {
+  overflow: hidden;
+  display: inline-block;
+  white-space : nowrap;
+  text-overflow: ellipsis;
+}
+
+#location-label {
+  font-size: 30px;
+}
+
+.location-holder {
+  top: 40%;
+  display: block;
+  position: relative;
+  text-align: center;
+  margin: auto;
+}
+
+#location-input-gps-wrapper,
+#location-input-mobile-gps {
+  /* width: 185px; */ /* AIR-537 Make Geosearch box fit Spanish cw 2022-04-14 */
+  position: relative;
+  display: inline-block;
+}
+
+.noData #location-input-gps-wrapper {
+  width: 390px; /* AIR-537 Make Geosearch box fit Spanish cw 2022-04-14 */
+  position: relative;
+  display: inline-block;
+}
+
+.noData #location-input-gps-wrapper .arcgisSearch .searchGroup .searchInput,
+.noData #location-input-gps-wrapper .location-input-field {
+  padding-right: 45px;
+}
+
+.noData #location-input-gps-wrapper .location-input-gps-btn {
+  height: 38px;
+  width: 38px;
+  padding: 9px;
+}
+
+/*.noData .location-input-gps-btn {*/
+  /*right: */
+/*}*/
+
+/*.noData .location-holder {*/
+  /*top: 40%;*/
+/*}*/
+
+.marquee-col {
+  height: 100%;
+}
+
+.po-aqi-scale {
+  position: fixed;
+  top: 340px;
+  z-index: 1001;
+  left: -5px;
+  pointer-events: none;
+}
+
+.po-aqi-scale .po-scale-item {
+  /*background: grey;*/
+  background: #565656;
+  border: solid 1px white;
+  color: white;
+  border-radius: 5px;
+  pointer-events: all;
+}
+
+.po-aqi-scale .po-aqi-scale-btn .fa{
+  margin: 5px;
+}
+
+/*Button Normal*/
+.po-aqi-scale .po-aqi-scale-btn {
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin:    0 0;
+  -ms-transform-origin:     0 0;
+  -o-transform-origin:      0 0;
+
+  transform: rotate(-90deg) translate(0px, 0px);
+  -webkit-transform: rotate(-90deg) translate(0px, 0px);
+  -moz-transform:    rotate(-90deg) translate(0px, 0px);
+  -ms-transform:     rotate(-90deg) translate(0px, 0px);
+  -o-transform:      rotate(-90deg) translate(0px, 0px);
+
+  -webkit-transition: transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+
+  padding-top: 5px;
+  top: 135px;
+  position: absolute;
+  width: 135px;
+  text-align: right;
+}
+
+/*Button Hide*/
+.po-aqi-scale .po-aqi-scale-btn.po-aqi-scale-btn-hidden {
+  transform: rotate(-90deg) translate(0px, -27px);
+  -webkit-transform: rotate(-90deg) translate(0px, -27px);
+  -moz-transform:    rotate(-90deg) translate(0px, -27px);
+  -ms-transform:     rotate(-90deg) translate(0px, -27px);
+  -o-transform:      rotate(-90deg) translate(0px, -27px);
+}
+
+/*Display Normal*/
+.po-aqi-scale .po-aqi-scale-display {
+  transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform:    translate(0px, 0px);
+  -ms-transform:     translate(0px, 0px);
+  -o-transform:      translate(0px, 0px);
+
+  -webkit-transition: transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+
+  padding: 10px 0;
+  width: 215px;
+}
+
+/*Display Hide*/
+.po-aqi-scale .po-aqi-scale-display.po-aqi-scale-display-hidden {
+  transform: translate(-245px, 0px);
+  -webkit-transform: translate(-245px, 0px);
+  -moz-transform:    translate(-245px, 0px);
+  -ms-transform:     translate(-245px, 0px);
+  -o-transform:      translate(-245px, 0px);
+}
+
+.po-aqi-scale .po-aqi-scale-display .fa-times {
+  cursor: pointer;
+  /*padding: 5px;*/
+}
+
+.po-aqi-scale .po-aqi-scale-display .display-item {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.scale-section {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 0px;
+}
+
+.scale-section .col-xs-8 {
+  padding-left: 6px;
+  padding-right: 5px;
+}
+
+.scale-section-title {
+  padding: 0px 0px 10px 0px;
+}
+
+.scale-section-good {
+  /*background-color: var(--color-aqi-green);*/
+  background-color: #00E400;
+  color: #000000;
+}
+
+.scale-section-moderate {
+  /*background-color: var(--color-aqi-yellow);*/
+  background-color: #ffff00;
+  color: #000000;
+}
+
+.scale-section-sensitive-unhealthy {
+  /*background-color: var(--color-aqi-orange);*/
+  background-color: #ff7e00;
+  color: #ffffff;
+}
+
+.scale-section-unhealthy {
+  /*background-color: var(--color-aqi-red);*/
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.scale-section-very-unhealthy {
+  /*background-color: var(--color-aqi-purple);*/
+  background-color: #8F3F97;
+}
+
+.scale-section-hazardous {
+  /*background-color: var(--color-aqi-maroon);*/
+  background-color: #7E0023;
+}
+
+.scale-section-info {
+  font-weight: normal;
+  padding: 5px 0 0 0;
+}
+
+.location-input-holder {
+  /*margin: 15px 0;*/
+}
+
+.splash-main-message {
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+.splash-sub-message {
+  margin: 0;
+  /*margin: 15px 0;*/
+  font-size: 16px;
+  font-weight: bold;
+}
+.splash-sub-message a {
+  color: white;
+}
+.splash-sub-message a img {
+  height: 22px;
+  margin-top: -4px;
+  margin-right: 1px;
+}
+
+.aq-forecast-details-button {
+  margin-top: 10px;
+}
+
+.aqi-legend-icon {
+  transform: rotate(90deg);
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  left: 5px;
+}
+
+.marquee-dial-status-tooltip-hotspot {
+  position: absolute;
+  display: inline-block;
+  width: 55%;
+  height: 20%;
+  top: 30%;
+  left: 22%;
+}
+
+.marquee-col-holder.marquee-dial-col-holder img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+/* AirNowDrupal #161 Prevent Text Jumping cw 2019-09-25 */
+/* AirNowDrupal #161 Now using Div tag cw 2020-03-10 */
+.marquee-col.marquee-location-col.col-sm-5.hidden-xs.noData div#location-input-gps-wrapper {
+	margin-bottom: -10px; /* -10px for Welcome message cw 2019-09-25 */
+}
+
+/* AirNowDrupal #161 Prevent Text Jumping cw 2019-09-25 */
+/* AirNowDrupal #161 Now using Div tag cw 2020-03-10 */
+.marquee-col.marquee-location-col.col-sm-5.hidden-xs div#location-input-gps-wrapper {
+	margin-bottom: -7px; /* -7px for a city name cw 2019-09-25 */
+}
+
+@media all and (max-width: 767px) {
+  /* AirNowDrupal #161 Prevent Text Jumping cw 2019-09-25 */
+  #location-input-mobile-gps {
+	margin-bottom: -7px;
+  }
+
+  .main-content {
+    position: relative;
+    top: -25px;
+  }
+
+.marquee {
+    height: 570px;
+    margin-top: -22px;
+  }
+
+  .forecast-container.narrowView .aq-forecast-details-button {
+    margin-top: 5px;
+  }
+
+  .forecast-container.narrowView p.aq-day-action {
+    margin: 0;
+  }
+  .forecast-container.narrowView .aq-day-category.halfcircle {
+    margin-top: 0;
+  }
+
+  .marquee-location-col.noData .location-input-style,
+  .marquee-location-col.noData .arcgisSearch .searchGroup .searchInput {
+    line-height: 20px;
+    font-size: 13px;
+    max-width: 185px;
+    height: 24px;
+    width: 100%;
+    padding-right: 33px;
+    margin:auto;
+  }
+
+  .marquee-location-col.noData #location-input-mobile-gps {
+    width: 185px;
+	margin-top: 12px; /* here cw 2019-09-25 */
+  }
+
+  .marquee-location-col.noData h2.location-label.standard-location-label {
+    display: block;
+    font-size: 20px;
+  }
+
+  .marquee-location-col h2.location-label.standard-location-label {
+    display: none;
+  }
+
+  .current-aq-label h3 {
+    font-size: 1.7em;
+    margin-top: 0px;
+    margin-bottom: 3px;
+  }
+
+  .current-aq-label h1 {
+    font-size: 1.7em;
+    margin-top: 0px;
+    margin-bottom: 3px;
+  }
+
+  .updated-time-row {
+    font-size: 0.7em;
+  }
+
+  .aq-data-row .aq-data-value{
+    font-size: 1.5em;
+  }
+
+  .aq-data-row .aq-data-label{
+    font-size: 0.7em;
+    margin-top: -8px;
+  }
+
+  .aq-data-row .aq-data-label p{
+    margin-left: -5px;
+  }
+
+  .col-sm-5.marquee-col.marquee-dial-col {
+    top: 0;
+    padding-top: 27px;
+    width: 100%;
+    /*margin-bottom: 60px;*/ /* AMC - removed to better fit search field below dial.  If change is good please delete  */
+  }
+
+  .marquee-dataprovider-col {
+    display: none;
+  }
+
+  .marquee-reportinglocation-col {
+     display: none;
+   }
+
+  .marquee-col.marquee-forecast-col.col-sm-2.visible-xs {
+    /*height: 120px;*/
+  }
+
+  .marquee-col.marquee-location-col.col-sm-5 {
+    /*height: 17px;*/ /* AMC - changed to better fit search field below dial.  If change is good please delete */
+    /*margin-top: 50px;*/ /* AMC - removed to better fit search field below dial.  If change is good please delete  */
+    /*margin-top: 20px;*/
+    height: 35px;
+  }
+
+  .marquee-col.marquee-location-col.col-sm-5.noData {
+    margin-top: 0px;
+    height: 100%;
+  }
+
+  .marquee-col.marquee-location-col.col-sm-5 .marquee-dataprovider-col {
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    font-size: .8em;
+    width: 100%;
+  }
+
+  .marquee-col.marquee-location-col.col-sm-5 .marquee-reportinglocation-col {
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    font-size: .8em;
+    width: 100%;
+  }
+
+  .marquee-col-holder {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .dial-data-info {
+    /*top: 155px;*/
+    top: 125px;
+    width: 100%;
+  }
+
+  .marquee-col {
+     height: 47%;
+  }
+
+  .marquee-holder {
+    padding: 0;
+  }
+
+  .marquee-col-holder.marquee-dial-col-holder {
+    width: 235px;
+    height: 235px;
+  }
+
+  .col-xs-12.aq-data-row {
+    margin-top: -2px;
+  }
+
+  .weather-container {
+    top: 10px;
+  }
+
+  .location-holder {
+    top: 0%;
+  }
+
+  .noData .location-holder {
+    top: 140px; /* AirNowDrupal #136 Center on Mobile View cw 2019-05-15 */
+  }
+
+  /* Handle tippy on mobile */
+  /*.tippy-popper {*/
+    /*!*display: none;*!*/
+    /*position: absolute !important;*/
+    /*transform: translate3d(0px, 0px, 0px) !important;*/
+    /*top: 135px !important;*/
+    /*left: 15px !important;*/
+    /*right: 0px !important;*/
+    /*!* min-width: 90% !important; *!*/
+    /*width: 92% !important;*/
+    /*max-width: 92% !important;*/
+  /*}*/
+
+  /*.tippy-popper .tippy-tooltip.marquee-theme {*/
+    /*top: 0px !important;*/
+    /*left: 0px !important;*/
+    /*right: 0px !important;*/
+  /*}*/
+}
+.mobile-marquee-dataprovider-col {
+  display: none;
+}
+/* Targeting ALL mobile devices SMALLER than iPad Mini; the iPad Mini is 768 px wide. cw 2019-02-27 */
+/* Created for AirNowDrupal#106 cw 2019-02-27 */
+@media all and (max-width: 767px) {
+
+  .band-title-row h1.band-title {
+    font-size: 20px;
+  }
+
+  .aq-forecast-label {
+  	display: none;
+  }
+
+  .marquee-forecast-col #aq-current-day,
+  .marquee-forecast-col #aq-next-day{
+    display: none;
+  }
+
+  .btn.btn-custom-blue {
+    margin: 4px;
+  }
+
+  /* Adjustments to Marquee backgroud image cw 2019-02-24 */
+  .marquee-col-holder {
+    /*height: 80px;*/
+  }
+
+  .marquee {
+    margin-bottom: -33px;
+	}
+
+  .mobile-marquee-dataprovider-col {
+    position: absolute;
+    display: block;
+    bottom: 50px;
+    color: #fff;
+    text-align: right;
+    right: 20px;
+  }
+
+  .mobile-marquee-dataprovider-col p {
+    margin-bottom: 0;
+  }
+  .mobile-marquee-dataprovider-col p,
+  .mobile-marquee-dataprovider-col p.dataProviderLabel a,
+  .mobile-marquee-dataprovider-col p.dataProviderLabel a:visited {
+    color: #FFFFFF !important;
+    text-decoration: underline !important;
+    cursor: pointer;
+  }
+  .mobile-marquee-dataprovider-col p.dataProviderLabel a:hover {
+    color: rgba(106,208,255,.9) !important;
+    text-decoration: underline !important;
+  }
+  .mobile-marquee-dataprovider-col p.dataProviderAgency {
+    font-size: 12px;
+  }
+
+  .forecast-container {
+    position: inherit;
+    bottom: 0;
+  }
+
+  .marquee-col .location-input-holder {
+    margin-bottom: 12px;
+  }
+
+  .location-holder {
+    /* top: 40%;  AirNowDrupal #136 Center on Mobile View cw 2019-05-15 */
+    /*display: block;*/
+    /*position: relative;*/
+    text-align: center;
+  }
+}
+.site-attribution {
+  position: absolute;
+  bottom: 20px;
+  left: 5px;
+  height: 22px;
+  line-height: 22px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.site-attribution a {
+  display: inline-block;
+}
+.site-attribution a.epa-logo {
+  width: 72px;
+}
+.site-attribution a.epa-logo img {
+  height: 22px;
+  margin-top: -12px;
+  margin-right: 1px;
+}
+.site-attribution a.partners-link {
+  color: white;
+  text-decoration: underline;
+}
+.site-attribution a.partners-link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+@media all and (max-width: 1260px) {
+  .site-attribution {
+    left: 25px;
+  }
+}
+@media all and (max-width: 767px) {
+  .site-attribution {
+    bottom: 70px;
+    left: 20px;
+    font-size: 14px;
+  }
+  .site-attribution a.epa-logo{
+    display: block;
+  }
+  .site-attribution a.epa-logo img {
+    height: 18px;
+    margin-top: 0;
+  }
+}
+
+
+@media all and (min-width: 768px) {
+  .current-aq-label h3 {
+    font-size: 42px;
+    margin-top: -15px;
+    margin-bottom: 3px;
+  }
+
+  .current-aq-label h1 {
+    font-size: 42px;
+    margin-top: -15px;
+    margin-bottom: 3px;
+  }
+
+  .updated-time-row {
+    font-size: 12px;
+  }
+
+  .aq-data-row {
+    padding: 10px;
+  }
+
+  .aq-data-row .aq-data-value{
+    font-size: 32px;
+  }
+
+  .aq-data-row .aq-data-label{
+    font-size: 12px;
+    margin-top: -3px;
+  }
+
+
+  .location-holder {
+    /* top: 40%; */
+    /*display: block;*/
+    /*position: relative;*/
+    text-align: center;
+  }
+
+  #location-label {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 900px) {
+  .location-holder {
+    max-width: 400px;
+  }
+
+  /*.arcgisSearch .searchGroup .searchInput {*/
+    /*width: 170px*/
+  /*}*/
+
+  .location-holder .location-btn-holder {
+    padding-right: 0px;
+  }
+
+  #location-label {
+    font-size: 22px;
+  }
+}
+
+/*.marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {*/
+  /*!*max-width: 440px;*!*/
+  /*padding: 5px;*/
+  /*position: absolute;*/
+  /*height: 100%;*/
+  /*width: 100%;*/
+ /*}*/
+
+/*.marquee-dial-background {*/
+  /*opacity: 0.6;*/
+/*}*/
+
+
+/*.aqi-dial-nav .aq-data-row {*/
+  /*padding: 2px 10px;*/
+/*}*/
+
+@media all and (min-width: 768px) and (max-width: 1159px) {
+  .marquee {
+    height: 590px;
+  }
+
+  .dial-data-info {
+    top: 290px;
+  }
+
+  .marquee-holder {
+    display: block;
+    width: 100%;
+    /*max-width: var(--global-padded-width);*/
+    max-width: 1240px;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {
+    /*max-width: 440px;*/
+    padding: 0px;
+  }
+
+  .current-aq-label h3 {
+    font-size: 3.5vw;
+  }
+
+  .current-aq-label h1 {
+    font-size: 3.5vw;
+  }
+
+  .updated-time-row {
+    font-size: 1vw;
+  }
+
+  .col-xs-12.aq-data-row {
+    margin-top: -10px;
+  }
+
+  .aq-data-row .aq-data-value {
+    font-size: 3.5vw;
+  }
+
+  div.aq-data-label p {
+    font-size: 1.2vw;
+  }
+
+  .aqi-dial-nav  div.aq-data-label p {
+    font-size: 8px;
+  }
+
+  .aqi-dial-nav .aq-data-row {
+    padding: 10px;
+  }
+}
+
+
+.aqi-dial-nav .current-aq-label h3 {
+  font-size: 16px;
+}
+
+.aqi-dial-nav .current-aq-label h1 {
+  font-size: 16px;
+}
+
+.aqi-dial-nav .updated-time-row {
+  font-size: 8px;
+}
+
+.aqi-dial-nav .aq-data-value{
+  font-size: 16px;
+}
+
+.aqi-dial-nav .aq-data-label{
+  font-size: 8px;
+}
+
+@media all and (max-width: 767px) {
+  .marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {
+    min-width: 230px;
+    padding: 0px;
+  }
+}
+
+@media all and (max-width: 374px) {
+  .marquee-dial-background, .marquee-dial-meter, .marquee-dial-status, .marquee-dial-arrow {
+    min-width: 228px;
+    width: 80%;
+  }
+}
+
+/* Targets iPhone 5 cw 2019-02-15 */
+@media all and (max-width: 359px) and (min-width: 319px) {
+	.forecast-container {
+		top: 8px;
+	}
+	.col-xs-12, .aq-forecast-details-button {
+    	width: 285px;
+		padding-right: 0px;
+		padding-left: 0px;
+  }
+	.mobile-reporting-location-name {
+		margin-top: 0px;
+	}
+  /* Adjustments to Marquee background image cw 2019-02-24 */
+  .marquee {
+    height: 485px;
+	}
+}
+
+/* Targets landscape on phones: Range from Galaxy S5 to iPhone 8 Plus */
+@media all and (max-width: 767px) and (max-height: 415px) {
+  .po-aqi-scale {
+    top: 20vh;
+  }
+}
+
+.po-aqi-text {
+  padding-right: 0;
+  white-space: nowrap;
+}
+
+.po-category-text{
+
+}
+
+.po-title-text {
+  /* white-space: nowrap; AIR-521 Enable Dial Text Translation; Removed to allow room for Spanish cw 2022-04-18 */
+}
+
+.po-title-container{
+}
+
+
+/***********************/
+/* Updated Dial Widget */
+/***********************/
+
+.aq-dial-container.noData {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  .aq-dial-container {
+    display: grid;
+    height: 100%;
+  }
+}
+.aq-dial-mobile-spacer {
+  height: 15px;
+  width: 100%;
+}
+.aq-dial {
+  width: 430px;
+  height: 430px;
+  position: relative;
+  font-size: 16px;
+  color: white;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.aq-dial.status-bar {
+  display: none;
+}
+.aq-dial.small {
+  width: 230px;
+  height: 230px;
+  font-size: 8px;
+}
+.aq-dial.col-sm-5 {
+  top: 27px;
+}
+.aq-dial.noData {
+  display: none !important;
+}
+@media all and (max-width: 1199px) {
+  .aq-dial {
+    width: 385px;
+    height: 385px;
+    margin-top: 35px;
+  }
+}
+/* Tablet and smaller screen sizes */
+@media all and (max-width: 768px) {
+  .aq-dial {
+    width: 300px;
+    height: 300px;
+    font-size: 12px;
+    margin: auto;
+  }
+  .aq-dial.small {
+    width: 175px;
+    height: 175px;
+    font-size: 6px;
+  }
+}
+
+.aq-dial .aq-dial-background,
+.aq-dial .aq-dial-background2,
+.aq-dial .aq-dial-meter,
+.aq-dial .aq-dial-arrow,
+.aq-dial .aq-dial-status {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.aq-dial .aq-dial-background {
+  opacity: 0.7;
+}
+.aq-dial .aq-dial-background2 {
+  opacity: 0.5;
+}
+
+.aq-dial .aq-dial-arrow {
+  -webkit-transition: all 1.25s ease-in-out;
+  -moz-transition: all 1.25s ease-in-out;
+  -o-transition: all 1.25s ease-in-out;
+  transition: all 1.25s ease-in-out;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+
+  /* for testing arrow rotation */
+  /*transform: rotate(13.8deg);*/
+}
+
+.aq-dial .top-half { /* AIR-521 Enable Dial Text Translation cw 2022-04-20 */
+  text-align: center;
+  font-size: 1.75em;
+  position: relative;
+  box-sizing: border-box;
+  height: 60%;
+  width: 50%;
+  top: 34%;
+  left: 25%;
+  right: 25%;
+}
+
+.aq-dial .top-half .current-category-tooltip-hotspot {
+  position: relative;
+  width: 60%;
+  left: 20%;
+  right: 20%;
+  height: 60%;
+  top: 40%;
+}
+
+.aq-dial .bottom-half {
+  position: absolute;
+  box-sizing: border-box;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+}
+
+.aq-dial .bottom-half .current-aq-container {
+  position: relative;
+  box-sizing: border-box;
+  height: 42%;
+  width: 100%;
+  top: 0;
+  padding: 2%;
+  font-size: 1em;
+}
+
+.aq-dial .bottom-half .current-aq-container .header {
+  position: relative;
+  box-sizing: border-box;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  padding: 1%;
+  text-align: center;
+}
+
+.aq-dial .bottom-half .current-aq-container .current-aq-data {
+  position: relative;
+  box-sizing: border-box;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+}
+
+.aq-dial .bottom-half .current-aq-container .current-aq-data .aqi {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding: 1% 3% 1% 1%;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.aq-dial .bottom-half .current-aq-container .current-aq-data .pollutant {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  float: right;
+  padding: 1% 1% 1% 3%;
+}
+
+.aq-dial .bottom-half .forecast-aq-container {
+  position: relative;
+  box-sizing: border-box;
+  height: 58%;
+  width: 100%;
+  bottom: 0;
+  padding: 2.5% 10% 6.5% 10%;
+  text-align: center;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .header,
+.aq-dial .bottom-half .forecast-aq-container .today-aq-data,
+.aq-dial .bottom-half .forecast-aq-container .tomorrow-aq-data,
+.aq-dial .bottom-half .forecast-aq-container .misc {
+  position: relative;
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  float: left;
+  font-size: 0.75em;
+  padding-right: 2%;
+  padding-left: 2%;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.aq-dial .bottom-half .forecast-aq-container .today-aq-data,
+.aq-dial .bottom-half .forecast-aq-container .tomorrow-aq-data {
+  cursor: pointer;
+}
+.aq-dial .bottom-half .forecast-aq-container .today-aq-data .category.smallfont,
+.aq-dial .bottom-half .forecast-aq-container .tomorrow-aq-data .category.smallfont {
+  font-size: 0.75em;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .misc {
+  text-align: left;
+  border-right: none;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .misc div,
+.aq-dial .bottom-half .forecast-aq-container .misc a {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .misc .print-only {
+  display: none;
+}
+@media print {
+  .aq-dial .bottom-half .forecast-aq-container .misc .browser-only {
+    display: none;
+  }
+
+  .aq-dial .bottom-half .forecast-aq-container .misc .print-only {
+    display: block;
+  }
+}
+
+.aq-dial .bottom-half .forecast-aq-container .circle {
+  position: relative;
+  width: 40%;
+  height: 32%;
+  border-radius: 50px;
+  margin: 5% auto;
+  border: 1px solid white;
+  background-color: #5E5E5E;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.good {
+  background-color: #00E400;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.moderate {
+  background-color: #FFFF00;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.unhealthy-sensitive {
+  background-color: #FF7E00;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.unhealthy {
+  background-color: #FF0000;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.very-unhealthy {
+  background-color: #8F3E96;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.hazardous {
+  background-color: #7E0023;
+}
+.aq-dial .bottom-half .forecast-aq-container .circle.no-data-fcst {
+  background-color: #5E5E5E;
+}
+
+.aq-dial .bottom-half .forecast-aq-container .circle .action-day {
+  position: absolute;
+  display: none;
+  height: 65%;
+  width: 65%;
+  bottom: -1px; /* offset circle's 1px border */
+  right: -35%;
+}

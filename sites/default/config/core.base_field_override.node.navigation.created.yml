@@ -1,0 +1,18 @@
+uuid: 5cfc2dfb-6e01-47d4-b0af-528be4bf712d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.navigation
+id: node.navigation.created
+field_name: created
+entity_type: node
+bundle: navigation
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

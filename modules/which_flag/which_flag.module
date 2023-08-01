@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function which_flag_theme($existing, $type, $theme, $path) {
+
+  $variables = array(
+    'which_flag_template' => array(
+      'variables' => array(
+      ),
+      'template' => 'which_flag',
+    ),
+  );
+  return $variables;
+}

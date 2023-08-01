@@ -1,0 +1,25 @@
+
+
+# find all files updated in last 4 days
+Get-ChildItem -Path . -Recurse| ? {$_.LastWriteTime -gt (Get-Date).AddDays(-4)}
+
+
+# filter by file extension = PDF
+Get-ChildItem -Path . -Filter *.pdf -Recurse| ? {$_.LastWriteTime -gt (Get-Date).AddDays(-4)}
+
+# sort files by largest first
+ Get-ChildItem -Path . -Recurse -File | Sort-Object -Property Length -Descending
+
+# Find the 25 largest files -- for migrating to "document.airnow.gov"
+clear
+cd C:\Users\cwilkes\Sites\devdesktop\airnowgov-dev\docroot\sites\default\files
+Get-ChildItem -Path . -Recurse -File | Sort-Object -Property Length -Descending | Select-Object -first 25
+
+
+
+
+#Recent Events after cloud.gov login
+cd C:\Users\cwilkes\Sites\devdesktop\airnowgov-dev
+emailEventsLast7Days.ps1
+
+
